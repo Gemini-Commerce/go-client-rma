@@ -22,7 +22,10 @@ var _ MappedNullable = &RmaListReturnsResponse{}
 type RmaListReturnsResponse struct {
 	Returns []RmaReturnResponse `json:"returns,omitempty"`
 	NextPageToken *string `json:"nextPageToken,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _RmaListReturnsResponse RmaListReturnsResponse
 
 // NewRmaListReturnsResponse instantiates a new RmaListReturnsResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -59,8 +62,8 @@ func (o *RmaListReturnsResponse) GetReturnsOk() ([]RmaReturnResponse, bool) {
 	return o.Returns, true
 }
 
-// HasReturns returns a boolean if a field has been set.
-func (o *RmaListReturnsResponse) HasReturns() bool {
+// &#39;Has&#39;Returns returns a boolean if a field has been set.
+func (o *RmaListReturnsResponse) &#39;Has&#39;Returns() bool {
 	if o != nil && !IsNil(o.Returns) {
 		return true
 	}
@@ -91,8 +94,8 @@ func (o *RmaListReturnsResponse) GetNextPageTokenOk() (*string, bool) {
 	return o.NextPageToken, true
 }
 
-// HasNextPageToken returns a boolean if a field has been set.
-func (o *RmaListReturnsResponse) HasNextPageToken() bool {
+// &#39;Has&#39;NextPageToken returns a boolean if a field has been set.
+func (o *RmaListReturnsResponse) &#39;Has&#39;NextPageToken() bool {
 	if o != nil && !IsNil(o.NextPageToken) {
 		return true
 	}
@@ -121,9 +124,54 @@ func (o RmaListReturnsResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.NextPageToken) {
 		toSerialize["nextPageToken"] = o.NextPageToken
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *RmaListReturnsResponse) UnmarshalJSON(data []byte) (err error) {
+	varRmaListReturnsResponse := _RmaListReturnsResponse{}
+
+	err = json.Unmarshal(data, &varRmaListReturnsResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = RmaListReturnsResponse(varRmaListReturnsResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "returns")
+		delete(additionalProperties, "nextPageToken")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *RmaListReturnsResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *RmaListReturnsResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableRmaListReturnsResponse struct {
 	value *RmaListReturnsResponse
 	isSet bool

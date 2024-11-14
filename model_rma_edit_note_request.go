@@ -13,7 +13,6 @@ package rma
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type RmaEditNoteRequest struct {
 	Id string `json:"id"`
 	Payload *EditNoteRequestPayload `json:"payload,omitempty"`
 	PayloadMask *string `json:"payloadMask,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _RmaEditNoteRequest RmaEditNoteRequest
@@ -115,8 +115,8 @@ func (o *RmaEditNoteRequest) GetPayloadOk() (*EditNoteRequestPayload, bool) {
 	return o.Payload, true
 }
 
-// HasPayload returns a boolean if a field has been set.
-func (o *RmaEditNoteRequest) HasPayload() bool {
+// &#39;Has&#39;Payload returns a boolean if a field has been set.
+func (o *RmaEditNoteRequest) &#39;Has&#39;Payload() bool {
 	if o != nil && !IsNil(o.Payload) {
 		return true
 	}
@@ -147,8 +147,8 @@ func (o *RmaEditNoteRequest) GetPayloadMaskOk() (*string, bool) {
 	return o.PayloadMask, true
 }
 
-// HasPayloadMask returns a boolean if a field has been set.
-func (o *RmaEditNoteRequest) HasPayloadMask() bool {
+// &#39;Has&#39;PayloadMask returns a boolean if a field has been set.
+func (o *RmaEditNoteRequest) &#39;Has&#39;PayloadMask() bool {
 	if o != nil && !IsNil(o.PayloadMask) {
 		return true
 	}
@@ -179,6 +179,11 @@ func (o RmaEditNoteRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.PayloadMask) {
 		toSerialize["payloadMask"] = o.PayloadMask
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -207,9 +212,7 @@ func (o *RmaEditNoteRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varRmaEditNoteRequest := _RmaEditNoteRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varRmaEditNoteRequest)
+	err = json.Unmarshal(data, &varRmaEditNoteRequest)
 
 	if err != nil {
 		return err
@@ -217,9 +220,37 @@ func (o *RmaEditNoteRequest) UnmarshalJSON(data []byte) (err error) {
 
 	*o = RmaEditNoteRequest(varRmaEditNoteRequest)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "payload")
+		delete(additionalProperties, "payloadMask")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *RmaEditNoteRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *RmaEditNoteRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableRmaEditNoteRequest struct {
 	value *RmaEditNoteRequest
 	isSet bool

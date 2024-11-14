@@ -32,7 +32,10 @@ type RmaOrderData struct {
 	Currency *RmaCurrency `json:"currency,omitempty"`
 	Subtotals *map[string]OrderDataSubtotal `json:"subtotals,omitempty"`
 	Totals *map[string]OrderDataTotal `json:"totals,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _RmaOrderData RmaOrderData
 
 // NewRmaOrderData instantiates a new RmaOrderData object
 // This constructor will assign default values to properties that have it defined,
@@ -40,7 +43,7 @@ type RmaOrderData struct {
 // will change when the set of required properties is changed
 func NewRmaOrderData() *RmaOrderData {
 	this := RmaOrderData{}
-	var currency RmaCurrency = XXX
+	var currency RmaCurrency = RMACURRENCY_XXX
 	this.Currency = &currency
 	return &this
 }
@@ -50,7 +53,7 @@ func NewRmaOrderData() *RmaOrderData {
 // but it doesn't guarantee that properties required by API are set
 func NewRmaOrderDataWithDefaults() *RmaOrderData {
 	this := RmaOrderData{}
-	var currency RmaCurrency = XXX
+	var currency RmaCurrency = RMACURRENCY_XXX
 	this.Currency = &currency
 	return &this
 }
@@ -73,8 +76,8 @@ func (o *RmaOrderData) GetCreatedAtOk() (*time.Time, bool) {
 	return o.CreatedAt, true
 }
 
-// HasCreatedAt returns a boolean if a field has been set.
-func (o *RmaOrderData) HasCreatedAt() bool {
+// &#39;Has&#39;CreatedAt returns a boolean if a field has been set.
+func (o *RmaOrderData) &#39;Has&#39;CreatedAt() bool {
 	if o != nil && !IsNil(o.CreatedAt) {
 		return true
 	}
@@ -105,8 +108,8 @@ func (o *RmaOrderData) GetUpdatedAtOk() (*time.Time, bool) {
 	return o.UpdatedAt, true
 }
 
-// HasUpdatedAt returns a boolean if a field has been set.
-func (o *RmaOrderData) HasUpdatedAt() bool {
+// &#39;Has&#39;UpdatedAt returns a boolean if a field has been set.
+func (o *RmaOrderData) &#39;Has&#39;UpdatedAt() bool {
 	if o != nil && !IsNil(o.UpdatedAt) {
 		return true
 	}
@@ -137,8 +140,8 @@ func (o *RmaOrderData) GetGrnOk() (*string, bool) {
 	return o.Grn, true
 }
 
-// HasGrn returns a boolean if a field has been set.
-func (o *RmaOrderData) HasGrn() bool {
+// &#39;Has&#39;Grn returns a boolean if a field has been set.
+func (o *RmaOrderData) &#39;Has&#39;Grn() bool {
 	if o != nil && !IsNil(o.Grn) {
 		return true
 	}
@@ -169,8 +172,8 @@ func (o *RmaOrderData) GetNumberOk() (*string, bool) {
 	return o.Number, true
 }
 
-// HasNumber returns a boolean if a field has been set.
-func (o *RmaOrderData) HasNumber() bool {
+// &#39;Has&#39;Number returns a boolean if a field has been set.
+func (o *RmaOrderData) &#39;Has&#39;Number() bool {
 	if o != nil && !IsNil(o.Number) {
 		return true
 	}
@@ -201,8 +204,8 @@ func (o *RmaOrderData) GetStatusOk() (*string, bool) {
 	return o.Status, true
 }
 
-// HasStatus returns a boolean if a field has been set.
-func (o *RmaOrderData) HasStatus() bool {
+// &#39;Has&#39;Status returns a boolean if a field has been set.
+func (o *RmaOrderData) &#39;Has&#39;Status() bool {
 	if o != nil && !IsNil(o.Status) {
 		return true
 	}
@@ -233,8 +236,8 @@ func (o *RmaOrderData) GetChannelOk() (*string, bool) {
 	return o.Channel, true
 }
 
-// HasChannel returns a boolean if a field has been set.
-func (o *RmaOrderData) HasChannel() bool {
+// &#39;Has&#39;Channel returns a boolean if a field has been set.
+func (o *RmaOrderData) &#39;Has&#39;Channel() bool {
 	if o != nil && !IsNil(o.Channel) {
 		return true
 	}
@@ -265,8 +268,8 @@ func (o *RmaOrderData) GetMarketOk() (*string, bool) {
 	return o.Market, true
 }
 
-// HasMarket returns a boolean if a field has been set.
-func (o *RmaOrderData) HasMarket() bool {
+// &#39;Has&#39;Market returns a boolean if a field has been set.
+func (o *RmaOrderData) &#39;Has&#39;Market() bool {
 	if o != nil && !IsNil(o.Market) {
 		return true
 	}
@@ -297,8 +300,8 @@ func (o *RmaOrderData) GetItemsOk() ([]RmaOrderDataItem, bool) {
 	return o.Items, true
 }
 
-// HasItems returns a boolean if a field has been set.
-func (o *RmaOrderData) HasItems() bool {
+// &#39;Has&#39;Items returns a boolean if a field has been set.
+func (o *RmaOrderData) &#39;Has&#39;Items() bool {
 	if o != nil && !IsNil(o.Items) {
 		return true
 	}
@@ -329,8 +332,8 @@ func (o *RmaOrderData) GetCurrencyOk() (*RmaCurrency, bool) {
 	return o.Currency, true
 }
 
-// HasCurrency returns a boolean if a field has been set.
-func (o *RmaOrderData) HasCurrency() bool {
+// &#39;Has&#39;Currency returns a boolean if a field has been set.
+func (o *RmaOrderData) &#39;Has&#39;Currency() bool {
 	if o != nil && !IsNil(o.Currency) {
 		return true
 	}
@@ -361,8 +364,8 @@ func (o *RmaOrderData) GetSubtotalsOk() (*map[string]OrderDataSubtotal, bool) {
 	return o.Subtotals, true
 }
 
-// HasSubtotals returns a boolean if a field has been set.
-func (o *RmaOrderData) HasSubtotals() bool {
+// &#39;Has&#39;Subtotals returns a boolean if a field has been set.
+func (o *RmaOrderData) &#39;Has&#39;Subtotals() bool {
 	if o != nil && !IsNil(o.Subtotals) {
 		return true
 	}
@@ -393,8 +396,8 @@ func (o *RmaOrderData) GetTotalsOk() (*map[string]OrderDataTotal, bool) {
 	return o.Totals, true
 }
 
-// HasTotals returns a boolean if a field has been set.
-func (o *RmaOrderData) HasTotals() bool {
+// &#39;Has&#39;Totals returns a boolean if a field has been set.
+func (o *RmaOrderData) &#39;Has&#39;Totals() bool {
 	if o != nil && !IsNil(o.Totals) {
 		return true
 	}
@@ -450,9 +453,63 @@ func (o RmaOrderData) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Totals) {
 		toSerialize["totals"] = o.Totals
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *RmaOrderData) UnmarshalJSON(data []byte) (err error) {
+	varRmaOrderData := _RmaOrderData{}
+
+	err = json.Unmarshal(data, &varRmaOrderData)
+
+	if err != nil {
+		return err
+	}
+
+	*o = RmaOrderData(varRmaOrderData)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "createdAt")
+		delete(additionalProperties, "updatedAt")
+		delete(additionalProperties, "grn")
+		delete(additionalProperties, "number")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "channel")
+		delete(additionalProperties, "market")
+		delete(additionalProperties, "items")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "subtotals")
+		delete(additionalProperties, "totals")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *RmaOrderData) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *RmaOrderData) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableRmaOrderData struct {
 	value *RmaOrderData
 	isSet bool

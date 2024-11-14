@@ -21,13 +21,13 @@ type OrderDataSubtotalCode string
 
 // List of OrderDataSubtotalCode
 const (
-	UNKNOWN OrderDataSubtotalCode = "UNKNOWN"
-	PAYMENT OrderDataSubtotalCode = "PAYMENT"
-	SHIPMENT OrderDataSubtotalCode = "SHIPMENT"
-	TAX OrderDataSubtotalCode = "TAX"
-	ITEMS OrderDataSubtotalCode = "ITEMS"
-	ITEMS_DISCOUNTED OrderDataSubtotalCode = "ITEMS_DISCOUNTED"
-	DISCOUNT OrderDataSubtotalCode = "DISCOUNT"
+	ORDERDATASUBTOTALCODE_UNKNOWN OrderDataSubtotalCode = "UNKNOWN"
+	ORDERDATASUBTOTALCODE_PAYMENT OrderDataSubtotalCode = "PAYMENT"
+	ORDERDATASUBTOTALCODE_SHIPMENT OrderDataSubtotalCode = "SHIPMENT"
+	ORDERDATASUBTOTALCODE_TAX OrderDataSubtotalCode = "TAX"
+	ORDERDATASUBTOTALCODE_ITEMS OrderDataSubtotalCode = "ITEMS"
+	ORDERDATASUBTOTALCODE_ITEMS_DISCOUNTED OrderDataSubtotalCode = "ITEMS_DISCOUNTED"
+	ORDERDATASUBTOTALCODE_DISCOUNT OrderDataSubtotalCode = "DISCOUNT"
 )
 
 // All allowed values of OrderDataSubtotalCode enum

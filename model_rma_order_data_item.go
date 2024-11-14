@@ -43,7 +43,10 @@ type RmaOrderDataItem struct {
 	ShipmentInfoReference *string `json:"shipmentInfoReference,omitempty"`
 	PromotionGrn []string `json:"promotionGrn,omitempty"`
 	ProductIsVirtual *bool `json:"productIsVirtual,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _RmaOrderDataItem RmaOrderDataItem
 
 // NewRmaOrderDataItem instantiates a new RmaOrderDataItem object
 // This constructor will assign default values to properties that have it defined,
@@ -80,8 +83,8 @@ func (o *RmaOrderDataItem) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *RmaOrderDataItem) HasId() bool {
+// &#39;Has&#39;Id returns a boolean if a field has been set.
+func (o *RmaOrderDataItem) &#39;Has&#39;Id() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -112,8 +115,8 @@ func (o *RmaOrderDataItem) GetProductGrnOk() (*string, bool) {
 	return o.ProductGrn, true
 }
 
-// HasProductGrn returns a boolean if a field has been set.
-func (o *RmaOrderDataItem) HasProductGrn() bool {
+// &#39;Has&#39;ProductGrn returns a boolean if a field has been set.
+func (o *RmaOrderDataItem) &#39;Has&#39;ProductGrn() bool {
 	if o != nil && !IsNil(o.ProductGrn) {
 		return true
 	}
@@ -144,8 +147,8 @@ func (o *RmaOrderDataItem) GetQtyOrderedOk() (*int64, bool) {
 	return o.QtyOrdered, true
 }
 
-// HasQtyOrdered returns a boolean if a field has been set.
-func (o *RmaOrderDataItem) HasQtyOrdered() bool {
+// &#39;Has&#39;QtyOrdered returns a boolean if a field has been set.
+func (o *RmaOrderDataItem) &#39;Has&#39;QtyOrdered() bool {
 	if o != nil && !IsNil(o.QtyOrdered) {
 		return true
 	}
@@ -176,8 +179,8 @@ func (o *RmaOrderDataItem) GetQtyCommittedOk() (*int64, bool) {
 	return o.QtyCommitted, true
 }
 
-// HasQtyCommitted returns a boolean if a field has been set.
-func (o *RmaOrderDataItem) HasQtyCommitted() bool {
+// &#39;Has&#39;QtyCommitted returns a boolean if a field has been set.
+func (o *RmaOrderDataItem) &#39;Has&#39;QtyCommitted() bool {
 	if o != nil && !IsNil(o.QtyCommitted) {
 		return true
 	}
@@ -208,8 +211,8 @@ func (o *RmaOrderDataItem) GetQtyShippedOk() (*int64, bool) {
 	return o.QtyShipped, true
 }
 
-// HasQtyShipped returns a boolean if a field has been set.
-func (o *RmaOrderDataItem) HasQtyShipped() bool {
+// &#39;Has&#39;QtyShipped returns a boolean if a field has been set.
+func (o *RmaOrderDataItem) &#39;Has&#39;QtyShipped() bool {
 	if o != nil && !IsNil(o.QtyShipped) {
 		return true
 	}
@@ -240,8 +243,8 @@ func (o *RmaOrderDataItem) GetUnitSalePriceOk() (*RmaMoney, bool) {
 	return o.UnitSalePrice, true
 }
 
-// HasUnitSalePrice returns a boolean if a field has been set.
-func (o *RmaOrderDataItem) HasUnitSalePrice() bool {
+// &#39;Has&#39;UnitSalePrice returns a boolean if a field has been set.
+func (o *RmaOrderDataItem) &#39;Has&#39;UnitSalePrice() bool {
 	if o != nil && !IsNil(o.UnitSalePrice) {
 		return true
 	}
@@ -272,8 +275,8 @@ func (o *RmaOrderDataItem) GetUnitListPriceOk() (*RmaMoney, bool) {
 	return o.UnitListPrice, true
 }
 
-// HasUnitListPrice returns a boolean if a field has been set.
-func (o *RmaOrderDataItem) HasUnitListPrice() bool {
+// &#39;Has&#39;UnitListPrice returns a boolean if a field has been set.
+func (o *RmaOrderDataItem) &#39;Has&#39;UnitListPrice() bool {
 	if o != nil && !IsNil(o.UnitListPrice) {
 		return true
 	}
@@ -304,8 +307,8 @@ func (o *RmaOrderDataItem) GetUnitVatAmountOk() (*RmaMoney, bool) {
 	return o.UnitVatAmount, true
 }
 
-// HasUnitVatAmount returns a boolean if a field has been set.
-func (o *RmaOrderDataItem) HasUnitVatAmount() bool {
+// &#39;Has&#39;UnitVatAmount returns a boolean if a field has been set.
+func (o *RmaOrderDataItem) &#39;Has&#39;UnitVatAmount() bool {
 	if o != nil && !IsNil(o.UnitVatAmount) {
 		return true
 	}
@@ -336,8 +339,8 @@ func (o *RmaOrderDataItem) GetRowSalePriceOk() (*RmaMoney, bool) {
 	return o.RowSalePrice, true
 }
 
-// HasRowSalePrice returns a boolean if a field has been set.
-func (o *RmaOrderDataItem) HasRowSalePrice() bool {
+// &#39;Has&#39;RowSalePrice returns a boolean if a field has been set.
+func (o *RmaOrderDataItem) &#39;Has&#39;RowSalePrice() bool {
 	if o != nil && !IsNil(o.RowSalePrice) {
 		return true
 	}
@@ -368,8 +371,8 @@ func (o *RmaOrderDataItem) GetRowListPriceOk() (*RmaMoney, bool) {
 	return o.RowListPrice, true
 }
 
-// HasRowListPrice returns a boolean if a field has been set.
-func (o *RmaOrderDataItem) HasRowListPrice() bool {
+// &#39;Has&#39;RowListPrice returns a boolean if a field has been set.
+func (o *RmaOrderDataItem) &#39;Has&#39;RowListPrice() bool {
 	if o != nil && !IsNil(o.RowListPrice) {
 		return true
 	}
@@ -400,8 +403,8 @@ func (o *RmaOrderDataItem) GetRowVatAmountOk() (*RmaMoney, bool) {
 	return o.RowVatAmount, true
 }
 
-// HasRowVatAmount returns a boolean if a field has been set.
-func (o *RmaOrderDataItem) HasRowVatAmount() bool {
+// &#39;Has&#39;RowVatAmount returns a boolean if a field has been set.
+func (o *RmaOrderDataItem) &#39;Has&#39;RowVatAmount() bool {
 	if o != nil && !IsNil(o.RowVatAmount) {
 		return true
 	}
@@ -432,8 +435,8 @@ func (o *RmaOrderDataItem) GetVatPercentageOk() (*float32, bool) {
 	return o.VatPercentage, true
 }
 
-// HasVatPercentage returns a boolean if a field has been set.
-func (o *RmaOrderDataItem) HasVatPercentage() bool {
+// &#39;Has&#39;VatPercentage returns a boolean if a field has been set.
+func (o *RmaOrderDataItem) &#39;Has&#39;VatPercentage() bool {
 	if o != nil && !IsNil(o.VatPercentage) {
 		return true
 	}
@@ -464,8 +467,8 @@ func (o *RmaOrderDataItem) GetVatInaccurateOk() (*bool, bool) {
 	return o.VatInaccurate, true
 }
 
-// HasVatInaccurate returns a boolean if a field has been set.
-func (o *RmaOrderDataItem) HasVatInaccurate() bool {
+// &#39;Has&#39;VatInaccurate returns a boolean if a field has been set.
+func (o *RmaOrderDataItem) &#39;Has&#39;VatInaccurate() bool {
 	if o != nil && !IsNil(o.VatInaccurate) {
 		return true
 	}
@@ -496,8 +499,8 @@ func (o *RmaOrderDataItem) GetVatCalculatedOk() (*bool, bool) {
 	return o.VatCalculated, true
 }
 
-// HasVatCalculated returns a boolean if a field has been set.
-func (o *RmaOrderDataItem) HasVatCalculated() bool {
+// &#39;Has&#39;VatCalculated returns a boolean if a field has been set.
+func (o *RmaOrderDataItem) &#39;Has&#39;VatCalculated() bool {
 	if o != nil && !IsNil(o.VatCalculated) {
 		return true
 	}
@@ -528,8 +531,8 @@ func (o *RmaOrderDataItem) GetProductNameOk() (*string, bool) {
 	return o.ProductName, true
 }
 
-// HasProductName returns a boolean if a field has been set.
-func (o *RmaOrderDataItem) HasProductName() bool {
+// &#39;Has&#39;ProductName returns a boolean if a field has been set.
+func (o *RmaOrderDataItem) &#39;Has&#39;ProductName() bool {
 	if o != nil && !IsNil(o.ProductName) {
 		return true
 	}
@@ -560,8 +563,8 @@ func (o *RmaOrderDataItem) GetProductCodeOk() (*string, bool) {
 	return o.ProductCode, true
 }
 
-// HasProductCode returns a boolean if a field has been set.
-func (o *RmaOrderDataItem) HasProductCode() bool {
+// &#39;Has&#39;ProductCode returns a boolean if a field has been set.
+func (o *RmaOrderDataItem) &#39;Has&#39;ProductCode() bool {
 	if o != nil && !IsNil(o.ProductCode) {
 		return true
 	}
@@ -592,8 +595,8 @@ func (o *RmaOrderDataItem) GetProductSkuOk() (*string, bool) {
 	return o.ProductSku, true
 }
 
-// HasProductSku returns a boolean if a field has been set.
-func (o *RmaOrderDataItem) HasProductSku() bool {
+// &#39;Has&#39;ProductSku returns a boolean if a field has been set.
+func (o *RmaOrderDataItem) &#39;Has&#39;ProductSku() bool {
 	if o != nil && !IsNil(o.ProductSku) {
 		return true
 	}
@@ -624,8 +627,8 @@ func (o *RmaOrderDataItem) GetProductOptionsOk() (*string, bool) {
 	return o.ProductOptions, true
 }
 
-// HasProductOptions returns a boolean if a field has been set.
-func (o *RmaOrderDataItem) HasProductOptions() bool {
+// &#39;Has&#39;ProductOptions returns a boolean if a field has been set.
+func (o *RmaOrderDataItem) &#39;Has&#39;ProductOptions() bool {
 	if o != nil && !IsNil(o.ProductOptions) {
 		return true
 	}
@@ -656,8 +659,8 @@ func (o *RmaOrderDataItem) GetProductImgOk() (*string, bool) {
 	return o.ProductImg, true
 }
 
-// HasProductImg returns a boolean if a field has been set.
-func (o *RmaOrderDataItem) HasProductImg() bool {
+// &#39;Has&#39;ProductImg returns a boolean if a field has been set.
+func (o *RmaOrderDataItem) &#39;Has&#39;ProductImg() bool {
 	if o != nil && !IsNil(o.ProductImg) {
 		return true
 	}
@@ -688,8 +691,8 @@ func (o *RmaOrderDataItem) GetProductDataOk() (*string, bool) {
 	return o.ProductData, true
 }
 
-// HasProductData returns a boolean if a field has been set.
-func (o *RmaOrderDataItem) HasProductData() bool {
+// &#39;Has&#39;ProductData returns a boolean if a field has been set.
+func (o *RmaOrderDataItem) &#39;Has&#39;ProductData() bool {
 	if o != nil && !IsNil(o.ProductData) {
 		return true
 	}
@@ -720,8 +723,8 @@ func (o *RmaOrderDataItem) GetShipmentInfoReferenceOk() (*string, bool) {
 	return o.ShipmentInfoReference, true
 }
 
-// HasShipmentInfoReference returns a boolean if a field has been set.
-func (o *RmaOrderDataItem) HasShipmentInfoReference() bool {
+// &#39;Has&#39;ShipmentInfoReference returns a boolean if a field has been set.
+func (o *RmaOrderDataItem) &#39;Has&#39;ShipmentInfoReference() bool {
 	if o != nil && !IsNil(o.ShipmentInfoReference) {
 		return true
 	}
@@ -752,8 +755,8 @@ func (o *RmaOrderDataItem) GetPromotionGrnOk() ([]string, bool) {
 	return o.PromotionGrn, true
 }
 
-// HasPromotionGrn returns a boolean if a field has been set.
-func (o *RmaOrderDataItem) HasPromotionGrn() bool {
+// &#39;Has&#39;PromotionGrn returns a boolean if a field has been set.
+func (o *RmaOrderDataItem) &#39;Has&#39;PromotionGrn() bool {
 	if o != nil && !IsNil(o.PromotionGrn) {
 		return true
 	}
@@ -784,8 +787,8 @@ func (o *RmaOrderDataItem) GetProductIsVirtualOk() (*bool, bool) {
 	return o.ProductIsVirtual, true
 }
 
-// HasProductIsVirtual returns a boolean if a field has been set.
-func (o *RmaOrderDataItem) HasProductIsVirtual() bool {
+// &#39;Has&#39;ProductIsVirtual returns a boolean if a field has been set.
+func (o *RmaOrderDataItem) &#39;Has&#39;ProductIsVirtual() bool {
 	if o != nil && !IsNil(o.ProductIsVirtual) {
 		return true
 	}
@@ -877,9 +880,75 @@ func (o RmaOrderDataItem) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ProductIsVirtual) {
 		toSerialize["productIsVirtual"] = o.ProductIsVirtual
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *RmaOrderDataItem) UnmarshalJSON(data []byte) (err error) {
+	varRmaOrderDataItem := _RmaOrderDataItem{}
+
+	err = json.Unmarshal(data, &varRmaOrderDataItem)
+
+	if err != nil {
+		return err
+	}
+
+	*o = RmaOrderDataItem(varRmaOrderDataItem)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "productGrn")
+		delete(additionalProperties, "qtyOrdered")
+		delete(additionalProperties, "qtyCommitted")
+		delete(additionalProperties, "qtyShipped")
+		delete(additionalProperties, "unitSalePrice")
+		delete(additionalProperties, "unitListPrice")
+		delete(additionalProperties, "unitVatAmount")
+		delete(additionalProperties, "rowSalePrice")
+		delete(additionalProperties, "rowListPrice")
+		delete(additionalProperties, "rowVatAmount")
+		delete(additionalProperties, "vatPercentage")
+		delete(additionalProperties, "vatInaccurate")
+		delete(additionalProperties, "vatCalculated")
+		delete(additionalProperties, "productName")
+		delete(additionalProperties, "productCode")
+		delete(additionalProperties, "productSku")
+		delete(additionalProperties, "productOptions")
+		delete(additionalProperties, "productImg")
+		delete(additionalProperties, "productData")
+		delete(additionalProperties, "shipmentInfoReference")
+		delete(additionalProperties, "promotionGrn")
+		delete(additionalProperties, "productIsVirtual")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *RmaOrderDataItem) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *RmaOrderDataItem) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableRmaOrderDataItem struct {
 	value *RmaOrderDataItem
 	isSet bool

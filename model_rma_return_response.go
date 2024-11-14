@@ -36,7 +36,10 @@ type RmaReturnResponse struct {
 	CreatedAt *time.Time `json:"createdAt,omitempty"`
 	UpdatedAt *time.Time `json:"updatedAt,omitempty"`
 	OrderData *RmaOrderData `json:"orderData,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _RmaReturnResponse RmaReturnResponse
 
 // NewRmaReturnResponse instantiates a new RmaReturnResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -44,7 +47,7 @@ type RmaReturnResponse struct {
 // will change when the set of required properties is changed
 func NewRmaReturnResponse() *RmaReturnResponse {
 	this := RmaReturnResponse{}
-	var preferredRefundMethod RmaRefundMethod = UNKNOWN
+	var preferredRefundMethod RmaRefundMethod = RMAREFUNDMETHOD_UNKNOWN
 	this.PreferredRefundMethod = &preferredRefundMethod
 	return &this
 }
@@ -54,7 +57,7 @@ func NewRmaReturnResponse() *RmaReturnResponse {
 // but it doesn't guarantee that properties required by API are set
 func NewRmaReturnResponseWithDefaults() *RmaReturnResponse {
 	this := RmaReturnResponse{}
-	var preferredRefundMethod RmaRefundMethod = UNKNOWN
+	var preferredRefundMethod RmaRefundMethod = RMAREFUNDMETHOD_UNKNOWN
 	this.PreferredRefundMethod = &preferredRefundMethod
 	return &this
 }
@@ -77,8 +80,8 @@ func (o *RmaReturnResponse) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *RmaReturnResponse) HasId() bool {
+// &#39;Has&#39;Id returns a boolean if a field has been set.
+func (o *RmaReturnResponse) &#39;Has&#39;Id() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -109,8 +112,8 @@ func (o *RmaReturnResponse) GetGrnOk() (*string, bool) {
 	return o.Grn, true
 }
 
-// HasGrn returns a boolean if a field has been set.
-func (o *RmaReturnResponse) HasGrn() bool {
+// &#39;Has&#39;Grn returns a boolean if a field has been set.
+func (o *RmaReturnResponse) &#39;Has&#39;Grn() bool {
 	if o != nil && !IsNil(o.Grn) {
 		return true
 	}
@@ -141,8 +144,8 @@ func (o *RmaReturnResponse) GetOrderGrnOk() (*string, bool) {
 	return o.OrderGrn, true
 }
 
-// HasOrderGrn returns a boolean if a field has been set.
-func (o *RmaReturnResponse) HasOrderGrn() bool {
+// &#39;Has&#39;OrderGrn returns a boolean if a field has been set.
+func (o *RmaReturnResponse) &#39;Has&#39;OrderGrn() bool {
 	if o != nil && !IsNil(o.OrderGrn) {
 		return true
 	}
@@ -173,8 +176,8 @@ func (o *RmaReturnResponse) GetStatusOk() (*string, bool) {
 	return o.Status, true
 }
 
-// HasStatus returns a boolean if a field has been set.
-func (o *RmaReturnResponse) HasStatus() bool {
+// &#39;Has&#39;Status returns a boolean if a field has been set.
+func (o *RmaReturnResponse) &#39;Has&#39;Status() bool {
 	if o != nil && !IsNil(o.Status) {
 		return true
 	}
@@ -205,8 +208,8 @@ func (o *RmaReturnResponse) GetProductsOk() ([]RmaReturnProduct, bool) {
 	return o.Products, true
 }
 
-// HasProducts returns a boolean if a field has been set.
-func (o *RmaReturnResponse) HasProducts() bool {
+// &#39;Has&#39;Products returns a boolean if a field has been set.
+func (o *RmaReturnResponse) &#39;Has&#39;Products() bool {
 	if o != nil && !IsNil(o.Products) {
 		return true
 	}
@@ -237,8 +240,8 @@ func (o *RmaReturnResponse) GetPreferredRefundMethodOk() (*RmaRefundMethod, bool
 	return o.PreferredRefundMethod, true
 }
 
-// HasPreferredRefundMethod returns a boolean if a field has been set.
-func (o *RmaReturnResponse) HasPreferredRefundMethod() bool {
+// &#39;Has&#39;PreferredRefundMethod returns a boolean if a field has been set.
+func (o *RmaReturnResponse) &#39;Has&#39;PreferredRefundMethod() bool {
 	if o != nil && !IsNil(o.PreferredRefundMethod) {
 		return true
 	}
@@ -269,8 +272,8 @@ func (o *RmaReturnResponse) GetRefundShippingCostOk() (*bool, bool) {
 	return o.RefundShippingCost, true
 }
 
-// HasRefundShippingCost returns a boolean if a field has been set.
-func (o *RmaReturnResponse) HasRefundShippingCost() bool {
+// &#39;Has&#39;RefundShippingCost returns a boolean if a field has been set.
+func (o *RmaReturnResponse) &#39;Has&#39;RefundShippingCost() bool {
 	if o != nil && !IsNil(o.RefundShippingCost) {
 		return true
 	}
@@ -301,8 +304,8 @@ func (o *RmaReturnResponse) GetRefundPaymentCostOk() (*bool, bool) {
 	return o.RefundPaymentCost, true
 }
 
-// HasRefundPaymentCost returns a boolean if a field has been set.
-func (o *RmaReturnResponse) HasRefundPaymentCost() bool {
+// &#39;Has&#39;RefundPaymentCost returns a boolean if a field has been set.
+func (o *RmaReturnResponse) &#39;Has&#39;RefundPaymentCost() bool {
 	if o != nil && !IsNil(o.RefundPaymentCost) {
 		return true
 	}
@@ -333,8 +336,8 @@ func (o *RmaReturnResponse) GetCustomerInfoOk() (*RmaCustomerInfo, bool) {
 	return o.CustomerInfo, true
 }
 
-// HasCustomerInfo returns a boolean if a field has been set.
-func (o *RmaReturnResponse) HasCustomerInfo() bool {
+// &#39;Has&#39;CustomerInfo returns a boolean if a field has been set.
+func (o *RmaReturnResponse) &#39;Has&#39;CustomerInfo() bool {
 	if o != nil && !IsNil(o.CustomerInfo) {
 		return true
 	}
@@ -365,8 +368,8 @@ func (o *RmaReturnResponse) GetReturnAddressOk() (*RmaPostalAddress, bool) {
 	return o.ReturnAddress, true
 }
 
-// HasReturnAddress returns a boolean if a field has been set.
-func (o *RmaReturnResponse) HasReturnAddress() bool {
+// &#39;Has&#39;ReturnAddress returns a boolean if a field has been set.
+func (o *RmaReturnResponse) &#39;Has&#39;ReturnAddress() bool {
 	if o != nil && !IsNil(o.ReturnAddress) {
 		return true
 	}
@@ -397,8 +400,8 @@ func (o *RmaReturnResponse) GetNoteOk() (*string, bool) {
 	return o.Note, true
 }
 
-// HasNote returns a boolean if a field has been set.
-func (o *RmaReturnResponse) HasNote() bool {
+// &#39;Has&#39;Note returns a boolean if a field has been set.
+func (o *RmaReturnResponse) &#39;Has&#39;Note() bool {
 	if o != nil && !IsNil(o.Note) {
 		return true
 	}
@@ -429,8 +432,8 @@ func (o *RmaReturnResponse) GetHistoryOk() ([]RmaReturnHistory, bool) {
 	return o.History, true
 }
 
-// HasHistory returns a boolean if a field has been set.
-func (o *RmaReturnResponse) HasHistory() bool {
+// &#39;Has&#39;History returns a boolean if a field has been set.
+func (o *RmaReturnResponse) &#39;Has&#39;History() bool {
 	if o != nil && !IsNil(o.History) {
 		return true
 	}
@@ -461,8 +464,8 @@ func (o *RmaReturnResponse) GetCreatedAtOk() (*time.Time, bool) {
 	return o.CreatedAt, true
 }
 
-// HasCreatedAt returns a boolean if a field has been set.
-func (o *RmaReturnResponse) HasCreatedAt() bool {
+// &#39;Has&#39;CreatedAt returns a boolean if a field has been set.
+func (o *RmaReturnResponse) &#39;Has&#39;CreatedAt() bool {
 	if o != nil && !IsNil(o.CreatedAt) {
 		return true
 	}
@@ -493,8 +496,8 @@ func (o *RmaReturnResponse) GetUpdatedAtOk() (*time.Time, bool) {
 	return o.UpdatedAt, true
 }
 
-// HasUpdatedAt returns a boolean if a field has been set.
-func (o *RmaReturnResponse) HasUpdatedAt() bool {
+// &#39;Has&#39;UpdatedAt returns a boolean if a field has been set.
+func (o *RmaReturnResponse) &#39;Has&#39;UpdatedAt() bool {
 	if o != nil && !IsNil(o.UpdatedAt) {
 		return true
 	}
@@ -525,8 +528,8 @@ func (o *RmaReturnResponse) GetOrderDataOk() (*RmaOrderData, bool) {
 	return o.OrderData, true
 }
 
-// HasOrderData returns a boolean if a field has been set.
-func (o *RmaReturnResponse) HasOrderData() bool {
+// &#39;Has&#39;OrderData returns a boolean if a field has been set.
+func (o *RmaReturnResponse) &#39;Has&#39;OrderData() bool {
 	if o != nil && !IsNil(o.OrderData) {
 		return true
 	}
@@ -594,9 +597,67 @@ func (o RmaReturnResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OrderData) {
 		toSerialize["orderData"] = o.OrderData
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *RmaReturnResponse) UnmarshalJSON(data []byte) (err error) {
+	varRmaReturnResponse := _RmaReturnResponse{}
+
+	err = json.Unmarshal(data, &varRmaReturnResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = RmaReturnResponse(varRmaReturnResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "grn")
+		delete(additionalProperties, "orderGrn")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "products")
+		delete(additionalProperties, "preferredRefundMethod")
+		delete(additionalProperties, "refundShippingCost")
+		delete(additionalProperties, "refundPaymentCost")
+		delete(additionalProperties, "customerInfo")
+		delete(additionalProperties, "returnAddress")
+		delete(additionalProperties, "note")
+		delete(additionalProperties, "history")
+		delete(additionalProperties, "createdAt")
+		delete(additionalProperties, "updatedAt")
+		delete(additionalProperties, "orderData")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *RmaReturnResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *RmaReturnResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableRmaReturnResponse struct {
 	value *RmaReturnResponse
 	isSet bool

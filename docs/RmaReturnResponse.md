@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **OrderGrn**| **string** |   | [optional]
 **Status**| **string** |   | [optional]
 **Products**| [**[]RmaReturnProduct**](RmaReturnProduct.md) |   | [optional]
-**PreferredRefundMethod**| [**RmaRefundMethod**](RmaRefundMethod.md) |  for more information please, see Model/RmaRefundMethod.php  | [optional] [default to UNKNOWN]
+**PreferredRefundMethod**| [**RmaRefundMethod**](RmaRefundMethod.md) |  for more information please, see Model/RmaRefundMethod.php  | [optional] [default to RMAREFUNDMETHOD_UNKNOWN]
 **RefundShippingCost**| **bool** |   | [optional]
 **RefundPaymentCost**| **bool** |   | [optional]
 **CustomerInfo**| [**RmaCustomerInfo**](RmaCustomerInfo.md) |   | [optional]

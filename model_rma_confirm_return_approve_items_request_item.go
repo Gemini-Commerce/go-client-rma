@@ -13,7 +13,6 @@ package rma
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &RmaConfirmReturnApproveItemsRequestItem{}
 type RmaConfirmReturnApproveItemsRequestItem struct {
 	Grn string `json:"grn"`
 	Quantity string `json:"quantity"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _RmaConfirmReturnApproveItemsRequestItem RmaConfirmReturnApproveItemsRequestItem
@@ -107,6 +107,11 @@ func (o RmaConfirmReturnApproveItemsRequestItem) ToMap() (map[string]interface{}
 	toSerialize := map[string]interface{}{}
 	toSerialize["grn"] = o.Grn
 	toSerialize["quantity"] = o.Quantity
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -135,9 +140,7 @@ func (o *RmaConfirmReturnApproveItemsRequestItem) UnmarshalJSON(data []byte) (er
 
 	varRmaConfirmReturnApproveItemsRequestItem := _RmaConfirmReturnApproveItemsRequestItem{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varRmaConfirmReturnApproveItemsRequestItem)
+	err = json.Unmarshal(data, &varRmaConfirmReturnApproveItemsRequestItem)
 
 	if err != nil {
 		return err
@@ -145,9 +148,35 @@ func (o *RmaConfirmReturnApproveItemsRequestItem) UnmarshalJSON(data []byte) (er
 
 	*o = RmaConfirmReturnApproveItemsRequestItem(varRmaConfirmReturnApproveItemsRequestItem)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "grn")
+		delete(additionalProperties, "quantity")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *RmaConfirmReturnApproveItemsRequestItem) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *RmaConfirmReturnApproveItemsRequestItem) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableRmaConfirmReturnApproveItemsRequestItem struct {
 	value *RmaConfirmReturnApproveItemsRequestItem
 	isSet bool

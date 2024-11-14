@@ -13,7 +13,6 @@ package rma
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -27,6 +26,7 @@ type RmaApproveReturnRequest struct {
 	RefundShippingCost bool `json:"refundShippingCost"`
 	RefundPaymentCost bool `json:"refundPaymentCost"`
 	Items []RmaApproveReturnRequestItem `json:"items"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _RmaApproveReturnRequest RmaApproveReturnRequest
@@ -188,6 +188,11 @@ func (o RmaApproveReturnRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize["refundShippingCost"] = o.RefundShippingCost
 	toSerialize["refundPaymentCost"] = o.RefundPaymentCost
 	toSerialize["items"] = o.Items
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -219,9 +224,7 @@ func (o *RmaApproveReturnRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varRmaApproveReturnRequest := _RmaApproveReturnRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varRmaApproveReturnRequest)
+	err = json.Unmarshal(data, &varRmaApproveReturnRequest)
 
 	if err != nil {
 		return err
@@ -229,9 +232,38 @@ func (o *RmaApproveReturnRequest) UnmarshalJSON(data []byte) (err error) {
 
 	*o = RmaApproveReturnRequest(varRmaApproveReturnRequest)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "refundShippingCost")
+		delete(additionalProperties, "refundPaymentCost")
+		delete(additionalProperties, "items")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *RmaApproveReturnRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *RmaApproveReturnRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableRmaApproveReturnRequest struct {
 	value *RmaApproveReturnRequest
 	isSet bool

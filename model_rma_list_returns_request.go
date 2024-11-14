@@ -13,7 +13,6 @@ package rma
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -28,6 +27,7 @@ type RmaListReturnsRequest struct {
 	Sorts []RmaListReturnsRequestSort `json:"sorts,omitempty"`
 	FilterMask *string `json:"filterMask,omitempty"`
 	Filter *ListReturnsRequestFilter `json:"filter,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _RmaListReturnsRequest RmaListReturnsRequest
@@ -92,8 +92,8 @@ func (o *RmaListReturnsRequest) GetPageSizeOk() (*int64, bool) {
 	return o.PageSize, true
 }
 
-// HasPageSize returns a boolean if a field has been set.
-func (o *RmaListReturnsRequest) HasPageSize() bool {
+// &#39;Has&#39;PageSize returns a boolean if a field has been set.
+func (o *RmaListReturnsRequest) &#39;Has&#39;PageSize() bool {
 	if o != nil && !IsNil(o.PageSize) {
 		return true
 	}
@@ -124,8 +124,8 @@ func (o *RmaListReturnsRequest) GetPageTokenOk() (*string, bool) {
 	return o.PageToken, true
 }
 
-// HasPageToken returns a boolean if a field has been set.
-func (o *RmaListReturnsRequest) HasPageToken() bool {
+// &#39;Has&#39;PageToken returns a boolean if a field has been set.
+func (o *RmaListReturnsRequest) &#39;Has&#39;PageToken() bool {
 	if o != nil && !IsNil(o.PageToken) {
 		return true
 	}
@@ -156,8 +156,8 @@ func (o *RmaListReturnsRequest) GetSortsOk() ([]RmaListReturnsRequestSort, bool)
 	return o.Sorts, true
 }
 
-// HasSorts returns a boolean if a field has been set.
-func (o *RmaListReturnsRequest) HasSorts() bool {
+// &#39;Has&#39;Sorts returns a boolean if a field has been set.
+func (o *RmaListReturnsRequest) &#39;Has&#39;Sorts() bool {
 	if o != nil && !IsNil(o.Sorts) {
 		return true
 	}
@@ -188,8 +188,8 @@ func (o *RmaListReturnsRequest) GetFilterMaskOk() (*string, bool) {
 	return o.FilterMask, true
 }
 
-// HasFilterMask returns a boolean if a field has been set.
-func (o *RmaListReturnsRequest) HasFilterMask() bool {
+// &#39;Has&#39;FilterMask returns a boolean if a field has been set.
+func (o *RmaListReturnsRequest) &#39;Has&#39;FilterMask() bool {
 	if o != nil && !IsNil(o.FilterMask) {
 		return true
 	}
@@ -220,8 +220,8 @@ func (o *RmaListReturnsRequest) GetFilterOk() (*ListReturnsRequestFilter, bool) 
 	return o.Filter, true
 }
 
-// HasFilter returns a boolean if a field has been set.
-func (o *RmaListReturnsRequest) HasFilter() bool {
+// &#39;Has&#39;Filter returns a boolean if a field has been set.
+func (o *RmaListReturnsRequest) &#39;Has&#39;Filter() bool {
 	if o != nil && !IsNil(o.Filter) {
 		return true
 	}
@@ -260,6 +260,11 @@ func (o RmaListReturnsRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Filter) {
 		toSerialize["filter"] = o.Filter
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -287,9 +292,7 @@ func (o *RmaListReturnsRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varRmaListReturnsRequest := _RmaListReturnsRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varRmaListReturnsRequest)
+	err = json.Unmarshal(data, &varRmaListReturnsRequest)
 
 	if err != nil {
 		return err
@@ -297,9 +300,39 @@ func (o *RmaListReturnsRequest) UnmarshalJSON(data []byte) (err error) {
 
 	*o = RmaListReturnsRequest(varRmaListReturnsRequest)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "pageSize")
+		delete(additionalProperties, "pageToken")
+		delete(additionalProperties, "sorts")
+		delete(additionalProperties, "filterMask")
+		delete(additionalProperties, "filter")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *RmaListReturnsRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *RmaListReturnsRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableRmaListReturnsRequest struct {
 	value *RmaListReturnsRequest
 	isSet bool

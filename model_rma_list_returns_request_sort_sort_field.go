@@ -21,8 +21,8 @@ type RmaListReturnsRequestSortSortField string
 
 // List of rmaListReturnsRequestSortSortField
 const (
-	UNKNOWN RmaListReturnsRequestSortSortField = "UNKNOWN"
-	DATE RmaListReturnsRequestSortSortField = "DATE"
+	RMALISTRETURNSREQUESTSORTSORTFIELD_UNKNOWN RmaListReturnsRequestSortSortField = "UNKNOWN"
+	RMALISTRETURNSREQUESTSORTSORTFIELD_DATE RmaListReturnsRequestSortSortField = "DATE"
 )
 
 // All allowed values of RmaListReturnsRequestSortSortField enum

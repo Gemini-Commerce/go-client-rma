@@ -13,7 +13,6 @@ package rma
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &RmaRejectReturnRequest{}
 type RmaRejectReturnRequest struct {
 	TenantId string `json:"tenantId"`
 	Id string `json:"id"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _RmaRejectReturnRequest RmaRejectReturnRequest
@@ -107,6 +107,11 @@ func (o RmaRejectReturnRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["tenantId"] = o.TenantId
 	toSerialize["id"] = o.Id
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -135,9 +140,7 @@ func (o *RmaRejectReturnRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varRmaRejectReturnRequest := _RmaRejectReturnRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varRmaRejectReturnRequest)
+	err = json.Unmarshal(data, &varRmaRejectReturnRequest)
 
 	if err != nil {
 		return err
@@ -145,9 +148,35 @@ func (o *RmaRejectReturnRequest) UnmarshalJSON(data []byte) (err error) {
 
 	*o = RmaRejectReturnRequest(varRmaRejectReturnRequest)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *RmaRejectReturnRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *RmaRejectReturnRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableRmaRejectReturnRequest struct {
 	value *RmaRejectReturnRequest
 	isSet bool

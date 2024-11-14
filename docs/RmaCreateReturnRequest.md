@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **TenantId**| **string** |   |
 **OrderGrn**| **string** |   |
 **Products**| [**[]CreateReturnRequestProduct**](CreateReturnRequestProduct.md) |   |
-**PreferredRefundMethod**| [**RmaRefundMethod**](RmaRefundMethod.md) |  for more information please, see Model/RmaRefundMethod.php  | [default to UNKNOWN]
+**PreferredRefundMethod**| [**RmaRefundMethod**](RmaRefundMethod.md) |  for more information please, see Model/RmaRefundMethod.php  | [default to RMAREFUNDMETHOD_UNKNOWN]
 **RefundShippingCost**| **bool** |   | [optional]
 **RefundPaymentCost**| **bool** |   | [optional]
 **CustomerInfo**| [**RmaCustomerInfo**](RmaCustomerInfo.md) |   | [optional]

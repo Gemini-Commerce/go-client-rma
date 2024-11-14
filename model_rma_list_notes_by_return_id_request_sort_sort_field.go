@@ -21,8 +21,8 @@ type RmaListNotesByReturnIdRequestSortSortField string
 
 // List of rmaListNotesByReturnIdRequestSortSortField
 const (
-	UNKNOWN RmaListNotesByReturnIdRequestSortSortField = "UNKNOWN"
-	DATE RmaListNotesByReturnIdRequestSortSortField = "DATE"
+	RMALISTNOTESBYRETURNIDREQUESTSORTSORTFIELD_UNKNOWN RmaListNotesByReturnIdRequestSortSortField = "UNKNOWN"
+	RMALISTNOTESBYRETURNIDREQUESTSORTSORTFIELD_DATE RmaListNotesByReturnIdRequestSortSortField = "DATE"
 )
 
 // All allowed values of RmaListNotesByReturnIdRequestSortSortField enum

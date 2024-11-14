@@ -22,7 +22,10 @@ var _ MappedNullable = &RmaReturnProductProperty{}
 type RmaReturnProductProperty struct {
 	Quantity *string `json:"quantity,omitempty"`
 	Note *string `json:"note,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _RmaReturnProductProperty RmaReturnProductProperty
 
 // NewRmaReturnProductProperty instantiates a new RmaReturnProductProperty object
 // This constructor will assign default values to properties that have it defined,
@@ -59,8 +62,8 @@ func (o *RmaReturnProductProperty) GetQuantityOk() (*string, bool) {
 	return o.Quantity, true
 }
 
-// HasQuantity returns a boolean if a field has been set.
-func (o *RmaReturnProductProperty) HasQuantity() bool {
+// &#39;Has&#39;Quantity returns a boolean if a field has been set.
+func (o *RmaReturnProductProperty) &#39;Has&#39;Quantity() bool {
 	if o != nil && !IsNil(o.Quantity) {
 		return true
 	}
@@ -91,8 +94,8 @@ func (o *RmaReturnProductProperty) GetNoteOk() (*string, bool) {
 	return o.Note, true
 }
 
-// HasNote returns a boolean if a field has been set.
-func (o *RmaReturnProductProperty) HasNote() bool {
+// &#39;Has&#39;Note returns a boolean if a field has been set.
+func (o *RmaReturnProductProperty) &#39;Has&#39;Note() bool {
 	if o != nil && !IsNil(o.Note) {
 		return true
 	}
@@ -121,9 +124,54 @@ func (o RmaReturnProductProperty) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Note) {
 		toSerialize["note"] = o.Note
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *RmaReturnProductProperty) UnmarshalJSON(data []byte) (err error) {
+	varRmaReturnProductProperty := _RmaReturnProductProperty{}
+
+	err = json.Unmarshal(data, &varRmaReturnProductProperty)
+
+	if err != nil {
+		return err
+	}
+
+	*o = RmaReturnProductProperty(varRmaReturnProductProperty)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "quantity")
+		delete(additionalProperties, "note")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *RmaReturnProductProperty) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *RmaReturnProductProperty) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableRmaReturnProductProperty struct {
 	value *RmaReturnProductProperty
 	isSet bool

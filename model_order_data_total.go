@@ -22,7 +22,10 @@ var _ MappedNullable = &OrderDataTotal{}
 type OrderDataTotal struct {
 	Code *OrderDataTotalCode `json:"code,omitempty"`
 	Value *RmaMoney `json:"value,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _OrderDataTotal OrderDataTotal
 
 // NewOrderDataTotal instantiates a new OrderDataTotal object
 // This constructor will assign default values to properties that have it defined,
@@ -30,7 +33,7 @@ type OrderDataTotal struct {
 // will change when the set of required properties is changed
 func NewOrderDataTotal() *OrderDataTotal {
 	this := OrderDataTotal{}
-	var code OrderDataTotalCode = UNKNOWN
+	var code OrderDataTotalCode = ORDERDATATOTALCODE_UNKNOWN
 	this.Code = &code
 	return &this
 }
@@ -40,7 +43,7 @@ func NewOrderDataTotal() *OrderDataTotal {
 // but it doesn't guarantee that properties required by API are set
 func NewOrderDataTotalWithDefaults() *OrderDataTotal {
 	this := OrderDataTotal{}
-	var code OrderDataTotalCode = UNKNOWN
+	var code OrderDataTotalCode = ORDERDATATOTALCODE_UNKNOWN
 	this.Code = &code
 	return &this
 }
@@ -63,8 +66,8 @@ func (o *OrderDataTotal) GetCodeOk() (*OrderDataTotalCode, bool) {
 	return o.Code, true
 }
 
-// HasCode returns a boolean if a field has been set.
-func (o *OrderDataTotal) HasCode() bool {
+// &#39;Has&#39;Code returns a boolean if a field has been set.
+func (o *OrderDataTotal) &#39;Has&#39;Code() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -95,8 +98,8 @@ func (o *OrderDataTotal) GetValueOk() (*RmaMoney, bool) {
 	return o.Value, true
 }
 
-// HasValue returns a boolean if a field has been set.
-func (o *OrderDataTotal) HasValue() bool {
+// &#39;Has&#39;Value returns a boolean if a field has been set.
+func (o *OrderDataTotal) &#39;Has&#39;Value() bool {
 	if o != nil && !IsNil(o.Value) {
 		return true
 	}
@@ -125,9 +128,54 @@ func (o OrderDataTotal) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Value) {
 		toSerialize["value"] = o.Value
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *OrderDataTotal) UnmarshalJSON(data []byte) (err error) {
+	varOrderDataTotal := _OrderDataTotal{}
+
+	err = json.Unmarshal(data, &varOrderDataTotal)
+
+	if err != nil {
+		return err
+	}
+
+	*o = OrderDataTotal(varOrderDataTotal)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "value")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *OrderDataTotal) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *OrderDataTotal) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableOrderDataTotal struct {
 	value *OrderDataTotal
 	isSet bool

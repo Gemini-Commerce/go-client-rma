@@ -32,7 +32,10 @@ type ListReturnsRequestFilter struct {
 	CustomerEmails []string `json:"customerEmails,omitempty"`
 	CreatedAtStart *time.Time `json:"createdAtStart,omitempty"`
 	CreatedAtEnd *time.Time `json:"createdAtEnd,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListReturnsRequestFilter ListReturnsRequestFilter
 
 // NewListReturnsRequestFilter instantiates a new ListReturnsRequestFilter object
 // This constructor will assign default values to properties that have it defined,
@@ -69,8 +72,8 @@ func (o *ListReturnsRequestFilter) GetSearchTermsOk() ([]string, bool) {
 	return o.SearchTerms, true
 }
 
-// HasSearchTerms returns a boolean if a field has been set.
-func (o *ListReturnsRequestFilter) HasSearchTerms() bool {
+// &#39;Has&#39;SearchTerms returns a boolean if a field has been set.
+func (o *ListReturnsRequestFilter) &#39;Has&#39;SearchTerms() bool {
 	if o != nil && !IsNil(o.SearchTerms) {
 		return true
 	}
@@ -101,8 +104,8 @@ func (o *ListReturnsRequestFilter) GetReturnIdsOk() ([]string, bool) {
 	return o.ReturnIds, true
 }
 
-// HasReturnIds returns a boolean if a field has been set.
-func (o *ListReturnsRequestFilter) HasReturnIds() bool {
+// &#39;Has&#39;ReturnIds returns a boolean if a field has been set.
+func (o *ListReturnsRequestFilter) &#39;Has&#39;ReturnIds() bool {
 	if o != nil && !IsNil(o.ReturnIds) {
 		return true
 	}
@@ -133,8 +136,8 @@ func (o *ListReturnsRequestFilter) GetReturnStatusOk() ([]string, bool) {
 	return o.ReturnStatus, true
 }
 
-// HasReturnStatus returns a boolean if a field has been set.
-func (o *ListReturnsRequestFilter) HasReturnStatus() bool {
+// &#39;Has&#39;ReturnStatus returns a boolean if a field has been set.
+func (o *ListReturnsRequestFilter) &#39;Has&#39;ReturnStatus() bool {
 	if o != nil && !IsNil(o.ReturnStatus) {
 		return true
 	}
@@ -165,8 +168,8 @@ func (o *ListReturnsRequestFilter) GetOrderGrnsOk() ([]string, bool) {
 	return o.OrderGrns, true
 }
 
-// HasOrderGrns returns a boolean if a field has been set.
-func (o *ListReturnsRequestFilter) HasOrderGrns() bool {
+// &#39;Has&#39;OrderGrns returns a boolean if a field has been set.
+func (o *ListReturnsRequestFilter) &#39;Has&#39;OrderGrns() bool {
 	if o != nil && !IsNil(o.OrderGrns) {
 		return true
 	}
@@ -197,8 +200,8 @@ func (o *ListReturnsRequestFilter) GetOrderNumbersOk() ([]string, bool) {
 	return o.OrderNumbers, true
 }
 
-// HasOrderNumbers returns a boolean if a field has been set.
-func (o *ListReturnsRequestFilter) HasOrderNumbers() bool {
+// &#39;Has&#39;OrderNumbers returns a boolean if a field has been set.
+func (o *ListReturnsRequestFilter) &#39;Has&#39;OrderNumbers() bool {
 	if o != nil && !IsNil(o.OrderNumbers) {
 		return true
 	}
@@ -229,8 +232,8 @@ func (o *ListReturnsRequestFilter) GetOrderItemGrnsOk() ([]string, bool) {
 	return o.OrderItemGrns, true
 }
 
-// HasOrderItemGrns returns a boolean if a field has been set.
-func (o *ListReturnsRequestFilter) HasOrderItemGrns() bool {
+// &#39;Has&#39;OrderItemGrns returns a boolean if a field has been set.
+func (o *ListReturnsRequestFilter) &#39;Has&#39;OrderItemGrns() bool {
 	if o != nil && !IsNil(o.OrderItemGrns) {
 		return true
 	}
@@ -261,8 +264,8 @@ func (o *ListReturnsRequestFilter) GetOrderItemSkusOk() ([]string, bool) {
 	return o.OrderItemSkus, true
 }
 
-// HasOrderItemSkus returns a boolean if a field has been set.
-func (o *ListReturnsRequestFilter) HasOrderItemSkus() bool {
+// &#39;Has&#39;OrderItemSkus returns a boolean if a field has been set.
+func (o *ListReturnsRequestFilter) &#39;Has&#39;OrderItemSkus() bool {
 	if o != nil && !IsNil(o.OrderItemSkus) {
 		return true
 	}
@@ -293,8 +296,8 @@ func (o *ListReturnsRequestFilter) GetCustomerGrnsOk() ([]string, bool) {
 	return o.CustomerGrns, true
 }
 
-// HasCustomerGrns returns a boolean if a field has been set.
-func (o *ListReturnsRequestFilter) HasCustomerGrns() bool {
+// &#39;Has&#39;CustomerGrns returns a boolean if a field has been set.
+func (o *ListReturnsRequestFilter) &#39;Has&#39;CustomerGrns() bool {
 	if o != nil && !IsNil(o.CustomerGrns) {
 		return true
 	}
@@ -325,8 +328,8 @@ func (o *ListReturnsRequestFilter) GetCustomerEmailsOk() ([]string, bool) {
 	return o.CustomerEmails, true
 }
 
-// HasCustomerEmails returns a boolean if a field has been set.
-func (o *ListReturnsRequestFilter) HasCustomerEmails() bool {
+// &#39;Has&#39;CustomerEmails returns a boolean if a field has been set.
+func (o *ListReturnsRequestFilter) &#39;Has&#39;CustomerEmails() bool {
 	if o != nil && !IsNil(o.CustomerEmails) {
 		return true
 	}
@@ -357,8 +360,8 @@ func (o *ListReturnsRequestFilter) GetCreatedAtStartOk() (*time.Time, bool) {
 	return o.CreatedAtStart, true
 }
 
-// HasCreatedAtStart returns a boolean if a field has been set.
-func (o *ListReturnsRequestFilter) HasCreatedAtStart() bool {
+// &#39;Has&#39;CreatedAtStart returns a boolean if a field has been set.
+func (o *ListReturnsRequestFilter) &#39;Has&#39;CreatedAtStart() bool {
 	if o != nil && !IsNil(o.CreatedAtStart) {
 		return true
 	}
@@ -389,8 +392,8 @@ func (o *ListReturnsRequestFilter) GetCreatedAtEndOk() (*time.Time, bool) {
 	return o.CreatedAtEnd, true
 }
 
-// HasCreatedAtEnd returns a boolean if a field has been set.
-func (o *ListReturnsRequestFilter) HasCreatedAtEnd() bool {
+// &#39;Has&#39;CreatedAtEnd returns a boolean if a field has been set.
+func (o *ListReturnsRequestFilter) &#39;Has&#39;CreatedAtEnd() bool {
 	if o != nil && !IsNil(o.CreatedAtEnd) {
 		return true
 	}
@@ -446,9 +449,63 @@ func (o ListReturnsRequestFilter) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CreatedAtEnd) {
 		toSerialize["createdAtEnd"] = o.CreatedAtEnd
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *ListReturnsRequestFilter) UnmarshalJSON(data []byte) (err error) {
+	varListReturnsRequestFilter := _ListReturnsRequestFilter{}
+
+	err = json.Unmarshal(data, &varListReturnsRequestFilter)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListReturnsRequestFilter(varListReturnsRequestFilter)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "searchTerms")
+		delete(additionalProperties, "returnIds")
+		delete(additionalProperties, "returnStatus")
+		delete(additionalProperties, "orderGrns")
+		delete(additionalProperties, "orderNumbers")
+		delete(additionalProperties, "orderItemGrns")
+		delete(additionalProperties, "orderItemSkus")
+		delete(additionalProperties, "customerGrns")
+		delete(additionalProperties, "customerEmails")
+		delete(additionalProperties, "createdAtStart")
+		delete(additionalProperties, "createdAtEnd")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *ListReturnsRequestFilter) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *ListReturnsRequestFilter) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableListReturnsRequestFilter struct {
 	value *ListReturnsRequestFilter
 	isSet bool

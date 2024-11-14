@@ -13,7 +13,6 @@ package rma
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &RmaSkipReturnStatusRequest{}
 type RmaSkipReturnStatusRequest struct {
 	TenantId string `json:"tenantId"`
 	Id string `json:"id"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _RmaSkipReturnStatusRequest RmaSkipReturnStatusRequest
@@ -107,6 +107,11 @@ func (o RmaSkipReturnStatusRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["tenantId"] = o.TenantId
 	toSerialize["id"] = o.Id
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -135,9 +140,7 @@ func (o *RmaSkipReturnStatusRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varRmaSkipReturnStatusRequest := _RmaSkipReturnStatusRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varRmaSkipReturnStatusRequest)
+	err = json.Unmarshal(data, &varRmaSkipReturnStatusRequest)
 
 	if err != nil {
 		return err
@@ -145,9 +148,35 @@ func (o *RmaSkipReturnStatusRequest) UnmarshalJSON(data []byte) (err error) {
 
 	*o = RmaSkipReturnStatusRequest(varRmaSkipReturnStatusRequest)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *RmaSkipReturnStatusRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *RmaSkipReturnStatusRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableRmaSkipReturnStatusRequest struct {
 	value *RmaSkipReturnStatusRequest
 	isSet bool

@@ -13,7 +13,6 @@ package rma
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type RmaListNotesByReturnIdRequestSort struct {
 	EvaluationOrder int64 `json:"evaluationOrder"`
 	Field RmaListNotesByReturnIdRequestSortSortField `json:"field"`
 	Order *RmaSortOrder `json:"order,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _RmaListNotesByReturnIdRequestSort RmaListNotesByReturnIdRequestSort
@@ -38,7 +38,7 @@ func NewRmaListNotesByReturnIdRequestSort(evaluationOrder int64, field RmaListNo
 	this := RmaListNotesByReturnIdRequestSort{}
 	this.EvaluationOrder = evaluationOrder
 	this.Field = field
-	var order RmaSortOrder = DESC
+	var order RmaSortOrder = RMASORTORDER_DESC
 	this.Order = &order
 	return &this
 }
@@ -48,9 +48,9 @@ func NewRmaListNotesByReturnIdRequestSort(evaluationOrder int64, field RmaListNo
 // but it doesn't guarantee that properties required by API are set
 func NewRmaListNotesByReturnIdRequestSortWithDefaults() *RmaListNotesByReturnIdRequestSort {
 	this := RmaListNotesByReturnIdRequestSort{}
-	var field RmaListNotesByReturnIdRequestSortSortField = UNKNOWN
+	var field RmaListNotesByReturnIdRequestSortSortField = RMALISTNOTESBYRETURNIDREQUESTSORTSORTFIELD_UNKNOWN
 	this.Field = field
-	var order RmaSortOrder = DESC
+	var order RmaSortOrder = RMASORTORDER_DESC
 	this.Order = &order
 	return &this
 }
@@ -121,8 +121,8 @@ func (o *RmaListNotesByReturnIdRequestSort) GetOrderOk() (*RmaSortOrder, bool) {
 	return o.Order, true
 }
 
-// HasOrder returns a boolean if a field has been set.
-func (o *RmaListNotesByReturnIdRequestSort) HasOrder() bool {
+// &#39;Has&#39;Order returns a boolean if a field has been set.
+func (o *RmaListNotesByReturnIdRequestSort) &#39;Has&#39;Order() bool {
 	if o != nil && !IsNil(o.Order) {
 		return true
 	}
@@ -150,6 +150,11 @@ func (o RmaListNotesByReturnIdRequestSort) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Order) {
 		toSerialize["order"] = o.Order
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -178,9 +183,7 @@ func (o *RmaListNotesByReturnIdRequestSort) UnmarshalJSON(data []byte) (err erro
 
 	varRmaListNotesByReturnIdRequestSort := _RmaListNotesByReturnIdRequestSort{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varRmaListNotesByReturnIdRequestSort)
+	err = json.Unmarshal(data, &varRmaListNotesByReturnIdRequestSort)
 
 	if err != nil {
 		return err
@@ -188,9 +191,36 @@ func (o *RmaListNotesByReturnIdRequestSort) UnmarshalJSON(data []byte) (err erro
 
 	*o = RmaListNotesByReturnIdRequestSort(varRmaListNotesByReturnIdRequestSort)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "evaluationOrder")
+		delete(additionalProperties, "field")
+		delete(additionalProperties, "order")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *RmaListNotesByReturnIdRequestSort) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *RmaListNotesByReturnIdRequestSort) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableRmaListNotesByReturnIdRequestSort struct {
 	value *RmaListNotesByReturnIdRequestSort
 	isSet bool

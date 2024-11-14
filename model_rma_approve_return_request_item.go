@@ -13,7 +13,6 @@ package rma
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &RmaApproveReturnRequestItem{}
 type RmaApproveReturnRequestItem struct {
 	Grn string `json:"grn"`
 	Quantity string `json:"quantity"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _RmaApproveReturnRequestItem RmaApproveReturnRequestItem
@@ -107,6 +107,11 @@ func (o RmaApproveReturnRequestItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["grn"] = o.Grn
 	toSerialize["quantity"] = o.Quantity
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -135,9 +140,7 @@ func (o *RmaApproveReturnRequestItem) UnmarshalJSON(data []byte) (err error) {
 
 	varRmaApproveReturnRequestItem := _RmaApproveReturnRequestItem{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varRmaApproveReturnRequestItem)
+	err = json.Unmarshal(data, &varRmaApproveReturnRequestItem)
 
 	if err != nil {
 		return err
@@ -145,9 +148,35 @@ func (o *RmaApproveReturnRequestItem) UnmarshalJSON(data []byte) (err error) {
 
 	*o = RmaApproveReturnRequestItem(varRmaApproveReturnRequestItem)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "grn")
+		delete(additionalProperties, "quantity")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *RmaApproveReturnRequestItem) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *RmaApproveReturnRequestItem) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableRmaApproveReturnRequestItem struct {
 	value *RmaApproveReturnRequestItem
 	isSet bool

@@ -13,7 +13,6 @@ package rma
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &RmaSetReceivedItemsRequestItem{}
 type RmaSetReceivedItemsRequestItem struct {
 	Grn string `json:"grn"`
 	Quantity string `json:"quantity"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _RmaSetReceivedItemsRequestItem RmaSetReceivedItemsRequestItem
@@ -107,6 +107,11 @@ func (o RmaSetReceivedItemsRequestItem) ToMap() (map[string]interface{}, error) 
 	toSerialize := map[string]interface{}{}
 	toSerialize["grn"] = o.Grn
 	toSerialize["quantity"] = o.Quantity
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -135,9 +140,7 @@ func (o *RmaSetReceivedItemsRequestItem) UnmarshalJSON(data []byte) (err error) 
 
 	varRmaSetReceivedItemsRequestItem := _RmaSetReceivedItemsRequestItem{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varRmaSetReceivedItemsRequestItem)
+	err = json.Unmarshal(data, &varRmaSetReceivedItemsRequestItem)
 
 	if err != nil {
 		return err
@@ -145,9 +148,35 @@ func (o *RmaSetReceivedItemsRequestItem) UnmarshalJSON(data []byte) (err error) 
 
 	*o = RmaSetReceivedItemsRequestItem(varRmaSetReceivedItemsRequestItem)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "grn")
+		delete(additionalProperties, "quantity")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *RmaSetReceivedItemsRequestItem) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *RmaSetReceivedItemsRequestItem) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableRmaSetReceivedItemsRequestItem struct {
 	value *RmaSetReceivedItemsRequestItem
 	isSet bool

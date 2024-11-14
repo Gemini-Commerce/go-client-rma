@@ -24,7 +24,10 @@ type RmaReturnHistory struct {
 	Date *time.Time `json:"date,omitempty"`
 	Status *string `json:"status,omitempty"`
 	Note *string `json:"note,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _RmaReturnHistory RmaReturnHistory
 
 // NewRmaReturnHistory instantiates a new RmaReturnHistory object
 // This constructor will assign default values to properties that have it defined,
@@ -61,8 +64,8 @@ func (o *RmaReturnHistory) GetDateOk() (*time.Time, bool) {
 	return o.Date, true
 }
 
-// HasDate returns a boolean if a field has been set.
-func (o *RmaReturnHistory) HasDate() bool {
+// &#39;Has&#39;Date returns a boolean if a field has been set.
+func (o *RmaReturnHistory) &#39;Has&#39;Date() bool {
 	if o != nil && !IsNil(o.Date) {
 		return true
 	}
@@ -93,8 +96,8 @@ func (o *RmaReturnHistory) GetStatusOk() (*string, bool) {
 	return o.Status, true
 }
 
-// HasStatus returns a boolean if a field has been set.
-func (o *RmaReturnHistory) HasStatus() bool {
+// &#39;Has&#39;Status returns a boolean if a field has been set.
+func (o *RmaReturnHistory) &#39;Has&#39;Status() bool {
 	if o != nil && !IsNil(o.Status) {
 		return true
 	}
@@ -125,8 +128,8 @@ func (o *RmaReturnHistory) GetNoteOk() (*string, bool) {
 	return o.Note, true
 }
 
-// HasNote returns a boolean if a field has been set.
-func (o *RmaReturnHistory) HasNote() bool {
+// &#39;Has&#39;Note returns a boolean if a field has been set.
+func (o *RmaReturnHistory) &#39;Has&#39;Note() bool {
 	if o != nil && !IsNil(o.Note) {
 		return true
 	}
@@ -158,9 +161,55 @@ func (o RmaReturnHistory) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Note) {
 		toSerialize["note"] = o.Note
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *RmaReturnHistory) UnmarshalJSON(data []byte) (err error) {
+	varRmaReturnHistory := _RmaReturnHistory{}
+
+	err = json.Unmarshal(data, &varRmaReturnHistory)
+
+	if err != nil {
+		return err
+	}
+
+	*o = RmaReturnHistory(varRmaReturnHistory)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "date")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "note")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *RmaReturnHistory) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *RmaReturnHistory) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableRmaReturnHistory struct {
 	value *RmaReturnHistory
 	isSet bool

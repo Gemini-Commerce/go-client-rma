@@ -13,7 +13,6 @@ package rma
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -27,6 +26,7 @@ type RmaListNotesByReturnIdRequest struct {
 	PageSize *int64 `json:"pageSize,omitempty"`
 	PageToken *string `json:"pageToken,omitempty"`
 	Sorts []RmaListNotesByReturnIdRequestSort `json:"sorts,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _RmaListNotesByReturnIdRequest RmaListNotesByReturnIdRequest
@@ -116,8 +116,8 @@ func (o *RmaListNotesByReturnIdRequest) GetPageSizeOk() (*int64, bool) {
 	return o.PageSize, true
 }
 
-// HasPageSize returns a boolean if a field has been set.
-func (o *RmaListNotesByReturnIdRequest) HasPageSize() bool {
+// &#39;Has&#39;PageSize returns a boolean if a field has been set.
+func (o *RmaListNotesByReturnIdRequest) &#39;Has&#39;PageSize() bool {
 	if o != nil && !IsNil(o.PageSize) {
 		return true
 	}
@@ -148,8 +148,8 @@ func (o *RmaListNotesByReturnIdRequest) GetPageTokenOk() (*string, bool) {
 	return o.PageToken, true
 }
 
-// HasPageToken returns a boolean if a field has been set.
-func (o *RmaListNotesByReturnIdRequest) HasPageToken() bool {
+// &#39;Has&#39;PageToken returns a boolean if a field has been set.
+func (o *RmaListNotesByReturnIdRequest) &#39;Has&#39;PageToken() bool {
 	if o != nil && !IsNil(o.PageToken) {
 		return true
 	}
@@ -180,8 +180,8 @@ func (o *RmaListNotesByReturnIdRequest) GetSortsOk() ([]RmaListNotesByReturnIdRe
 	return o.Sorts, true
 }
 
-// HasSorts returns a boolean if a field has been set.
-func (o *RmaListNotesByReturnIdRequest) HasSorts() bool {
+// &#39;Has&#39;Sorts returns a boolean if a field has been set.
+func (o *RmaListNotesByReturnIdRequest) &#39;Has&#39;Sorts() bool {
 	if o != nil && !IsNil(o.Sorts) {
 		return true
 	}
@@ -215,6 +215,11 @@ func (o RmaListNotesByReturnIdRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Sorts) {
 		toSerialize["sorts"] = o.Sorts
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -243,9 +248,7 @@ func (o *RmaListNotesByReturnIdRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varRmaListNotesByReturnIdRequest := _RmaListNotesByReturnIdRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varRmaListNotesByReturnIdRequest)
+	err = json.Unmarshal(data, &varRmaListNotesByReturnIdRequest)
 
 	if err != nil {
 		return err
@@ -253,9 +256,38 @@ func (o *RmaListNotesByReturnIdRequest) UnmarshalJSON(data []byte) (err error) {
 
 	*o = RmaListNotesByReturnIdRequest(varRmaListNotesByReturnIdRequest)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "returnId")
+		delete(additionalProperties, "pageSize")
+		delete(additionalProperties, "pageToken")
+		delete(additionalProperties, "sorts")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *RmaListNotesByReturnIdRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *RmaListNotesByReturnIdRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableRmaListNotesByReturnIdRequest struct {
 	value *RmaListNotesByReturnIdRequest
 	isSet bool

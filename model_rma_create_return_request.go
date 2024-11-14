@@ -13,7 +13,6 @@ package rma
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -31,6 +30,7 @@ type RmaCreateReturnRequest struct {
 	CustomerInfo *RmaCustomerInfo `json:"customerInfo,omitempty"`
 	ReturnAddress *RmaPostalAddress `json:"returnAddress,omitempty"`
 	Note *string `json:"note,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _RmaCreateReturnRequest RmaCreateReturnRequest
@@ -53,7 +53,7 @@ func NewRmaCreateReturnRequest(tenantId string, orderGrn string, products []Crea
 // but it doesn't guarantee that properties required by API are set
 func NewRmaCreateReturnRequestWithDefaults() *RmaCreateReturnRequest {
 	this := RmaCreateReturnRequest{}
-	var preferredRefundMethod RmaRefundMethod = UNKNOWN
+	var preferredRefundMethod RmaRefundMethod = RMAREFUNDMETHOD_UNKNOWN
 	this.PreferredRefundMethod = preferredRefundMethod
 	return &this
 }
@@ -172,8 +172,8 @@ func (o *RmaCreateReturnRequest) GetRefundShippingCostOk() (*bool, bool) {
 	return o.RefundShippingCost, true
 }
 
-// HasRefundShippingCost returns a boolean if a field has been set.
-func (o *RmaCreateReturnRequest) HasRefundShippingCost() bool {
+// &#39;Has&#39;RefundShippingCost returns a boolean if a field has been set.
+func (o *RmaCreateReturnRequest) &#39;Has&#39;RefundShippingCost() bool {
 	if o != nil && !IsNil(o.RefundShippingCost) {
 		return true
 	}
@@ -204,8 +204,8 @@ func (o *RmaCreateReturnRequest) GetRefundPaymentCostOk() (*bool, bool) {
 	return o.RefundPaymentCost, true
 }
 
-// HasRefundPaymentCost returns a boolean if a field has been set.
-func (o *RmaCreateReturnRequest) HasRefundPaymentCost() bool {
+// &#39;Has&#39;RefundPaymentCost returns a boolean if a field has been set.
+func (o *RmaCreateReturnRequest) &#39;Has&#39;RefundPaymentCost() bool {
 	if o != nil && !IsNil(o.RefundPaymentCost) {
 		return true
 	}
@@ -236,8 +236,8 @@ func (o *RmaCreateReturnRequest) GetCustomerInfoOk() (*RmaCustomerInfo, bool) {
 	return o.CustomerInfo, true
 }
 
-// HasCustomerInfo returns a boolean if a field has been set.
-func (o *RmaCreateReturnRequest) HasCustomerInfo() bool {
+// &#39;Has&#39;CustomerInfo returns a boolean if a field has been set.
+func (o *RmaCreateReturnRequest) &#39;Has&#39;CustomerInfo() bool {
 	if o != nil && !IsNil(o.CustomerInfo) {
 		return true
 	}
@@ -268,8 +268,8 @@ func (o *RmaCreateReturnRequest) GetReturnAddressOk() (*RmaPostalAddress, bool) 
 	return o.ReturnAddress, true
 }
 
-// HasReturnAddress returns a boolean if a field has been set.
-func (o *RmaCreateReturnRequest) HasReturnAddress() bool {
+// &#39;Has&#39;ReturnAddress returns a boolean if a field has been set.
+func (o *RmaCreateReturnRequest) &#39;Has&#39;ReturnAddress() bool {
 	if o != nil && !IsNil(o.ReturnAddress) {
 		return true
 	}
@@ -300,8 +300,8 @@ func (o *RmaCreateReturnRequest) GetNoteOk() (*string, bool) {
 	return o.Note, true
 }
 
-// HasNote returns a boolean if a field has been set.
-func (o *RmaCreateReturnRequest) HasNote() bool {
+// &#39;Has&#39;Note returns a boolean if a field has been set.
+func (o *RmaCreateReturnRequest) &#39;Has&#39;Note() bool {
 	if o != nil && !IsNil(o.Note) {
 		return true
 	}
@@ -343,6 +343,11 @@ func (o RmaCreateReturnRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Note) {
 		toSerialize["note"] = o.Note
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -373,9 +378,7 @@ func (o *RmaCreateReturnRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varRmaCreateReturnRequest := _RmaCreateReturnRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varRmaCreateReturnRequest)
+	err = json.Unmarshal(data, &varRmaCreateReturnRequest)
 
 	if err != nil {
 		return err
@@ -383,9 +386,42 @@ func (o *RmaCreateReturnRequest) UnmarshalJSON(data []byte) (err error) {
 
 	*o = RmaCreateReturnRequest(varRmaCreateReturnRequest)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "orderGrn")
+		delete(additionalProperties, "products")
+		delete(additionalProperties, "preferredRefundMethod")
+		delete(additionalProperties, "refundShippingCost")
+		delete(additionalProperties, "refundPaymentCost")
+		delete(additionalProperties, "customerInfo")
+		delete(additionalProperties, "returnAddress")
+		delete(additionalProperties, "note")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *RmaCreateReturnRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *RmaCreateReturnRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableRmaCreateReturnRequest struct {
 	value *RmaCreateReturnRequest
 	isSet bool

@@ -1,4 +1,4 @@
-# GeminiCommerce\Rma\RmaAPI
+# \RmaAPI
 
 All URIs are relative to *https://rma.api.gogemini.io*
 

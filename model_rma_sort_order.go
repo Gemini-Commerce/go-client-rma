@@ -21,8 +21,8 @@ type RmaSortOrder string
 
 // List of rmaSortOrder
 const (
-	DESC RmaSortOrder = "DESC"
-	ASC RmaSortOrder = "ASC"
+	RMASORTORDER_DESC RmaSortOrder = "DESC"
+	RMASORTORDER_ASC RmaSortOrder = "ASC"
 )
 
 // All allowed values of RmaSortOrder enum

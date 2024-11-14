@@ -13,7 +13,6 @@ package rma
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type RmaAddNoteRequest struct {
 	ReturnId string `json:"returnId"`
 	Author string `json:"author"`
 	Note string `json:"note"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _RmaAddNoteRequest RmaAddNoteRequest
@@ -161,6 +161,11 @@ func (o RmaAddNoteRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize["returnId"] = o.ReturnId
 	toSerialize["author"] = o.Author
 	toSerialize["note"] = o.Note
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -191,9 +196,7 @@ func (o *RmaAddNoteRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varRmaAddNoteRequest := _RmaAddNoteRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varRmaAddNoteRequest)
+	err = json.Unmarshal(data, &varRmaAddNoteRequest)
 
 	if err != nil {
 		return err
@@ -201,9 +204,37 @@ func (o *RmaAddNoteRequest) UnmarshalJSON(data []byte) (err error) {
 
 	*o = RmaAddNoteRequest(varRmaAddNoteRequest)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "returnId")
+		delete(additionalProperties, "author")
+		delete(additionalProperties, "note")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *RmaAddNoteRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *RmaAddNoteRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableRmaAddNoteRequest struct {
 	value *RmaAddNoteRequest
 	isSet bool

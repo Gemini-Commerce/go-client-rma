@@ -22,7 +22,10 @@ var _ MappedNullable = &EditNoteRequestPayload{}
 type EditNoteRequestPayload struct {
 	Author *string `json:"author,omitempty"`
 	Note *string `json:"note,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EditNoteRequestPayload EditNoteRequestPayload
 
 // NewEditNoteRequestPayload instantiates a new EditNoteRequestPayload object
 // This constructor will assign default values to properties that have it defined,
@@ -59,8 +62,8 @@ func (o *EditNoteRequestPayload) GetAuthorOk() (*string, bool) {
 	return o.Author, true
 }
 
-// HasAuthor returns a boolean if a field has been set.
-func (o *EditNoteRequestPayload) HasAuthor() bool {
+// &#39;Has&#39;Author returns a boolean if a field has been set.
+func (o *EditNoteRequestPayload) &#39;Has&#39;Author() bool {
 	if o != nil && !IsNil(o.Author) {
 		return true
 	}
@@ -91,8 +94,8 @@ func (o *EditNoteRequestPayload) GetNoteOk() (*string, bool) {
 	return o.Note, true
 }
 
-// HasNote returns a boolean if a field has been set.
-func (o *EditNoteRequestPayload) HasNote() bool {
+// &#39;Has&#39;Note returns a boolean if a field has been set.
+func (o *EditNoteRequestPayload) &#39;Has&#39;Note() bool {
 	if o != nil && !IsNil(o.Note) {
 		return true
 	}
@@ -121,9 +124,54 @@ func (o EditNoteRequestPayload) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Note) {
 		toSerialize["note"] = o.Note
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *EditNoteRequestPayload) UnmarshalJSON(data []byte) (err error) {
+	varEditNoteRequestPayload := _EditNoteRequestPayload{}
+
+	err = json.Unmarshal(data, &varEditNoteRequestPayload)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EditNoteRequestPayload(varEditNoteRequestPayload)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "author")
+		delete(additionalProperties, "note")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *EditNoteRequestPayload) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *EditNoteRequestPayload) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableEditNoteRequestPayload struct {
 	value *EditNoteRequestPayload
 	isSet bool

@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -103,5 +102,4 @@ model_rma_skip_return_status_request.go
 model_rma_sort_order.go
 model_rpc_status.go
 response.go
-test/api_rma_test.go
 utils.go

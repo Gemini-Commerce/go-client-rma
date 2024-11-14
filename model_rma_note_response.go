@@ -28,7 +28,10 @@ type RmaNoteResponse struct {
 	CreatedAt *time.Time `json:"createdAt,omitempty"`
 	UpdatedAt *time.Time `json:"updatedAt,omitempty"`
 	DeletedAt *time.Time `json:"deletedAt,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _RmaNoteResponse RmaNoteResponse
 
 // NewRmaNoteResponse instantiates a new RmaNoteResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -65,8 +68,8 @@ func (o *RmaNoteResponse) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *RmaNoteResponse) HasId() bool {
+// &#39;Has&#39;Id returns a boolean if a field has been set.
+func (o *RmaNoteResponse) &#39;Has&#39;Id() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -97,8 +100,8 @@ func (o *RmaNoteResponse) GetGrnOk() (*string, bool) {
 	return o.Grn, true
 }
 
-// HasGrn returns a boolean if a field has been set.
-func (o *RmaNoteResponse) HasGrn() bool {
+// &#39;Has&#39;Grn returns a boolean if a field has been set.
+func (o *RmaNoteResponse) &#39;Has&#39;Grn() bool {
 	if o != nil && !IsNil(o.Grn) {
 		return true
 	}
@@ -129,8 +132,8 @@ func (o *RmaNoteResponse) GetAuthorOk() (*string, bool) {
 	return o.Author, true
 }
 
-// HasAuthor returns a boolean if a field has been set.
-func (o *RmaNoteResponse) HasAuthor() bool {
+// &#39;Has&#39;Author returns a boolean if a field has been set.
+func (o *RmaNoteResponse) &#39;Has&#39;Author() bool {
 	if o != nil && !IsNil(o.Author) {
 		return true
 	}
@@ -161,8 +164,8 @@ func (o *RmaNoteResponse) GetNoteOk() (*string, bool) {
 	return o.Note, true
 }
 
-// HasNote returns a boolean if a field has been set.
-func (o *RmaNoteResponse) HasNote() bool {
+// &#39;Has&#39;Note returns a boolean if a field has been set.
+func (o *RmaNoteResponse) &#39;Has&#39;Note() bool {
 	if o != nil && !IsNil(o.Note) {
 		return true
 	}
@@ -193,8 +196,8 @@ func (o *RmaNoteResponse) GetCreatedAtOk() (*time.Time, bool) {
 	return o.CreatedAt, true
 }
 
-// HasCreatedAt returns a boolean if a field has been set.
-func (o *RmaNoteResponse) HasCreatedAt() bool {
+// &#39;Has&#39;CreatedAt returns a boolean if a field has been set.
+func (o *RmaNoteResponse) &#39;Has&#39;CreatedAt() bool {
 	if o != nil && !IsNil(o.CreatedAt) {
 		return true
 	}
@@ -225,8 +228,8 @@ func (o *RmaNoteResponse) GetUpdatedAtOk() (*time.Time, bool) {
 	return o.UpdatedAt, true
 }
 
-// HasUpdatedAt returns a boolean if a field has been set.
-func (o *RmaNoteResponse) HasUpdatedAt() bool {
+// &#39;Has&#39;UpdatedAt returns a boolean if a field has been set.
+func (o *RmaNoteResponse) &#39;Has&#39;UpdatedAt() bool {
 	if o != nil && !IsNil(o.UpdatedAt) {
 		return true
 	}
@@ -257,8 +260,8 @@ func (o *RmaNoteResponse) GetDeletedAtOk() (*time.Time, bool) {
 	return o.DeletedAt, true
 }
 
-// HasDeletedAt returns a boolean if a field has been set.
-func (o *RmaNoteResponse) HasDeletedAt() bool {
+// &#39;Has&#39;DeletedAt returns a boolean if a field has been set.
+func (o *RmaNoteResponse) &#39;Has&#39;DeletedAt() bool {
 	if o != nil && !IsNil(o.DeletedAt) {
 		return true
 	}
@@ -302,9 +305,59 @@ func (o RmaNoteResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DeletedAt) {
 		toSerialize["deletedAt"] = o.DeletedAt
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *RmaNoteResponse) UnmarshalJSON(data []byte) (err error) {
+	varRmaNoteResponse := _RmaNoteResponse{}
+
+	err = json.Unmarshal(data, &varRmaNoteResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = RmaNoteResponse(varRmaNoteResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "grn")
+		delete(additionalProperties, "author")
+		delete(additionalProperties, "note")
+		delete(additionalProperties, "createdAt")
+		delete(additionalProperties, "updatedAt")
+		delete(additionalProperties, "deletedAt")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *RmaNoteResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *RmaNoteResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableRmaNoteResponse struct {
 	value *RmaNoteResponse
 	isSet bool

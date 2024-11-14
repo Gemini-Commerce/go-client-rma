@@ -13,7 +13,6 @@ package rma
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type CreateReturnRequestProduct struct {
 	Quantity string `json:"quantity"`
 	Reason *string `json:"reason,omitempty"`
 	Note *string `json:"note,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateReturnRequestProduct CreateReturnRequestProduct
@@ -115,8 +115,8 @@ func (o *CreateReturnRequestProduct) GetReasonOk() (*string, bool) {
 	return o.Reason, true
 }
 
-// HasReason returns a boolean if a field has been set.
-func (o *CreateReturnRequestProduct) HasReason() bool {
+// &#39;Has&#39;Reason returns a boolean if a field has been set.
+func (o *CreateReturnRequestProduct) &#39;Has&#39;Reason() bool {
 	if o != nil && !IsNil(o.Reason) {
 		return true
 	}
@@ -147,8 +147,8 @@ func (o *CreateReturnRequestProduct) GetNoteOk() (*string, bool) {
 	return o.Note, true
 }
 
-// HasNote returns a boolean if a field has been set.
-func (o *CreateReturnRequestProduct) HasNote() bool {
+// &#39;Has&#39;Note returns a boolean if a field has been set.
+func (o *CreateReturnRequestProduct) &#39;Has&#39;Note() bool {
 	if o != nil && !IsNil(o.Note) {
 		return true
 	}
@@ -179,6 +179,11 @@ func (o CreateReturnRequestProduct) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Note) {
 		toSerialize["note"] = o.Note
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -207,9 +212,7 @@ func (o *CreateReturnRequestProduct) UnmarshalJSON(data []byte) (err error) {
 
 	varCreateReturnRequestProduct := _CreateReturnRequestProduct{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varCreateReturnRequestProduct)
+	err = json.Unmarshal(data, &varCreateReturnRequestProduct)
 
 	if err != nil {
 		return err
@@ -217,9 +220,37 @@ func (o *CreateReturnRequestProduct) UnmarshalJSON(data []byte) (err error) {
 
 	*o = CreateReturnRequestProduct(varCreateReturnRequestProduct)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "grn")
+		delete(additionalProperties, "quantity")
+		delete(additionalProperties, "reason")
+		delete(additionalProperties, "note")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *CreateReturnRequestProduct) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *CreateReturnRequestProduct) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableCreateReturnRequestProduct struct {
 	value *CreateReturnRequestProduct
 	isSet bool

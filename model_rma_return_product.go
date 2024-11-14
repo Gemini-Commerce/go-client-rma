@@ -26,7 +26,10 @@ type RmaReturnProduct struct {
 	Approved *RmaReturnProductProperty `json:"approved,omitempty"`
 	Verified *RmaReturnProductProperty `json:"verified,omitempty"`
 	Refunded *RmaReturnProductProperty `json:"refunded,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _RmaReturnProduct RmaReturnProduct
 
 // NewRmaReturnProduct instantiates a new RmaReturnProduct object
 // This constructor will assign default values to properties that have it defined,
@@ -63,8 +66,8 @@ func (o *RmaReturnProduct) GetGrnOk() (*string, bool) {
 	return o.Grn, true
 }
 
-// HasGrn returns a boolean if a field has been set.
-func (o *RmaReturnProduct) HasGrn() bool {
+// &#39;Has&#39;Grn returns a boolean if a field has been set.
+func (o *RmaReturnProduct) &#39;Has&#39;Grn() bool {
 	if o != nil && !IsNil(o.Grn) {
 		return true
 	}
@@ -95,8 +98,8 @@ func (o *RmaReturnProduct) GetReasonOk() (*string, bool) {
 	return o.Reason, true
 }
 
-// HasReason returns a boolean if a field has been set.
-func (o *RmaReturnProduct) HasReason() bool {
+// &#39;Has&#39;Reason returns a boolean if a field has been set.
+func (o *RmaReturnProduct) &#39;Has&#39;Reason() bool {
 	if o != nil && !IsNil(o.Reason) {
 		return true
 	}
@@ -127,8 +130,8 @@ func (o *RmaReturnProduct) GetRequestedOk() (*RmaReturnProductProperty, bool) {
 	return o.Requested, true
 }
 
-// HasRequested returns a boolean if a field has been set.
-func (o *RmaReturnProduct) HasRequested() bool {
+// &#39;Has&#39;Requested returns a boolean if a field has been set.
+func (o *RmaReturnProduct) &#39;Has&#39;Requested() bool {
 	if o != nil && !IsNil(o.Requested) {
 		return true
 	}
@@ -159,8 +162,8 @@ func (o *RmaReturnProduct) GetApprovedOk() (*RmaReturnProductProperty, bool) {
 	return o.Approved, true
 }
 
-// HasApproved returns a boolean if a field has been set.
-func (o *RmaReturnProduct) HasApproved() bool {
+// &#39;Has&#39;Approved returns a boolean if a field has been set.
+func (o *RmaReturnProduct) &#39;Has&#39;Approved() bool {
 	if o != nil && !IsNil(o.Approved) {
 		return true
 	}
@@ -191,8 +194,8 @@ func (o *RmaReturnProduct) GetVerifiedOk() (*RmaReturnProductProperty, bool) {
 	return o.Verified, true
 }
 
-// HasVerified returns a boolean if a field has been set.
-func (o *RmaReturnProduct) HasVerified() bool {
+// &#39;Has&#39;Verified returns a boolean if a field has been set.
+func (o *RmaReturnProduct) &#39;Has&#39;Verified() bool {
 	if o != nil && !IsNil(o.Verified) {
 		return true
 	}
@@ -223,8 +226,8 @@ func (o *RmaReturnProduct) GetRefundedOk() (*RmaReturnProductProperty, bool) {
 	return o.Refunded, true
 }
 
-// HasRefunded returns a boolean if a field has been set.
-func (o *RmaReturnProduct) HasRefunded() bool {
+// &#39;Has&#39;Refunded returns a boolean if a field has been set.
+func (o *RmaReturnProduct) &#39;Has&#39;Refunded() bool {
 	if o != nil && !IsNil(o.Refunded) {
 		return true
 	}
@@ -265,9 +268,58 @@ func (o RmaReturnProduct) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Refunded) {
 		toSerialize["refunded"] = o.Refunded
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *RmaReturnProduct) UnmarshalJSON(data []byte) (err error) {
+	varRmaReturnProduct := _RmaReturnProduct{}
+
+	err = json.Unmarshal(data, &varRmaReturnProduct)
+
+	if err != nil {
+		return err
+	}
+
+	*o = RmaReturnProduct(varRmaReturnProduct)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "grn")
+		delete(additionalProperties, "reason")
+		delete(additionalProperties, "requested")
+		delete(additionalProperties, "approved")
+		delete(additionalProperties, "verified")
+		delete(additionalProperties, "refunded")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *RmaReturnProduct) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *RmaReturnProduct) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableRmaReturnProduct struct {
 	value *RmaReturnProduct
 	isSet bool

@@ -25,7 +25,10 @@ type RmaCustomerInfo struct {
 	Email *string `json:"email,omitempty"`
 	Phone *string `json:"phone,omitempty"`
 	Grn *string `json:"grn,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _RmaCustomerInfo RmaCustomerInfo
 
 // NewRmaCustomerInfo instantiates a new RmaCustomerInfo object
 // This constructor will assign default values to properties that have it defined,
@@ -62,8 +65,8 @@ func (o *RmaCustomerInfo) GetFirstnameOk() (*string, bool) {
 	return o.Firstname, true
 }
 
-// HasFirstname returns a boolean if a field has been set.
-func (o *RmaCustomerInfo) HasFirstname() bool {
+// &#39;Has&#39;Firstname returns a boolean if a field has been set.
+func (o *RmaCustomerInfo) &#39;Has&#39;Firstname() bool {
 	if o != nil && !IsNil(o.Firstname) {
 		return true
 	}
@@ -94,8 +97,8 @@ func (o *RmaCustomerInfo) GetLastnameOk() (*string, bool) {
 	return o.Lastname, true
 }
 
-// HasLastname returns a boolean if a field has been set.
-func (o *RmaCustomerInfo) HasLastname() bool {
+// &#39;Has&#39;Lastname returns a boolean if a field has been set.
+func (o *RmaCustomerInfo) &#39;Has&#39;Lastname() bool {
 	if o != nil && !IsNil(o.Lastname) {
 		return true
 	}
@@ -126,8 +129,8 @@ func (o *RmaCustomerInfo) GetEmailOk() (*string, bool) {
 	return o.Email, true
 }
 
-// HasEmail returns a boolean if a field has been set.
-func (o *RmaCustomerInfo) HasEmail() bool {
+// &#39;Has&#39;Email returns a boolean if a field has been set.
+func (o *RmaCustomerInfo) &#39;Has&#39;Email() bool {
 	if o != nil && !IsNil(o.Email) {
 		return true
 	}
@@ -158,8 +161,8 @@ func (o *RmaCustomerInfo) GetPhoneOk() (*string, bool) {
 	return o.Phone, true
 }
 
-// HasPhone returns a boolean if a field has been set.
-func (o *RmaCustomerInfo) HasPhone() bool {
+// &#39;Has&#39;Phone returns a boolean if a field has been set.
+func (o *RmaCustomerInfo) &#39;Has&#39;Phone() bool {
 	if o != nil && !IsNil(o.Phone) {
 		return true
 	}
@@ -190,8 +193,8 @@ func (o *RmaCustomerInfo) GetGrnOk() (*string, bool) {
 	return o.Grn, true
 }
 
-// HasGrn returns a boolean if a field has been set.
-func (o *RmaCustomerInfo) HasGrn() bool {
+// &#39;Has&#39;Grn returns a boolean if a field has been set.
+func (o *RmaCustomerInfo) &#39;Has&#39;Grn() bool {
 	if o != nil && !IsNil(o.Grn) {
 		return true
 	}
@@ -229,9 +232,57 @@ func (o RmaCustomerInfo) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Grn) {
 		toSerialize["grn"] = o.Grn
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *RmaCustomerInfo) UnmarshalJSON(data []byte) (err error) {
+	varRmaCustomerInfo := _RmaCustomerInfo{}
+
+	err = json.Unmarshal(data, &varRmaCustomerInfo)
+
+	if err != nil {
+		return err
+	}
+
+	*o = RmaCustomerInfo(varRmaCustomerInfo)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "firstname")
+		delete(additionalProperties, "lastname")
+		delete(additionalProperties, "email")
+		delete(additionalProperties, "phone")
+		delete(additionalProperties, "grn")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *RmaCustomerInfo) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *RmaCustomerInfo) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableRmaCustomerInfo struct {
 	value *RmaCustomerInfo
 	isSet bool

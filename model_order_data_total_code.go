@@ -21,10 +21,10 @@ type OrderDataTotalCode string
 
 // List of OrderDataTotalCode
 const (
-	UNKNOWN OrderDataTotalCode = "UNKNOWN"
-	ORDERED OrderDataTotalCode = "ORDERED"
-	PAID OrderDataTotalCode = "PAID"
-	REFUNDED OrderDataTotalCode = "REFUNDED"
+	ORDERDATATOTALCODE_UNKNOWN OrderDataTotalCode = "UNKNOWN"
+	ORDERDATATOTALCODE_ORDERED OrderDataTotalCode = "ORDERED"
+	ORDERDATATOTALCODE_PAID OrderDataTotalCode = "PAID"
+	ORDERDATATOTALCODE_REFUNDED OrderDataTotalCode = "REFUNDED"
 )
 
 // All allowed values of OrderDataTotalCode enum

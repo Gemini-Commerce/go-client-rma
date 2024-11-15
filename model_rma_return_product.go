@@ -66,8 +66,8 @@ func (o *RmaReturnProduct) GetGrnOk() (*string, bool) {
 	return o.Grn, true
 }
 
-// &#39;Has&#39;Grn returns a boolean if a field has been set.
-func (o *RmaReturnProduct) &#39;Has&#39;Grn() bool {
+// HasGrn returns a boolean if a field has been set.
+func (o *RmaReturnProduct) HasGrn() bool {
 	if o != nil && !IsNil(o.Grn) {
 		return true
 	}
@@ -98,8 +98,8 @@ func (o *RmaReturnProduct) GetReasonOk() (*string, bool) {
 	return o.Reason, true
 }
 
-// &#39;Has&#39;Reason returns a boolean if a field has been set.
-func (o *RmaReturnProduct) &#39;Has&#39;Reason() bool {
+// HasReason returns a boolean if a field has been set.
+func (o *RmaReturnProduct) HasReason() bool {
 	if o != nil && !IsNil(o.Reason) {
 		return true
 	}
@@ -130,8 +130,8 @@ func (o *RmaReturnProduct) GetRequestedOk() (*RmaReturnProductProperty, bool) {
 	return o.Requested, true
 }
 
-// &#39;Has&#39;Requested returns a boolean if a field has been set.
-func (o *RmaReturnProduct) &#39;Has&#39;Requested() bool {
+// HasRequested returns a boolean if a field has been set.
+func (o *RmaReturnProduct) HasRequested() bool {
 	if o != nil && !IsNil(o.Requested) {
 		return true
 	}
@@ -162,8 +162,8 @@ func (o *RmaReturnProduct) GetApprovedOk() (*RmaReturnProductProperty, bool) {
 	return o.Approved, true
 }
 
-// &#39;Has&#39;Approved returns a boolean if a field has been set.
-func (o *RmaReturnProduct) &#39;Has&#39;Approved() bool {
+// HasApproved returns a boolean if a field has been set.
+func (o *RmaReturnProduct) HasApproved() bool {
 	if o != nil && !IsNil(o.Approved) {
 		return true
 	}
@@ -194,8 +194,8 @@ func (o *RmaReturnProduct) GetVerifiedOk() (*RmaReturnProductProperty, bool) {
 	return o.Verified, true
 }
 
-// &#39;Has&#39;Verified returns a boolean if a field has been set.
-func (o *RmaReturnProduct) &#39;Has&#39;Verified() bool {
+// HasVerified returns a boolean if a field has been set.
+func (o *RmaReturnProduct) HasVerified() bool {
 	if o != nil && !IsNil(o.Verified) {
 		return true
 	}
@@ -226,8 +226,8 @@ func (o *RmaReturnProduct) GetRefundedOk() (*RmaReturnProductProperty, bool) {
 	return o.Refunded, true
 }
 
-// &#39;Has&#39;Refunded returns a boolean if a field has been set.
-func (o *RmaReturnProduct) &#39;Has&#39;Refunded() bool {
+// HasRefunded returns a boolean if a field has been set.
+func (o *RmaReturnProduct) HasRefunded() bool {
 	if o != nil && !IsNil(o.Refunded) {
 		return true
 	}

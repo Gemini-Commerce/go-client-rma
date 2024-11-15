@@ -66,8 +66,8 @@ func (o *OrderDataSubtotal) GetCodeOk() (*OrderDataSubtotalCode, bool) {
 	return o.Code, true
 }
 
-// &#39;Has&#39;Code returns a boolean if a field has been set.
-func (o *OrderDataSubtotal) &#39;Has&#39;Code() bool {
+// HasCode returns a boolean if a field has been set.
+func (o *OrderDataSubtotal) HasCode() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -98,8 +98,8 @@ func (o *OrderDataSubtotal) GetValueOk() (*RmaMoney, bool) {
 	return o.Value, true
 }
 
-// &#39;Has&#39;Value returns a boolean if a field has been set.
-func (o *OrderDataSubtotal) &#39;Has&#39;Value() bool {
+// HasValue returns a boolean if a field has been set.
+func (o *OrderDataSubtotal) HasValue() bool {
 	if o != nil && !IsNil(o.Value) {
 		return true
 	}

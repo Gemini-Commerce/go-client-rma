@@ -62,8 +62,8 @@ func (o *RmaReturnProductProperty) GetQuantityOk() (*string, bool) {
 	return o.Quantity, true
 }
 
-// &#39;Has&#39;Quantity returns a boolean if a field has been set.
-func (o *RmaReturnProductProperty) &#39;Has&#39;Quantity() bool {
+// HasQuantity returns a boolean if a field has been set.
+func (o *RmaReturnProductProperty) HasQuantity() bool {
 	if o != nil && !IsNil(o.Quantity) {
 		return true
 	}
@@ -94,8 +94,8 @@ func (o *RmaReturnProductProperty) GetNoteOk() (*string, bool) {
 	return o.Note, true
 }
 
-// &#39;Has&#39;Note returns a boolean if a field has been set.
-func (o *RmaReturnProductProperty) &#39;Has&#39;Note() bool {
+// HasNote returns a boolean if a field has been set.
+func (o *RmaReturnProductProperty) HasNote() bool {
 	if o != nil && !IsNil(o.Note) {
 		return true
 	}

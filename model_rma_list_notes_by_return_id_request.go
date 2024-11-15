@@ -116,8 +116,8 @@ func (o *RmaListNotesByReturnIdRequest) GetPageSizeOk() (*int64, bool) {
 	return o.PageSize, true
 }
 
-// &#39;Has&#39;PageSize returns a boolean if a field has been set.
-func (o *RmaListNotesByReturnIdRequest) &#39;Has&#39;PageSize() bool {
+// HasPageSize returns a boolean if a field has been set.
+func (o *RmaListNotesByReturnIdRequest) HasPageSize() bool {
 	if o != nil && !IsNil(o.PageSize) {
 		return true
 	}
@@ -148,8 +148,8 @@ func (o *RmaListNotesByReturnIdRequest) GetPageTokenOk() (*string, bool) {
 	return o.PageToken, true
 }
 
-// &#39;Has&#39;PageToken returns a boolean if a field has been set.
-func (o *RmaListNotesByReturnIdRequest) &#39;Has&#39;PageToken() bool {
+// HasPageToken returns a boolean if a field has been set.
+func (o *RmaListNotesByReturnIdRequest) HasPageToken() bool {
 	if o != nil && !IsNil(o.PageToken) {
 		return true
 	}
@@ -180,8 +180,8 @@ func (o *RmaListNotesByReturnIdRequest) GetSortsOk() ([]RmaListNotesByReturnIdRe
 	return o.Sorts, true
 }
 
-// &#39;Has&#39;Sorts returns a boolean if a field has been set.
-func (o *RmaListNotesByReturnIdRequest) &#39;Has&#39;Sorts() bool {
+// HasSorts returns a boolean if a field has been set.
+func (o *RmaListNotesByReturnIdRequest) HasSorts() bool {
 	if o != nil && !IsNil(o.Sorts) {
 		return true
 	}

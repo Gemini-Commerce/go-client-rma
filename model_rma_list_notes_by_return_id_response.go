@@ -62,8 +62,8 @@ func (o *RmaListNotesByReturnIdResponse) GetNotesOk() ([]RmaNoteResponse, bool) 
 	return o.Notes, true
 }
 
-// &#39;Has&#39;Notes returns a boolean if a field has been set.
-func (o *RmaListNotesByReturnIdResponse) &#39;Has&#39;Notes() bool {
+// HasNotes returns a boolean if a field has been set.
+func (o *RmaListNotesByReturnIdResponse) HasNotes() bool {
 	if o != nil && !IsNil(o.Notes) {
 		return true
 	}
@@ -94,8 +94,8 @@ func (o *RmaListNotesByReturnIdResponse) GetNextPageTokenOk() (*string, bool) {
 	return o.NextPageToken, true
 }
 
-// &#39;Has&#39;NextPageToken returns a boolean if a field has been set.
-func (o *RmaListNotesByReturnIdResponse) &#39;Has&#39;NextPageToken() bool {
+// HasNextPageToken returns a boolean if a field has been set.
+func (o *RmaListNotesByReturnIdResponse) HasNextPageToken() bool {
 	if o != nil && !IsNil(o.NextPageToken) {
 		return true
 	}

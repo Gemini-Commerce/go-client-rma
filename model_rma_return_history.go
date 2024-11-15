@@ -64,8 +64,8 @@ func (o *RmaReturnHistory) GetDateOk() (*time.Time, bool) {
 	return o.Date, true
 }
 
-// &#39;Has&#39;Date returns a boolean if a field has been set.
-func (o *RmaReturnHistory) &#39;Has&#39;Date() bool {
+// HasDate returns a boolean if a field has been set.
+func (o *RmaReturnHistory) HasDate() bool {
 	if o != nil && !IsNil(o.Date) {
 		return true
 	}
@@ -96,8 +96,8 @@ func (o *RmaReturnHistory) GetStatusOk() (*string, bool) {
 	return o.Status, true
 }
 
-// &#39;Has&#39;Status returns a boolean if a field has been set.
-func (o *RmaReturnHistory) &#39;Has&#39;Status() bool {
+// HasStatus returns a boolean if a field has been set.
+func (o *RmaReturnHistory) HasStatus() bool {
 	if o != nil && !IsNil(o.Status) {
 		return true
 	}
@@ -128,8 +128,8 @@ func (o *RmaReturnHistory) GetNoteOk() (*string, bool) {
 	return o.Note, true
 }
 
-// &#39;Has&#39;Note returns a boolean if a field has been set.
-func (o *RmaReturnHistory) &#39;Has&#39;Note() bool {
+// HasNote returns a boolean if a field has been set.
+func (o *RmaReturnHistory) HasNote() bool {
 	if o != nil && !IsNil(o.Note) {
 		return true
 	}

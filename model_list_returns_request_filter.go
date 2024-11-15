@@ -72,8 +72,8 @@ func (o *ListReturnsRequestFilter) GetSearchTermsOk() ([]string, bool) {
 	return o.SearchTerms, true
 }
 
-// &#39;Has&#39;SearchTerms returns a boolean if a field has been set.
-func (o *ListReturnsRequestFilter) &#39;Has&#39;SearchTerms() bool {
+// HasSearchTerms returns a boolean if a field has been set.
+func (o *ListReturnsRequestFilter) HasSearchTerms() bool {
 	if o != nil && !IsNil(o.SearchTerms) {
 		return true
 	}
@@ -104,8 +104,8 @@ func (o *ListReturnsRequestFilter) GetReturnIdsOk() ([]string, bool) {
 	return o.ReturnIds, true
 }
 
-// &#39;Has&#39;ReturnIds returns a boolean if a field has been set.
-func (o *ListReturnsRequestFilter) &#39;Has&#39;ReturnIds() bool {
+// HasReturnIds returns a boolean if a field has been set.
+func (o *ListReturnsRequestFilter) HasReturnIds() bool {
 	if o != nil && !IsNil(o.ReturnIds) {
 		return true
 	}
@@ -136,8 +136,8 @@ func (o *ListReturnsRequestFilter) GetReturnStatusOk() ([]string, bool) {
 	return o.ReturnStatus, true
 }
 
-// &#39;Has&#39;ReturnStatus returns a boolean if a field has been set.
-func (o *ListReturnsRequestFilter) &#39;Has&#39;ReturnStatus() bool {
+// HasReturnStatus returns a boolean if a field has been set.
+func (o *ListReturnsRequestFilter) HasReturnStatus() bool {
 	if o != nil && !IsNil(o.ReturnStatus) {
 		return true
 	}
@@ -168,8 +168,8 @@ func (o *ListReturnsRequestFilter) GetOrderGrnsOk() ([]string, bool) {
 	return o.OrderGrns, true
 }
 
-// &#39;Has&#39;OrderGrns returns a boolean if a field has been set.
-func (o *ListReturnsRequestFilter) &#39;Has&#39;OrderGrns() bool {
+// HasOrderGrns returns a boolean if a field has been set.
+func (o *ListReturnsRequestFilter) HasOrderGrns() bool {
 	if o != nil && !IsNil(o.OrderGrns) {
 		return true
 	}
@@ -200,8 +200,8 @@ func (o *ListReturnsRequestFilter) GetOrderNumbersOk() ([]string, bool) {
 	return o.OrderNumbers, true
 }
 
-// &#39;Has&#39;OrderNumbers returns a boolean if a field has been set.
-func (o *ListReturnsRequestFilter) &#39;Has&#39;OrderNumbers() bool {
+// HasOrderNumbers returns a boolean if a field has been set.
+func (o *ListReturnsRequestFilter) HasOrderNumbers() bool {
 	if o != nil && !IsNil(o.OrderNumbers) {
 		return true
 	}
@@ -232,8 +232,8 @@ func (o *ListReturnsRequestFilter) GetOrderItemGrnsOk() ([]string, bool) {
 	return o.OrderItemGrns, true
 }
 
-// &#39;Has&#39;OrderItemGrns returns a boolean if a field has been set.
-func (o *ListReturnsRequestFilter) &#39;Has&#39;OrderItemGrns() bool {
+// HasOrderItemGrns returns a boolean if a field has been set.
+func (o *ListReturnsRequestFilter) HasOrderItemGrns() bool {
 	if o != nil && !IsNil(o.OrderItemGrns) {
 		return true
 	}
@@ -264,8 +264,8 @@ func (o *ListReturnsRequestFilter) GetOrderItemSkusOk() ([]string, bool) {
 	return o.OrderItemSkus, true
 }
 
-// &#39;Has&#39;OrderItemSkus returns a boolean if a field has been set.
-func (o *ListReturnsRequestFilter) &#39;Has&#39;OrderItemSkus() bool {
+// HasOrderItemSkus returns a boolean if a field has been set.
+func (o *ListReturnsRequestFilter) HasOrderItemSkus() bool {
 	if o != nil && !IsNil(o.OrderItemSkus) {
 		return true
 	}
@@ -296,8 +296,8 @@ func (o *ListReturnsRequestFilter) GetCustomerGrnsOk() ([]string, bool) {
 	return o.CustomerGrns, true
 }
 
-// &#39;Has&#39;CustomerGrns returns a boolean if a field has been set.
-func (o *ListReturnsRequestFilter) &#39;Has&#39;CustomerGrns() bool {
+// HasCustomerGrns returns a boolean if a field has been set.
+func (o *ListReturnsRequestFilter) HasCustomerGrns() bool {
 	if o != nil && !IsNil(o.CustomerGrns) {
 		return true
 	}
@@ -328,8 +328,8 @@ func (o *ListReturnsRequestFilter) GetCustomerEmailsOk() ([]string, bool) {
 	return o.CustomerEmails, true
 }
 
-// &#39;Has&#39;CustomerEmails returns a boolean if a field has been set.
-func (o *ListReturnsRequestFilter) &#39;Has&#39;CustomerEmails() bool {
+// HasCustomerEmails returns a boolean if a field has been set.
+func (o *ListReturnsRequestFilter) HasCustomerEmails() bool {
 	if o != nil && !IsNil(o.CustomerEmails) {
 		return true
 	}
@@ -360,8 +360,8 @@ func (o *ListReturnsRequestFilter) GetCreatedAtStartOk() (*time.Time, bool) {
 	return o.CreatedAtStart, true
 }
 
-// &#39;Has&#39;CreatedAtStart returns a boolean if a field has been set.
-func (o *ListReturnsRequestFilter) &#39;Has&#39;CreatedAtStart() bool {
+// HasCreatedAtStart returns a boolean if a field has been set.
+func (o *ListReturnsRequestFilter) HasCreatedAtStart() bool {
 	if o != nil && !IsNil(o.CreatedAtStart) {
 		return true
 	}
@@ -392,8 +392,8 @@ func (o *ListReturnsRequestFilter) GetCreatedAtEndOk() (*time.Time, bool) {
 	return o.CreatedAtEnd, true
 }
 
-// &#39;Has&#39;CreatedAtEnd returns a boolean if a field has been set.
-func (o *ListReturnsRequestFilter) &#39;Has&#39;CreatedAtEnd() bool {
+// HasCreatedAtEnd returns a boolean if a field has been set.
+func (o *ListReturnsRequestFilter) HasCreatedAtEnd() bool {
 	if o != nil && !IsNil(o.CreatedAtEnd) {
 		return true
 	}

@@ -65,8 +65,8 @@ func (o *RmaCustomerInfo) GetFirstnameOk() (*string, bool) {
 	return o.Firstname, true
 }
 
-// &#39;Has&#39;Firstname returns a boolean if a field has been set.
-func (o *RmaCustomerInfo) &#39;Has&#39;Firstname() bool {
+// HasFirstname returns a boolean if a field has been set.
+func (o *RmaCustomerInfo) HasFirstname() bool {
 	if o != nil && !IsNil(o.Firstname) {
 		return true
 	}
@@ -97,8 +97,8 @@ func (o *RmaCustomerInfo) GetLastnameOk() (*string, bool) {
 	return o.Lastname, true
 }
 
-// &#39;Has&#39;Lastname returns a boolean if a field has been set.
-func (o *RmaCustomerInfo) &#39;Has&#39;Lastname() bool {
+// HasLastname returns a boolean if a field has been set.
+func (o *RmaCustomerInfo) HasLastname() bool {
 	if o != nil && !IsNil(o.Lastname) {
 		return true
 	}
@@ -129,8 +129,8 @@ func (o *RmaCustomerInfo) GetEmailOk() (*string, bool) {
 	return o.Email, true
 }
 
-// &#39;Has&#39;Email returns a boolean if a field has been set.
-func (o *RmaCustomerInfo) &#39;Has&#39;Email() bool {
+// HasEmail returns a boolean if a field has been set.
+func (o *RmaCustomerInfo) HasEmail() bool {
 	if o != nil && !IsNil(o.Email) {
 		return true
 	}
@@ -161,8 +161,8 @@ func (o *RmaCustomerInfo) GetPhoneOk() (*string, bool) {
 	return o.Phone, true
 }
 
-// &#39;Has&#39;Phone returns a boolean if a field has been set.
-func (o *RmaCustomerInfo) &#39;Has&#39;Phone() bool {
+// HasPhone returns a boolean if a field has been set.
+func (o *RmaCustomerInfo) HasPhone() bool {
 	if o != nil && !IsNil(o.Phone) {
 		return true
 	}
@@ -193,8 +193,8 @@ func (o *RmaCustomerInfo) GetGrnOk() (*string, bool) {
 	return o.Grn, true
 }
 
-// &#39;Has&#39;Grn returns a boolean if a field has been set.
-func (o *RmaCustomerInfo) &#39;Has&#39;Grn() bool {
+// HasGrn returns a boolean if a field has been set.
+func (o *RmaCustomerInfo) HasGrn() bool {
 	if o != nil && !IsNil(o.Grn) {
 		return true
 	}

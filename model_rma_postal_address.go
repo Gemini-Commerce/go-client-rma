@@ -86,8 +86,8 @@ func (o *RmaPostalAddress) GetRevisionOk() (*int32, bool) {
 	return o.Revision, true
 }
 
-// &#39;Has&#39;Revision returns a boolean if a field has been set.
-func (o *RmaPostalAddress) &#39;Has&#39;Revision() bool {
+// HasRevision returns a boolean if a field has been set.
+func (o *RmaPostalAddress) HasRevision() bool {
 	if o != nil && !IsNil(o.Revision) {
 		return true
 	}
@@ -118,8 +118,8 @@ func (o *RmaPostalAddress) GetRegionCodeOk() (*string, bool) {
 	return o.RegionCode, true
 }
 
-// &#39;Has&#39;RegionCode returns a boolean if a field has been set.
-func (o *RmaPostalAddress) &#39;Has&#39;RegionCode() bool {
+// HasRegionCode returns a boolean if a field has been set.
+func (o *RmaPostalAddress) HasRegionCode() bool {
 	if o != nil && !IsNil(o.RegionCode) {
 		return true
 	}
@@ -150,8 +150,8 @@ func (o *RmaPostalAddress) GetLanguageCodeOk() (*string, bool) {
 	return o.LanguageCode, true
 }
 
-// &#39;Has&#39;LanguageCode returns a boolean if a field has been set.
-func (o *RmaPostalAddress) &#39;Has&#39;LanguageCode() bool {
+// HasLanguageCode returns a boolean if a field has been set.
+func (o *RmaPostalAddress) HasLanguageCode() bool {
 	if o != nil && !IsNil(o.LanguageCode) {
 		return true
 	}
@@ -182,8 +182,8 @@ func (o *RmaPostalAddress) GetPostalCodeOk() (*string, bool) {
 	return o.PostalCode, true
 }
 
-// &#39;Has&#39;PostalCode returns a boolean if a field has been set.
-func (o *RmaPostalAddress) &#39;Has&#39;PostalCode() bool {
+// HasPostalCode returns a boolean if a field has been set.
+func (o *RmaPostalAddress) HasPostalCode() bool {
 	if o != nil && !IsNil(o.PostalCode) {
 		return true
 	}
@@ -214,8 +214,8 @@ func (o *RmaPostalAddress) GetSortingCodeOk() (*string, bool) {
 	return o.SortingCode, true
 }
 
-// &#39;Has&#39;SortingCode returns a boolean if a field has been set.
-func (o *RmaPostalAddress) &#39;Has&#39;SortingCode() bool {
+// HasSortingCode returns a boolean if a field has been set.
+func (o *RmaPostalAddress) HasSortingCode() bool {
 	if o != nil && !IsNil(o.SortingCode) {
 		return true
 	}
@@ -246,8 +246,8 @@ func (o *RmaPostalAddress) GetAdministrativeAreaOk() (*string, bool) {
 	return o.AdministrativeArea, true
 }
 
-// &#39;Has&#39;AdministrativeArea returns a boolean if a field has been set.
-func (o *RmaPostalAddress) &#39;Has&#39;AdministrativeArea() bool {
+// HasAdministrativeArea returns a boolean if a field has been set.
+func (o *RmaPostalAddress) HasAdministrativeArea() bool {
 	if o != nil && !IsNil(o.AdministrativeArea) {
 		return true
 	}
@@ -278,8 +278,8 @@ func (o *RmaPostalAddress) GetLocalityOk() (*string, bool) {
 	return o.Locality, true
 }
 
-// &#39;Has&#39;Locality returns a boolean if a field has been set.
-func (o *RmaPostalAddress) &#39;Has&#39;Locality() bool {
+// HasLocality returns a boolean if a field has been set.
+func (o *RmaPostalAddress) HasLocality() bool {
 	if o != nil && !IsNil(o.Locality) {
 		return true
 	}
@@ -310,8 +310,8 @@ func (o *RmaPostalAddress) GetSublocalityOk() (*string, bool) {
 	return o.Sublocality, true
 }
 
-// &#39;Has&#39;Sublocality returns a boolean if a field has been set.
-func (o *RmaPostalAddress) &#39;Has&#39;Sublocality() bool {
+// HasSublocality returns a boolean if a field has been set.
+func (o *RmaPostalAddress) HasSublocality() bool {
 	if o != nil && !IsNil(o.Sublocality) {
 		return true
 	}
@@ -342,8 +342,8 @@ func (o *RmaPostalAddress) GetAddressLinesOk() ([]string, bool) {
 	return o.AddressLines, true
 }
 
-// &#39;Has&#39;AddressLines returns a boolean if a field has been set.
-func (o *RmaPostalAddress) &#39;Has&#39;AddressLines() bool {
+// HasAddressLines returns a boolean if a field has been set.
+func (o *RmaPostalAddress) HasAddressLines() bool {
 	if o != nil && !IsNil(o.AddressLines) {
 		return true
 	}
@@ -374,8 +374,8 @@ func (o *RmaPostalAddress) GetRecipientsOk() ([]string, bool) {
 	return o.Recipients, true
 }
 
-// &#39;Has&#39;Recipients returns a boolean if a field has been set.
-func (o *RmaPostalAddress) &#39;Has&#39;Recipients() bool {
+// HasRecipients returns a boolean if a field has been set.
+func (o *RmaPostalAddress) HasRecipients() bool {
 	if o != nil && !IsNil(o.Recipients) {
 		return true
 	}
@@ -406,8 +406,8 @@ func (o *RmaPostalAddress) GetOrganizationOk() (*string, bool) {
 	return o.Organization, true
 }
 
-// &#39;Has&#39;Organization returns a boolean if a field has been set.
-func (o *RmaPostalAddress) &#39;Has&#39;Organization() bool {
+// HasOrganization returns a boolean if a field has been set.
+func (o *RmaPostalAddress) HasOrganization() bool {
 	if o != nil && !IsNil(o.Organization) {
 		return true
 	}
@@ -438,8 +438,8 @@ func (o *RmaPostalAddress) GetPhoneNumberOk() (*string, bool) {
 	return o.PhoneNumber, true
 }
 
-// &#39;Has&#39;PhoneNumber returns a boolean if a field has been set.
-func (o *RmaPostalAddress) &#39;Has&#39;PhoneNumber() bool {
+// HasPhoneNumber returns a boolean if a field has been set.
+func (o *RmaPostalAddress) HasPhoneNumber() bool {
 	if o != nil && !IsNil(o.PhoneNumber) {
 		return true
 	}
@@ -470,8 +470,8 @@ func (o *RmaPostalAddress) GetAdditionalInfoOk() (map[string]interface{}, bool) 
 	return o.AdditionalInfo, true
 }
 
-// &#39;Has&#39;AdditionalInfo returns a boolean if a field has been set.
-func (o *RmaPostalAddress) &#39;Has&#39;AdditionalInfo() bool {
+// HasAdditionalInfo returns a boolean if a field has been set.
+func (o *RmaPostalAddress) HasAdditionalInfo() bool {
 	if o != nil && !IsNil(o.AdditionalInfo) {
 		return true
 	}

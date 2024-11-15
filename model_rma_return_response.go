@@ -80,8 +80,8 @@ func (o *RmaReturnResponse) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// &#39;Has&#39;Id returns a boolean if a field has been set.
-func (o *RmaReturnResponse) &#39;Has&#39;Id() bool {
+// HasId returns a boolean if a field has been set.
+func (o *RmaReturnResponse) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -112,8 +112,8 @@ func (o *RmaReturnResponse) GetGrnOk() (*string, bool) {
 	return o.Grn, true
 }
 
-// &#39;Has&#39;Grn returns a boolean if a field has been set.
-func (o *RmaReturnResponse) &#39;Has&#39;Grn() bool {
+// HasGrn returns a boolean if a field has been set.
+func (o *RmaReturnResponse) HasGrn() bool {
 	if o != nil && !IsNil(o.Grn) {
 		return true
 	}
@@ -144,8 +144,8 @@ func (o *RmaReturnResponse) GetOrderGrnOk() (*string, bool) {
 	return o.OrderGrn, true
 }
 
-// &#39;Has&#39;OrderGrn returns a boolean if a field has been set.
-func (o *RmaReturnResponse) &#39;Has&#39;OrderGrn() bool {
+// HasOrderGrn returns a boolean if a field has been set.
+func (o *RmaReturnResponse) HasOrderGrn() bool {
 	if o != nil && !IsNil(o.OrderGrn) {
 		return true
 	}
@@ -176,8 +176,8 @@ func (o *RmaReturnResponse) GetStatusOk() (*string, bool) {
 	return o.Status, true
 }
 
-// &#39;Has&#39;Status returns a boolean if a field has been set.
-func (o *RmaReturnResponse) &#39;Has&#39;Status() bool {
+// HasStatus returns a boolean if a field has been set.
+func (o *RmaReturnResponse) HasStatus() bool {
 	if o != nil && !IsNil(o.Status) {
 		return true
 	}
@@ -208,8 +208,8 @@ func (o *RmaReturnResponse) GetProductsOk() ([]RmaReturnProduct, bool) {
 	return o.Products, true
 }
 
-// &#39;Has&#39;Products returns a boolean if a field has been set.
-func (o *RmaReturnResponse) &#39;Has&#39;Products() bool {
+// HasProducts returns a boolean if a field has been set.
+func (o *RmaReturnResponse) HasProducts() bool {
 	if o != nil && !IsNil(o.Products) {
 		return true
 	}
@@ -240,8 +240,8 @@ func (o *RmaReturnResponse) GetPreferredRefundMethodOk() (*RmaRefundMethod, bool
 	return o.PreferredRefundMethod, true
 }
 
-// &#39;Has&#39;PreferredRefundMethod returns a boolean if a field has been set.
-func (o *RmaReturnResponse) &#39;Has&#39;PreferredRefundMethod() bool {
+// HasPreferredRefundMethod returns a boolean if a field has been set.
+func (o *RmaReturnResponse) HasPreferredRefundMethod() bool {
 	if o != nil && !IsNil(o.PreferredRefundMethod) {
 		return true
 	}
@@ -272,8 +272,8 @@ func (o *RmaReturnResponse) GetRefundShippingCostOk() (*bool, bool) {
 	return o.RefundShippingCost, true
 }
 
-// &#39;Has&#39;RefundShippingCost returns a boolean if a field has been set.
-func (o *RmaReturnResponse) &#39;Has&#39;RefundShippingCost() bool {
+// HasRefundShippingCost returns a boolean if a field has been set.
+func (o *RmaReturnResponse) HasRefundShippingCost() bool {
 	if o != nil && !IsNil(o.RefundShippingCost) {
 		return true
 	}
@@ -304,8 +304,8 @@ func (o *RmaReturnResponse) GetRefundPaymentCostOk() (*bool, bool) {
 	return o.RefundPaymentCost, true
 }
 
-// &#39;Has&#39;RefundPaymentCost returns a boolean if a field has been set.
-func (o *RmaReturnResponse) &#39;Has&#39;RefundPaymentCost() bool {
+// HasRefundPaymentCost returns a boolean if a field has been set.
+func (o *RmaReturnResponse) HasRefundPaymentCost() bool {
 	if o != nil && !IsNil(o.RefundPaymentCost) {
 		return true
 	}
@@ -336,8 +336,8 @@ func (o *RmaReturnResponse) GetCustomerInfoOk() (*RmaCustomerInfo, bool) {
 	return o.CustomerInfo, true
 }
 
-// &#39;Has&#39;CustomerInfo returns a boolean if a field has been set.
-func (o *RmaReturnResponse) &#39;Has&#39;CustomerInfo() bool {
+// HasCustomerInfo returns a boolean if a field has been set.
+func (o *RmaReturnResponse) HasCustomerInfo() bool {
 	if o != nil && !IsNil(o.CustomerInfo) {
 		return true
 	}
@@ -368,8 +368,8 @@ func (o *RmaReturnResponse) GetReturnAddressOk() (*RmaPostalAddress, bool) {
 	return o.ReturnAddress, true
 }
 
-// &#39;Has&#39;ReturnAddress returns a boolean if a field has been set.
-func (o *RmaReturnResponse) &#39;Has&#39;ReturnAddress() bool {
+// HasReturnAddress returns a boolean if a field has been set.
+func (o *RmaReturnResponse) HasReturnAddress() bool {
 	if o != nil && !IsNil(o.ReturnAddress) {
 		return true
 	}
@@ -400,8 +400,8 @@ func (o *RmaReturnResponse) GetNoteOk() (*string, bool) {
 	return o.Note, true
 }
 
-// &#39;Has&#39;Note returns a boolean if a field has been set.
-func (o *RmaReturnResponse) &#39;Has&#39;Note() bool {
+// HasNote returns a boolean if a field has been set.
+func (o *RmaReturnResponse) HasNote() bool {
 	if o != nil && !IsNil(o.Note) {
 		return true
 	}
@@ -432,8 +432,8 @@ func (o *RmaReturnResponse) GetHistoryOk() ([]RmaReturnHistory, bool) {
 	return o.History, true
 }
 
-// &#39;Has&#39;History returns a boolean if a field has been set.
-func (o *RmaReturnResponse) &#39;Has&#39;History() bool {
+// HasHistory returns a boolean if a field has been set.
+func (o *RmaReturnResponse) HasHistory() bool {
 	if o != nil && !IsNil(o.History) {
 		return true
 	}
@@ -464,8 +464,8 @@ func (o *RmaReturnResponse) GetCreatedAtOk() (*time.Time, bool) {
 	return o.CreatedAt, true
 }
 
-// &#39;Has&#39;CreatedAt returns a boolean if a field has been set.
-func (o *RmaReturnResponse) &#39;Has&#39;CreatedAt() bool {
+// HasCreatedAt returns a boolean if a field has been set.
+func (o *RmaReturnResponse) HasCreatedAt() bool {
 	if o != nil && !IsNil(o.CreatedAt) {
 		return true
 	}
@@ -496,8 +496,8 @@ func (o *RmaReturnResponse) GetUpdatedAtOk() (*time.Time, bool) {
 	return o.UpdatedAt, true
 }
 
-// &#39;Has&#39;UpdatedAt returns a boolean if a field has been set.
-func (o *RmaReturnResponse) &#39;Has&#39;UpdatedAt() bool {
+// HasUpdatedAt returns a boolean if a field has been set.
+func (o *RmaReturnResponse) HasUpdatedAt() bool {
 	if o != nil && !IsNil(o.UpdatedAt) {
 		return true
 	}
@@ -528,8 +528,8 @@ func (o *RmaReturnResponse) GetOrderDataOk() (*RmaOrderData, bool) {
 	return o.OrderData, true
 }
 
-// &#39;Has&#39;OrderData returns a boolean if a field has been set.
-func (o *RmaReturnResponse) &#39;Has&#39;OrderData() bool {
+// HasOrderData returns a boolean if a field has been set.
+func (o *RmaReturnResponse) HasOrderData() bool {
 	if o != nil && !IsNil(o.OrderData) {
 		return true
 	}

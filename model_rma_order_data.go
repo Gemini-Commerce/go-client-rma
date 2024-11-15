@@ -76,8 +76,8 @@ func (o *RmaOrderData) GetCreatedAtOk() (*time.Time, bool) {
 	return o.CreatedAt, true
 }
 
-// &#39;Has&#39;CreatedAt returns a boolean if a field has been set.
-func (o *RmaOrderData) &#39;Has&#39;CreatedAt() bool {
+// HasCreatedAt returns a boolean if a field has been set.
+func (o *RmaOrderData) HasCreatedAt() bool {
 	if o != nil && !IsNil(o.CreatedAt) {
 		return true
 	}
@@ -108,8 +108,8 @@ func (o *RmaOrderData) GetUpdatedAtOk() (*time.Time, bool) {
 	return o.UpdatedAt, true
 }
 
-// &#39;Has&#39;UpdatedAt returns a boolean if a field has been set.
-func (o *RmaOrderData) &#39;Has&#39;UpdatedAt() bool {
+// HasUpdatedAt returns a boolean if a field has been set.
+func (o *RmaOrderData) HasUpdatedAt() bool {
 	if o != nil && !IsNil(o.UpdatedAt) {
 		return true
 	}
@@ -140,8 +140,8 @@ func (o *RmaOrderData) GetGrnOk() (*string, bool) {
 	return o.Grn, true
 }
 
-// &#39;Has&#39;Grn returns a boolean if a field has been set.
-func (o *RmaOrderData) &#39;Has&#39;Grn() bool {
+// HasGrn returns a boolean if a field has been set.
+func (o *RmaOrderData) HasGrn() bool {
 	if o != nil && !IsNil(o.Grn) {
 		return true
 	}
@@ -172,8 +172,8 @@ func (o *RmaOrderData) GetNumberOk() (*string, bool) {
 	return o.Number, true
 }
 
-// &#39;Has&#39;Number returns a boolean if a field has been set.
-func (o *RmaOrderData) &#39;Has&#39;Number() bool {
+// HasNumber returns a boolean if a field has been set.
+func (o *RmaOrderData) HasNumber() bool {
 	if o != nil && !IsNil(o.Number) {
 		return true
 	}
@@ -204,8 +204,8 @@ func (o *RmaOrderData) GetStatusOk() (*string, bool) {
 	return o.Status, true
 }
 
-// &#39;Has&#39;Status returns a boolean if a field has been set.
-func (o *RmaOrderData) &#39;Has&#39;Status() bool {
+// HasStatus returns a boolean if a field has been set.
+func (o *RmaOrderData) HasStatus() bool {
 	if o != nil && !IsNil(o.Status) {
 		return true
 	}
@@ -236,8 +236,8 @@ func (o *RmaOrderData) GetChannelOk() (*string, bool) {
 	return o.Channel, true
 }
 
-// &#39;Has&#39;Channel returns a boolean if a field has been set.
-func (o *RmaOrderData) &#39;Has&#39;Channel() bool {
+// HasChannel returns a boolean if a field has been set.
+func (o *RmaOrderData) HasChannel() bool {
 	if o != nil && !IsNil(o.Channel) {
 		return true
 	}
@@ -268,8 +268,8 @@ func (o *RmaOrderData) GetMarketOk() (*string, bool) {
 	return o.Market, true
 }
 
-// &#39;Has&#39;Market returns a boolean if a field has been set.
-func (o *RmaOrderData) &#39;Has&#39;Market() bool {
+// HasMarket returns a boolean if a field has been set.
+func (o *RmaOrderData) HasMarket() bool {
 	if o != nil && !IsNil(o.Market) {
 		return true
 	}
@@ -300,8 +300,8 @@ func (o *RmaOrderData) GetItemsOk() ([]RmaOrderDataItem, bool) {
 	return o.Items, true
 }
 
-// &#39;Has&#39;Items returns a boolean if a field has been set.
-func (o *RmaOrderData) &#39;Has&#39;Items() bool {
+// HasItems returns a boolean if a field has been set.
+func (o *RmaOrderData) HasItems() bool {
 	if o != nil && !IsNil(o.Items) {
 		return true
 	}
@@ -332,8 +332,8 @@ func (o *RmaOrderData) GetCurrencyOk() (*RmaCurrency, bool) {
 	return o.Currency, true
 }
 
-// &#39;Has&#39;Currency returns a boolean if a field has been set.
-func (o *RmaOrderData) &#39;Has&#39;Currency() bool {
+// HasCurrency returns a boolean if a field has been set.
+func (o *RmaOrderData) HasCurrency() bool {
 	if o != nil && !IsNil(o.Currency) {
 		return true
 	}
@@ -364,8 +364,8 @@ func (o *RmaOrderData) GetSubtotalsOk() (*map[string]OrderDataSubtotal, bool) {
 	return o.Subtotals, true
 }
 
-// &#39;Has&#39;Subtotals returns a boolean if a field has been set.
-func (o *RmaOrderData) &#39;Has&#39;Subtotals() bool {
+// HasSubtotals returns a boolean if a field has been set.
+func (o *RmaOrderData) HasSubtotals() bool {
 	if o != nil && !IsNil(o.Subtotals) {
 		return true
 	}
@@ -396,8 +396,8 @@ func (o *RmaOrderData) GetTotalsOk() (*map[string]OrderDataTotal, bool) {
 	return o.Totals, true
 }
 
-// &#39;Has&#39;Totals returns a boolean if a field has been set.
-func (o *RmaOrderData) &#39;Has&#39;Totals() bool {
+// HasTotals returns a boolean if a field has been set.
+func (o *RmaOrderData) HasTotals() bool {
 	if o != nil && !IsNil(o.Totals) {
 		return true
 	}

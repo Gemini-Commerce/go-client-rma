@@ -62,8 +62,8 @@ func (o *EditNoteRequestPayload) GetAuthorOk() (*string, bool) {
 	return o.Author, true
 }
 
-// &#39;Has&#39;Author returns a boolean if a field has been set.
-func (o *EditNoteRequestPayload) &#39;Has&#39;Author() bool {
+// HasAuthor returns a boolean if a field has been set.
+func (o *EditNoteRequestPayload) HasAuthor() bool {
 	if o != nil && !IsNil(o.Author) {
 		return true
 	}
@@ -94,8 +94,8 @@ func (o *EditNoteRequestPayload) GetNoteOk() (*string, bool) {
 	return o.Note, true
 }
 
-// &#39;Has&#39;Note returns a boolean if a field has been set.
-func (o *EditNoteRequestPayload) &#39;Has&#39;Note() bool {
+// HasNote returns a boolean if a field has been set.
+func (o *EditNoteRequestPayload) HasNote() bool {
 	if o != nil && !IsNil(o.Note) {
 		return true
 	}

@@ -121,8 +121,8 @@ func (o *RmaListReturnsRequestSort) GetOrderOk() (*RmaSortOrder, bool) {
 	return o.Order, true
 }
 
-// &#39;Has&#39;Order returns a boolean if a field has been set.
-func (o *RmaListReturnsRequestSort) &#39;Has&#39;Order() bool {
+// HasOrder returns a boolean if a field has been set.
+func (o *RmaListReturnsRequestSort) HasOrder() bool {
 	if o != nil && !IsNil(o.Order) {
 		return true
 	}

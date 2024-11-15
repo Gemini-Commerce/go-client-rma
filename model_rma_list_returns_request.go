@@ -92,8 +92,8 @@ func (o *RmaListReturnsRequest) GetPageSizeOk() (*int64, bool) {
 	return o.PageSize, true
 }
 
-// &#39;Has&#39;PageSize returns a boolean if a field has been set.
-func (o *RmaListReturnsRequest) &#39;Has&#39;PageSize() bool {
+// HasPageSize returns a boolean if a field has been set.
+func (o *RmaListReturnsRequest) HasPageSize() bool {
 	if o != nil && !IsNil(o.PageSize) {
 		return true
 	}
@@ -124,8 +124,8 @@ func (o *RmaListReturnsRequest) GetPageTokenOk() (*string, bool) {
 	return o.PageToken, true
 }
 
-// &#39;Has&#39;PageToken returns a boolean if a field has been set.
-func (o *RmaListReturnsRequest) &#39;Has&#39;PageToken() bool {
+// HasPageToken returns a boolean if a field has been set.
+func (o *RmaListReturnsRequest) HasPageToken() bool {
 	if o != nil && !IsNil(o.PageToken) {
 		return true
 	}
@@ -156,8 +156,8 @@ func (o *RmaListReturnsRequest) GetSortsOk() ([]RmaListReturnsRequestSort, bool)
 	return o.Sorts, true
 }
 
-// &#39;Has&#39;Sorts returns a boolean if a field has been set.
-func (o *RmaListReturnsRequest) &#39;Has&#39;Sorts() bool {
+// HasSorts returns a boolean if a field has been set.
+func (o *RmaListReturnsRequest) HasSorts() bool {
 	if o != nil && !IsNil(o.Sorts) {
 		return true
 	}
@@ -188,8 +188,8 @@ func (o *RmaListReturnsRequest) GetFilterMaskOk() (*string, bool) {
 	return o.FilterMask, true
 }
 
-// &#39;Has&#39;FilterMask returns a boolean if a field has been set.
-func (o *RmaListReturnsRequest) &#39;Has&#39;FilterMask() bool {
+// HasFilterMask returns a boolean if a field has been set.
+func (o *RmaListReturnsRequest) HasFilterMask() bool {
 	if o != nil && !IsNil(o.FilterMask) {
 		return true
 	}
@@ -220,8 +220,8 @@ func (o *RmaListReturnsRequest) GetFilterOk() (*ListReturnsRequestFilter, bool) 
 	return o.Filter, true
 }
 
-// &#39;Has&#39;Filter returns a boolean if a field has been set.
-func (o *RmaListReturnsRequest) &#39;Has&#39;Filter() bool {
+// HasFilter returns a boolean if a field has been set.
+func (o *RmaListReturnsRequest) HasFilter() bool {
 	if o != nil && !IsNil(o.Filter) {
 		return true
 	}

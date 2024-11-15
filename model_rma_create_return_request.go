@@ -172,8 +172,8 @@ func (o *RmaCreateReturnRequest) GetRefundShippingCostOk() (*bool, bool) {
 	return o.RefundShippingCost, true
 }
 
-// &#39;Has&#39;RefundShippingCost returns a boolean if a field has been set.
-func (o *RmaCreateReturnRequest) &#39;Has&#39;RefundShippingCost() bool {
+// HasRefundShippingCost returns a boolean if a field has been set.
+func (o *RmaCreateReturnRequest) HasRefundShippingCost() bool {
 	if o != nil && !IsNil(o.RefundShippingCost) {
 		return true
 	}
@@ -204,8 +204,8 @@ func (o *RmaCreateReturnRequest) GetRefundPaymentCostOk() (*bool, bool) {
 	return o.RefundPaymentCost, true
 }
 
-// &#39;Has&#39;RefundPaymentCost returns a boolean if a field has been set.
-func (o *RmaCreateReturnRequest) &#39;Has&#39;RefundPaymentCost() bool {
+// HasRefundPaymentCost returns a boolean if a field has been set.
+func (o *RmaCreateReturnRequest) HasRefundPaymentCost() bool {
 	if o != nil && !IsNil(o.RefundPaymentCost) {
 		return true
 	}
@@ -236,8 +236,8 @@ func (o *RmaCreateReturnRequest) GetCustomerInfoOk() (*RmaCustomerInfo, bool) {
 	return o.CustomerInfo, true
 }
 
-// &#39;Has&#39;CustomerInfo returns a boolean if a field has been set.
-func (o *RmaCreateReturnRequest) &#39;Has&#39;CustomerInfo() bool {
+// HasCustomerInfo returns a boolean if a field has been set.
+func (o *RmaCreateReturnRequest) HasCustomerInfo() bool {
 	if o != nil && !IsNil(o.CustomerInfo) {
 		return true
 	}
@@ -268,8 +268,8 @@ func (o *RmaCreateReturnRequest) GetReturnAddressOk() (*RmaPostalAddress, bool) 
 	return o.ReturnAddress, true
 }
 
-// &#39;Has&#39;ReturnAddress returns a boolean if a field has been set.
-func (o *RmaCreateReturnRequest) &#39;Has&#39;ReturnAddress() bool {
+// HasReturnAddress returns a boolean if a field has been set.
+func (o *RmaCreateReturnRequest) HasReturnAddress() bool {
 	if o != nil && !IsNil(o.ReturnAddress) {
 		return true
 	}
@@ -300,8 +300,8 @@ func (o *RmaCreateReturnRequest) GetNoteOk() (*string, bool) {
 	return o.Note, true
 }
 
-// &#39;Has&#39;Note returns a boolean if a field has been set.
-func (o *RmaCreateReturnRequest) &#39;Has&#39;Note() bool {
+// HasNote returns a boolean if a field has been set.
+func (o *RmaCreateReturnRequest) HasNote() bool {
 	if o != nil && !IsNil(o.Note) {
 		return true
 	}

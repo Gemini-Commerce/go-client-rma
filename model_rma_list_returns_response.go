@@ -62,8 +62,8 @@ func (o *RmaListReturnsResponse) GetReturnsOk() ([]RmaReturnResponse, bool) {
 	return o.Returns, true
 }
 
-// &#39;Has&#39;Returns returns a boolean if a field has been set.
-func (o *RmaListReturnsResponse) &#39;Has&#39;Returns() bool {
+// HasReturns returns a boolean if a field has been set.
+func (o *RmaListReturnsResponse) HasReturns() bool {
 	if o != nil && !IsNil(o.Returns) {
 		return true
 	}
@@ -94,8 +94,8 @@ func (o *RmaListReturnsResponse) GetNextPageTokenOk() (*string, bool) {
 	return o.NextPageToken, true
 }
 
-// &#39;Has&#39;NextPageToken returns a boolean if a field has been set.
-func (o *RmaListReturnsResponse) &#39;Has&#39;NextPageToken() bool {
+// HasNextPageToken returns a boolean if a field has been set.
+func (o *RmaListReturnsResponse) HasNextPageToken() bool {
 	if o != nil && !IsNil(o.NextPageToken) {
 		return true
 	}

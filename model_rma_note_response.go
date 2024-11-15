@@ -68,8 +68,8 @@ func (o *RmaNoteResponse) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// &#39;Has&#39;Id returns a boolean if a field has been set.
-func (o *RmaNoteResponse) &#39;Has&#39;Id() bool {
+// HasId returns a boolean if a field has been set.
+func (o *RmaNoteResponse) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -100,8 +100,8 @@ func (o *RmaNoteResponse) GetGrnOk() (*string, bool) {
 	return o.Grn, true
 }
 
-// &#39;Has&#39;Grn returns a boolean if a field has been set.
-func (o *RmaNoteResponse) &#39;Has&#39;Grn() bool {
+// HasGrn returns a boolean if a field has been set.
+func (o *RmaNoteResponse) HasGrn() bool {
 	if o != nil && !IsNil(o.Grn) {
 		return true
 	}
@@ -132,8 +132,8 @@ func (o *RmaNoteResponse) GetAuthorOk() (*string, bool) {
 	return o.Author, true
 }
 
-// &#39;Has&#39;Author returns a boolean if a field has been set.
-func (o *RmaNoteResponse) &#39;Has&#39;Author() bool {
+// HasAuthor returns a boolean if a field has been set.
+func (o *RmaNoteResponse) HasAuthor() bool {
 	if o != nil && !IsNil(o.Author) {
 		return true
 	}
@@ -164,8 +164,8 @@ func (o *RmaNoteResponse) GetNoteOk() (*string, bool) {
 	return o.Note, true
 }
 
-// &#39;Has&#39;Note returns a boolean if a field has been set.
-func (o *RmaNoteResponse) &#39;Has&#39;Note() bool {
+// HasNote returns a boolean if a field has been set.
+func (o *RmaNoteResponse) HasNote() bool {
 	if o != nil && !IsNil(o.Note) {
 		return true
 	}
@@ -196,8 +196,8 @@ func (o *RmaNoteResponse) GetCreatedAtOk() (*time.Time, bool) {
 	return o.CreatedAt, true
 }
 
-// &#39;Has&#39;CreatedAt returns a boolean if a field has been set.
-func (o *RmaNoteResponse) &#39;Has&#39;CreatedAt() bool {
+// HasCreatedAt returns a boolean if a field has been set.
+func (o *RmaNoteResponse) HasCreatedAt() bool {
 	if o != nil && !IsNil(o.CreatedAt) {
 		return true
 	}
@@ -228,8 +228,8 @@ func (o *RmaNoteResponse) GetUpdatedAtOk() (*time.Time, bool) {
 	return o.UpdatedAt, true
 }
 
-// &#39;Has&#39;UpdatedAt returns a boolean if a field has been set.
-func (o *RmaNoteResponse) &#39;Has&#39;UpdatedAt() bool {
+// HasUpdatedAt returns a boolean if a field has been set.
+func (o *RmaNoteResponse) HasUpdatedAt() bool {
 	if o != nil && !IsNil(o.UpdatedAt) {
 		return true
 	}
@@ -260,8 +260,8 @@ func (o *RmaNoteResponse) GetDeletedAtOk() (*time.Time, bool) {
 	return o.DeletedAt, true
 }
 
-// &#39;Has&#39;DeletedAt returns a boolean if a field has been set.
-func (o *RmaNoteResponse) &#39;Has&#39;DeletedAt() bool {
+// HasDeletedAt returns a boolean if a field has been set.
+func (o *RmaNoteResponse) HasDeletedAt() bool {
 	if o != nil && !IsNil(o.DeletedAt) {
 		return true
 	}

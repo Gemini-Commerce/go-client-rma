@@ -21,22 +21,22 @@ var _ MappedNullable = &RmaReturnResponse{}
 
 // RmaReturnResponse struct for RmaReturnResponse
 type RmaReturnResponse struct {
-	Id *string `json:"id,omitempty"`
-	Grn *string `json:"grn,omitempty"`
-	OrderGrn *string `json:"orderGrn,omitempty"`
-	Status *string `json:"status,omitempty"`
-	Products []RmaReturnProduct `json:"products,omitempty"`
-	PreferredRefundMethod *RmaRefundMethod `json:"preferredRefundMethod,omitempty"`
-	RefundShippingCost *bool `json:"refundShippingCost,omitempty"`
-	RefundPaymentCost *bool `json:"refundPaymentCost,omitempty"`
-	CustomerInfo *RmaCustomerInfo `json:"customerInfo,omitempty"`
-	ReturnAddress *RmaPostalAddress `json:"returnAddress,omitempty"`
-	Note *string `json:"note,omitempty"`
-	History []RmaReturnHistory `json:"history,omitempty"`
-	CreatedAt *time.Time `json:"createdAt,omitempty"`
-	UpdatedAt *time.Time `json:"updatedAt,omitempty"`
-	OrderData *RmaOrderData `json:"orderData,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                    *string            `json:"id,omitempty"`
+	Grn                   *string            `json:"grn,omitempty"`
+	OrderGrn              *string            `json:"orderGrn,omitempty"`
+	Status                *string            `json:"status,omitempty"`
+	Products              []RmaReturnProduct `json:"products,omitempty"`
+	PreferredRefundMethod *RmaRefundMethod   `json:"preferredRefundMethod,omitempty"`
+	RefundShippingCost    *bool              `json:"refundShippingCost,omitempty"`
+	RefundPaymentCost     *bool              `json:"refundPaymentCost,omitempty"`
+	CustomerInfo          *RmaCustomerInfo   `json:"customerInfo,omitempty"`
+	ReturnAddress         *RmaPostalAddress  `json:"returnAddress,omitempty"`
+	Note                  *string            `json:"note,omitempty"`
+	History               []RmaReturnHistory `json:"history,omitempty"`
+	CreatedAt             *time.Time         `json:"createdAt,omitempty"`
+	UpdatedAt             *time.Time         `json:"updatedAt,omitempty"`
+	OrderData             *RmaOrderData      `json:"orderData,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _RmaReturnResponse RmaReturnResponse
@@ -543,7 +543,7 @@ func (o *RmaReturnResponse) SetOrderData(v RmaOrderData) {
 }
 
 func (o RmaReturnResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -642,22 +642,24 @@ func (o *RmaReturnResponse) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *RmaReturnResponse) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *RmaReturnResponse) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableRmaReturnResponse struct {
 	value *RmaReturnResponse
 	isSet bool
@@ -693,5 +695,3 @@ func (v *NullableRmaReturnResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

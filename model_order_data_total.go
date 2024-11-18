@@ -20,8 +20,8 @@ var _ MappedNullable = &OrderDataTotal{}
 
 // OrderDataTotal struct for OrderDataTotal
 type OrderDataTotal struct {
-	Code *OrderDataTotalCode `json:"code,omitempty"`
-	Value *RmaMoney `json:"value,omitempty"`
+	Code                 *OrderDataTotalCode `json:"code,omitempty"`
+	Value                *RmaMoney           `json:"value,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -113,7 +113,7 @@ func (o *OrderDataTotal) SetValue(v RmaMoney) {
 }
 
 func (o OrderDataTotal) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -158,24 +158,6 @@ func (o *OrderDataTotal) UnmarshalJSON(data []byte) (err error) {
 	return err
 }
 
-// GetValue returns the value of well-known types
-func (o *OrderDataTotal) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
-		return nil
-	}
-	return o.AdditionalProperties["value"]
-}
-// SetValue populate the value of well-known types
-func (o *OrderDataTotal) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
-		return
-	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
-	o.AdditionalProperties["value"] = value
-	return
-}
 type NullableOrderDataTotal struct {
 	value *OrderDataTotal
 	isSet bool
@@ -211,5 +193,3 @@ func (v *NullableOrderDataTotal) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

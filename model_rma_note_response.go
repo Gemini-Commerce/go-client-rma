@@ -21,13 +21,13 @@ var _ MappedNullable = &RmaNoteResponse{}
 
 // RmaNoteResponse struct for RmaNoteResponse
 type RmaNoteResponse struct {
-	Id *string `json:"id,omitempty"`
-	Grn *string `json:"grn,omitempty"`
-	Author *string `json:"author,omitempty"`
-	Note *string `json:"note,omitempty"`
-	CreatedAt *time.Time `json:"createdAt,omitempty"`
-	UpdatedAt *time.Time `json:"updatedAt,omitempty"`
-	DeletedAt *time.Time `json:"deletedAt,omitempty"`
+	Id                   *string    `json:"id,omitempty"`
+	Grn                  *string    `json:"grn,omitempty"`
+	Author               *string    `json:"author,omitempty"`
+	Note                 *string    `json:"note,omitempty"`
+	CreatedAt            *time.Time `json:"createdAt,omitempty"`
+	UpdatedAt            *time.Time `json:"updatedAt,omitempty"`
+	DeletedAt            *time.Time `json:"deletedAt,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -275,7 +275,7 @@ func (o *RmaNoteResponse) SetDeletedAt(v time.Time) {
 }
 
 func (o RmaNoteResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -342,22 +342,24 @@ func (o *RmaNoteResponse) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *RmaNoteResponse) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *RmaNoteResponse) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableRmaNoteResponse struct {
 	value *RmaNoteResponse
 	isSet bool
@@ -393,5 +395,3 @@ func (v *NullableRmaNoteResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

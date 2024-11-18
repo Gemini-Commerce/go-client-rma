@@ -21,17 +21,17 @@ var _ MappedNullable = &RmaOrderData{}
 
 // RmaOrderData struct for RmaOrderData
 type RmaOrderData struct {
-	CreatedAt *time.Time `json:"createdAt,omitempty"`
-	UpdatedAt *time.Time `json:"updatedAt,omitempty"`
-	Grn *string `json:"grn,omitempty"`
-	Number *string `json:"number,omitempty"`
-	Status *string `json:"status,omitempty"`
-	Channel *string `json:"channel,omitempty"`
-	Market *string `json:"market,omitempty"`
-	Items []RmaOrderDataItem `json:"items,omitempty"`
-	Currency *RmaCurrency `json:"currency,omitempty"`
-	Subtotals *map[string]OrderDataSubtotal `json:"subtotals,omitempty"`
-	Totals *map[string]OrderDataTotal `json:"totals,omitempty"`
+	CreatedAt            *time.Time                    `json:"createdAt,omitempty"`
+	UpdatedAt            *time.Time                    `json:"updatedAt,omitempty"`
+	Grn                  *string                       `json:"grn,omitempty"`
+	Number               *string                       `json:"number,omitempty"`
+	Status               *string                       `json:"status,omitempty"`
+	Channel              *string                       `json:"channel,omitempty"`
+	Market               *string                       `json:"market,omitempty"`
+	Items                []RmaOrderDataItem            `json:"items,omitempty"`
+	Currency             *RmaCurrency                  `json:"currency,omitempty"`
+	Subtotals            *map[string]OrderDataSubtotal `json:"subtotals,omitempty"`
+	Totals               *map[string]OrderDataTotal    `json:"totals,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -411,7 +411,7 @@ func (o *RmaOrderData) SetTotals(v map[string]OrderDataTotal) {
 }
 
 func (o RmaOrderData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -494,22 +494,24 @@ func (o *RmaOrderData) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *RmaOrderData) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *RmaOrderData) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableRmaOrderData struct {
 	value *RmaOrderData
 	isSet bool
@@ -545,5 +547,3 @@ func (v *NullableRmaOrderData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

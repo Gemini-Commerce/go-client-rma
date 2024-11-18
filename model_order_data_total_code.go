@@ -21,9 +21,9 @@ type OrderDataTotalCode string
 
 // List of OrderDataTotalCode
 const (
-	ORDERDATATOTALCODE_UNKNOWN OrderDataTotalCode = "UNKNOWN"
-	ORDERDATATOTALCODE_ORDERED OrderDataTotalCode = "ORDERED"
-	ORDERDATATOTALCODE_PAID OrderDataTotalCode = "PAID"
+	ORDERDATATOTALCODE_UNKNOWN  OrderDataTotalCode = "UNKNOWN"
+	ORDERDATATOTALCODE_ORDERED  OrderDataTotalCode = "ORDERED"
+	ORDERDATATOTALCODE_PAID     OrderDataTotalCode = "PAID"
 	ORDERDATATOTALCODE_REFUNDED OrderDataTotalCode = "REFUNDED"
 )
 
@@ -113,4 +113,3 @@ func (v *NullableOrderDataTotalCode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

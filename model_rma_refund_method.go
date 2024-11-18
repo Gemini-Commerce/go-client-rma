@@ -21,9 +21,9 @@ type RmaRefundMethod string
 
 // List of rmaRefundMethod
 const (
-	RMAREFUNDMETHOD_UNKNOWN RmaRefundMethod = "REFUND_METHOD_UNKNOWN"
-	RMAREFUNDMETHOD_OFFLINE RmaRefundMethod = "REFUND_METHOD_OFFLINE"
-	RMAREFUNDMETHOD_COUPON RmaRefundMethod = "REFUND_METHOD_COUPON"
+	RMAREFUNDMETHOD_UNKNOWN         RmaRefundMethod = "REFUND_METHOD_UNKNOWN"
+	RMAREFUNDMETHOD_OFFLINE         RmaRefundMethod = "REFUND_METHOD_OFFLINE"
+	RMAREFUNDMETHOD_COUPON          RmaRefundMethod = "REFUND_METHOD_COUPON"
 	RMAREFUNDMETHOD_SAME_AS_PAYMENT RmaRefundMethod = "REFUND_METHOD_SAME_AS_PAYMENT"
 )
 
@@ -113,4 +113,3 @@ func (v *NullableRmaRefundMethod) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

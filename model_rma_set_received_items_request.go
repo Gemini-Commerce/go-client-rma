@@ -21,9 +21,9 @@ var _ MappedNullable = &RmaSetReceivedItemsRequest{}
 
 // RmaSetReceivedItemsRequest struct for RmaSetReceivedItemsRequest
 type RmaSetReceivedItemsRequest struct {
-	TenantId string `json:"tenantId"`
-	Id string `json:"id"`
-	Items []RmaSetReceivedItemsRequestItem `json:"items"`
+	TenantId             string                           `json:"tenantId"`
+	Id                   string                           `json:"id"`
+	Items                []RmaSetReceivedItemsRequestItem `json:"items"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -122,7 +122,7 @@ func (o *RmaSetReceivedItemsRequest) SetItems(v []RmaSetReceivedItemsRequestItem
 }
 
 func (o RmaSetReceivedItemsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -157,10 +157,10 @@ func (o *RmaSetReceivedItemsRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -190,22 +190,24 @@ func (o *RmaSetReceivedItemsRequest) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *RmaSetReceivedItemsRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *RmaSetReceivedItemsRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableRmaSetReceivedItemsRequest struct {
 	value *RmaSetReceivedItemsRequest
 	isSet bool
@@ -241,5 +243,3 @@ func (v *NullableRmaSetReceivedItemsRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

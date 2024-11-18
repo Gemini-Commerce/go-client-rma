@@ -21,12 +21,12 @@ var _ MappedNullable = &RmaListReturnsRequest{}
 
 // RmaListReturnsRequest struct for RmaListReturnsRequest
 type RmaListReturnsRequest struct {
-	TenantId string `json:"tenantId"`
-	PageSize *int64 `json:"pageSize,omitempty"`
-	PageToken *string `json:"pageToken,omitempty"`
-	Sorts []RmaListReturnsRequestSort `json:"sorts,omitempty"`
-	FilterMask *string `json:"filterMask,omitempty"`
-	Filter *ListReturnsRequestFilter `json:"filter,omitempty"`
+	TenantId             string                      `json:"tenantId"`
+	PageSize             *int64                      `json:"pageSize,omitempty"`
+	PageToken            *string                     `json:"pageToken,omitempty"`
+	Sorts                []RmaListReturnsRequestSort `json:"sorts,omitempty"`
+	FilterMask           *string                     `json:"filterMask,omitempty"`
+	Filter               *ListReturnsRequestFilter   `json:"filter,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -235,7 +235,7 @@ func (o *RmaListReturnsRequest) SetFilter(v ListReturnsRequestFilter) {
 }
 
 func (o RmaListReturnsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -281,10 +281,10 @@ func (o *RmaListReturnsRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -317,22 +317,24 @@ func (o *RmaListReturnsRequest) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *RmaListReturnsRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *RmaListReturnsRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableRmaListReturnsRequest struct {
 	value *RmaListReturnsRequest
 	isSet bool
@@ -368,5 +370,3 @@ func (v *NullableRmaListReturnsRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

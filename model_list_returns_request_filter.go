@@ -21,17 +21,17 @@ var _ MappedNullable = &ListReturnsRequestFilter{}
 
 // ListReturnsRequestFilter struct for ListReturnsRequestFilter
 type ListReturnsRequestFilter struct {
-	SearchTerms []string `json:"searchTerms,omitempty"`
-	ReturnIds []string `json:"returnIds,omitempty"`
-	ReturnStatus []string `json:"returnStatus,omitempty"`
-	OrderGrns []string `json:"orderGrns,omitempty"`
-	OrderNumbers []string `json:"orderNumbers,omitempty"`
-	OrderItemGrns []string `json:"orderItemGrns,omitempty"`
-	OrderItemSkus []string `json:"orderItemSkus,omitempty"`
-	CustomerGrns []string `json:"customerGrns,omitempty"`
-	CustomerEmails []string `json:"customerEmails,omitempty"`
-	CreatedAtStart *time.Time `json:"createdAtStart,omitempty"`
-	CreatedAtEnd *time.Time `json:"createdAtEnd,omitempty"`
+	SearchTerms          []string   `json:"searchTerms,omitempty"`
+	ReturnIds            []string   `json:"returnIds,omitempty"`
+	ReturnStatus         []string   `json:"returnStatus,omitempty"`
+	OrderGrns            []string   `json:"orderGrns,omitempty"`
+	OrderNumbers         []string   `json:"orderNumbers,omitempty"`
+	OrderItemGrns        []string   `json:"orderItemGrns,omitempty"`
+	OrderItemSkus        []string   `json:"orderItemSkus,omitempty"`
+	CustomerGrns         []string   `json:"customerGrns,omitempty"`
+	CustomerEmails       []string   `json:"customerEmails,omitempty"`
+	CreatedAtStart       *time.Time `json:"createdAtStart,omitempty"`
+	CreatedAtEnd         *time.Time `json:"createdAtEnd,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -407,7 +407,7 @@ func (o *ListReturnsRequestFilter) SetCreatedAtEnd(v time.Time) {
 }
 
 func (o ListReturnsRequestFilter) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -490,22 +490,24 @@ func (o *ListReturnsRequestFilter) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *ListReturnsRequestFilter) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *ListReturnsRequestFilter) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableListReturnsRequestFilter struct {
 	value *ListReturnsRequestFilter
 	isSet bool
@@ -541,5 +543,3 @@ func (v *NullableListReturnsRequestFilter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

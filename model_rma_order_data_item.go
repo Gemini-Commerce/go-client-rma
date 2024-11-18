@@ -20,30 +20,30 @@ var _ MappedNullable = &RmaOrderDataItem{}
 
 // RmaOrderDataItem struct for RmaOrderDataItem
 type RmaOrderDataItem struct {
-	Id *string `json:"id,omitempty"`
-	ProductGrn *string `json:"productGrn,omitempty"`
-	QtyOrdered *int64 `json:"qtyOrdered,omitempty"`
-	QtyCommitted *int64 `json:"qtyCommitted,omitempty"`
-	QtyShipped *int64 `json:"qtyShipped,omitempty"`
-	UnitSalePrice *RmaMoney `json:"unitSalePrice,omitempty"`
-	UnitListPrice *RmaMoney `json:"unitListPrice,omitempty"`
-	UnitVatAmount *RmaMoney `json:"unitVatAmount,omitempty"`
-	RowSalePrice *RmaMoney `json:"rowSalePrice,omitempty"`
-	RowListPrice *RmaMoney `json:"rowListPrice,omitempty"`
-	RowVatAmount *RmaMoney `json:"rowVatAmount,omitempty"`
-	VatPercentage *float32 `json:"vatPercentage,omitempty"`
-	VatInaccurate *bool `json:"vatInaccurate,omitempty"`
-	VatCalculated *bool `json:"vatCalculated,omitempty"`
-	ProductName *string `json:"productName,omitempty"`
-	ProductCode *string `json:"productCode,omitempty"`
-	ProductSku *string `json:"productSku,omitempty"`
-	ProductOptions *string `json:"productOptions,omitempty"`
-	ProductImg *string `json:"productImg,omitempty"`
-	ProductData *string `json:"productData,omitempty"`
-	ShipmentInfoReference *string `json:"shipmentInfoReference,omitempty"`
-	PromotionGrn []string `json:"promotionGrn,omitempty"`
-	ProductIsVirtual *bool `json:"productIsVirtual,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                    *string   `json:"id,omitempty"`
+	ProductGrn            *string   `json:"productGrn,omitempty"`
+	QtyOrdered            *int64    `json:"qtyOrdered,omitempty"`
+	QtyCommitted          *int64    `json:"qtyCommitted,omitempty"`
+	QtyShipped            *int64    `json:"qtyShipped,omitempty"`
+	UnitSalePrice         *RmaMoney `json:"unitSalePrice,omitempty"`
+	UnitListPrice         *RmaMoney `json:"unitListPrice,omitempty"`
+	UnitVatAmount         *RmaMoney `json:"unitVatAmount,omitempty"`
+	RowSalePrice          *RmaMoney `json:"rowSalePrice,omitempty"`
+	RowListPrice          *RmaMoney `json:"rowListPrice,omitempty"`
+	RowVatAmount          *RmaMoney `json:"rowVatAmount,omitempty"`
+	VatPercentage         *float32  `json:"vatPercentage,omitempty"`
+	VatInaccurate         *bool     `json:"vatInaccurate,omitempty"`
+	VatCalculated         *bool     `json:"vatCalculated,omitempty"`
+	ProductName           *string   `json:"productName,omitempty"`
+	ProductCode           *string   `json:"productCode,omitempty"`
+	ProductSku            *string   `json:"productSku,omitempty"`
+	ProductOptions        *string   `json:"productOptions,omitempty"`
+	ProductImg            *string   `json:"productImg,omitempty"`
+	ProductData           *string   `json:"productData,omitempty"`
+	ShipmentInfoReference *string   `json:"shipmentInfoReference,omitempty"`
+	PromotionGrn          []string  `json:"promotionGrn,omitempty"`
+	ProductIsVirtual      *bool     `json:"productIsVirtual,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _RmaOrderDataItem RmaOrderDataItem
@@ -802,7 +802,7 @@ func (o *RmaOrderDataItem) SetProductIsVirtual(v bool) {
 }
 
 func (o RmaOrderDataItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -933,22 +933,24 @@ func (o *RmaOrderDataItem) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *RmaOrderDataItem) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *RmaOrderDataItem) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableRmaOrderDataItem struct {
 	value *RmaOrderDataItem
 	isSet bool
@@ -984,5 +986,3 @@ func (v *NullableRmaOrderDataItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,11 +20,11 @@ var _ MappedNullable = &RmaCustomerInfo{}
 
 // RmaCustomerInfo struct for RmaCustomerInfo
 type RmaCustomerInfo struct {
-	Firstname *string `json:"firstname,omitempty"`
-	Lastname *string `json:"lastname,omitempty"`
-	Email *string `json:"email,omitempty"`
-	Phone *string `json:"phone,omitempty"`
-	Grn *string `json:"grn,omitempty"`
+	Firstname            *string `json:"firstname,omitempty"`
+	Lastname             *string `json:"lastname,omitempty"`
+	Email                *string `json:"email,omitempty"`
+	Phone                *string `json:"phone,omitempty"`
+	Grn                  *string `json:"grn,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -208,7 +208,7 @@ func (o *RmaCustomerInfo) SetGrn(v string) {
 }
 
 func (o RmaCustomerInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -267,22 +267,24 @@ func (o *RmaCustomerInfo) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *RmaCustomerInfo) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *RmaCustomerInfo) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableRmaCustomerInfo struct {
 	value *RmaCustomerInfo
 	isSet bool
@@ -318,5 +320,3 @@ func (v *NullableRmaCustomerInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -22,7 +22,7 @@ type RmaListNotesByReturnIdRequestSortSortField string
 // List of rmaListNotesByReturnIdRequestSortSortField
 const (
 	RMALISTNOTESBYRETURNIDREQUESTSORTSORTFIELD_UNKNOWN RmaListNotesByReturnIdRequestSortSortField = "UNKNOWN"
-	RMALISTNOTESBYRETURNIDREQUESTSORTSORTFIELD_DATE RmaListNotesByReturnIdRequestSortSortField = "DATE"
+	RMALISTNOTESBYRETURNIDREQUESTSORTSORTFIELD_DATE    RmaListNotesByReturnIdRequestSortSortField = "DATE"
 )
 
 // All allowed values of RmaListNotesByReturnIdRequestSortSortField enum
@@ -109,4 +109,3 @@ func (v *NullableRmaListNotesByReturnIdRequestSortSortField) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

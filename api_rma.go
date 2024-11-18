@@ -19,14 +19,13 @@ import (
 	"net/url"
 )
 
-
 // RmaAPIService RmaAPI service
 type RmaAPIService service
 
 type ApiAddNoteRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RmaAPIService
-	body *RmaAddNoteRequest
+	body       *RmaAddNoteRequest
 }
 
 func (r ApiAddNoteRequest) Body(body RmaAddNoteRequest) ApiAddNoteRequest {
@@ -41,24 +40,25 @@ func (r ApiAddNoteRequest) Execute() (*RmaNoteResponse, *http.Response, error) {
 /*
 AddNote Add a note to an RMA
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddNoteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddNoteRequest
 */
 func (a *RmaAPIService) AddNote(ctx context.Context) ApiAddNoteRequest {
 	return ApiAddNoteRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return RmaNoteResponse
+//
+//	@return RmaNoteResponse
 func (a *RmaAPIService) AddNoteExecute(r ApiAddNoteRequest) (*RmaNoteResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RmaNoteResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RmaNoteResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RmaAPIService.AddNote")
@@ -123,8 +123,8 @@ func (a *RmaAPIService) AddNoteExecute(r ApiAddNoteRequest) (*RmaNoteResponse, *
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -134,18 +134,18 @@ func (a *RmaAPIService) AddNoteExecute(r ApiAddNoteRequest) (*RmaNoteResponse, *
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -162,9 +162,9 @@ func (a *RmaAPIService) AddNoteExecute(r ApiAddNoteRequest) (*RmaNoteResponse, *
 }
 
 type ApiApproveReturnRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RmaAPIService
-	body *RmaApproveReturnRequest
+	body       *RmaApproveReturnRequest
 }
 
 func (r ApiApproveReturnRequest) Body(body RmaApproveReturnRequest) ApiApproveReturnRequest {
@@ -179,24 +179,25 @@ func (r ApiApproveReturnRequest) Execute() (*RpcStatus, *http.Response, error) {
 /*
 ApproveReturn Approve a return
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApproveReturnRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiApproveReturnRequest
 */
 func (a *RmaAPIService) ApproveReturn(ctx context.Context) ApiApproveReturnRequest {
 	return ApiApproveReturnRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return RpcStatus
+//
+//	@return RpcStatus
 func (a *RmaAPIService) ApproveReturnExecute(r ApiApproveReturnRequest) (*RpcStatus, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RpcStatus
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RpcStatus
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RmaAPIService.ApproveReturn")
@@ -261,8 +262,8 @@ func (a *RmaAPIService) ApproveReturnExecute(r ApiApproveReturnRequest) (*RpcSta
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -272,8 +273,8 @@ func (a *RmaAPIService) ApproveReturnExecute(r ApiApproveReturnRequest) (*RpcSta
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -283,18 +284,18 @@ func (a *RmaAPIService) ApproveReturnExecute(r ApiApproveReturnRequest) (*RpcSta
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -311,9 +312,9 @@ func (a *RmaAPIService) ApproveReturnExecute(r ApiApproveReturnRequest) (*RpcSta
 }
 
 type ApiCancelReturnRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RmaAPIService
-	body *RmaCancelReturnRequest
+	body       *RmaCancelReturnRequest
 }
 
 func (r ApiCancelReturnRequest) Body(body RmaCancelReturnRequest) ApiCancelReturnRequest {
@@ -328,24 +329,25 @@ func (r ApiCancelReturnRequest) Execute() (map[string]interface{}, *http.Respons
 /*
 CancelReturn Cancel a return
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCancelReturnRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCancelReturnRequest
 */
 func (a *RmaAPIService) CancelReturn(ctx context.Context) ApiCancelReturnRequest {
 	return ApiCancelReturnRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *RmaAPIService) CancelReturnExecute(r ApiCancelReturnRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RmaAPIService.CancelReturn")
@@ -410,8 +412,8 @@ func (a *RmaAPIService) CancelReturnExecute(r ApiCancelReturnRequest) (map[strin
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -421,18 +423,18 @@ func (a *RmaAPIService) CancelReturnExecute(r ApiCancelReturnRequest) (map[strin
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -449,9 +451,9 @@ func (a *RmaAPIService) CancelReturnExecute(r ApiCancelReturnRequest) (map[strin
 }
 
 type ApiConfirmReturnApproveItemsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RmaAPIService
-	body *RmaConfirmReturnApproveItemsRequest
+	body       *RmaConfirmReturnApproveItemsRequest
 }
 
 func (r ApiConfirmReturnApproveItemsRequest) Body(body RmaConfirmReturnApproveItemsRequest) ApiConfirmReturnApproveItemsRequest {
@@ -466,24 +468,25 @@ func (r ApiConfirmReturnApproveItemsRequest) Execute() (map[string]interface{}, 
 /*
 ConfirmReturnApproveItems Confirm return approve items
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiConfirmReturnApproveItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiConfirmReturnApproveItemsRequest
 */
 func (a *RmaAPIService) ConfirmReturnApproveItems(ctx context.Context) ApiConfirmReturnApproveItemsRequest {
 	return ApiConfirmReturnApproveItemsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *RmaAPIService) ConfirmReturnApproveItemsExecute(r ApiConfirmReturnApproveItemsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RmaAPIService.ConfirmReturnApproveItems")
@@ -548,8 +551,8 @@ func (a *RmaAPIService) ConfirmReturnApproveItemsExecute(r ApiConfirmReturnAppro
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -559,18 +562,18 @@ func (a *RmaAPIService) ConfirmReturnApproveItemsExecute(r ApiConfirmReturnAppro
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -587,9 +590,9 @@ func (a *RmaAPIService) ConfirmReturnApproveItemsExecute(r ApiConfirmReturnAppro
 }
 
 type ApiCreateReturnRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RmaAPIService
-	body *RmaCreateReturnRequest
+	body       *RmaCreateReturnRequest
 }
 
 func (r ApiCreateReturnRequest) Body(body RmaCreateReturnRequest) ApiCreateReturnRequest {
@@ -604,24 +607,25 @@ func (r ApiCreateReturnRequest) Execute() (*RmaReturnResponse, *http.Response, e
 /*
 CreateReturn Create a return
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateReturnRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateReturnRequest
 */
 func (a *RmaAPIService) CreateReturn(ctx context.Context) ApiCreateReturnRequest {
 	return ApiCreateReturnRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return RmaReturnResponse
+//
+//	@return RmaReturnResponse
 func (a *RmaAPIService) CreateReturnExecute(r ApiCreateReturnRequest) (*RmaReturnResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RmaReturnResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RmaReturnResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RmaAPIService.CreateReturn")
@@ -686,8 +690,8 @@ func (a *RmaAPIService) CreateReturnExecute(r ApiCreateReturnRequest) (*RmaRetur
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -697,18 +701,18 @@ func (a *RmaAPIService) CreateReturnExecute(r ApiCreateReturnRequest) (*RmaRetur
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -725,9 +729,9 @@ func (a *RmaAPIService) CreateReturnExecute(r ApiCreateReturnRequest) (*RmaRetur
 }
 
 type ApiDeleteNoteRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RmaAPIService
-	body *RmaDeleteNoteRequest
+	body       *RmaDeleteNoteRequest
 }
 
 func (r ApiDeleteNoteRequest) Body(body RmaDeleteNoteRequest) ApiDeleteNoteRequest {
@@ -742,24 +746,25 @@ func (r ApiDeleteNoteRequest) Execute() (map[string]interface{}, *http.Response,
 /*
 DeleteNote Delete a note from an RMA
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteNoteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDeleteNoteRequest
 */
 func (a *RmaAPIService) DeleteNote(ctx context.Context) ApiDeleteNoteRequest {
 	return ApiDeleteNoteRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *RmaAPIService) DeleteNoteExecute(r ApiDeleteNoteRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RmaAPIService.DeleteNote")
@@ -824,8 +829,8 @@ func (a *RmaAPIService) DeleteNoteExecute(r ApiDeleteNoteRequest) (map[string]in
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -835,18 +840,18 @@ func (a *RmaAPIService) DeleteNoteExecute(r ApiDeleteNoteRequest) (map[string]in
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -863,9 +868,9 @@ func (a *RmaAPIService) DeleteNoteExecute(r ApiDeleteNoteRequest) (map[string]in
 }
 
 type ApiEditNoteRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RmaAPIService
-	body *RmaEditNoteRequest
+	body       *RmaEditNoteRequest
 }
 
 func (r ApiEditNoteRequest) Body(body RmaEditNoteRequest) ApiEditNoteRequest {
@@ -880,24 +885,25 @@ func (r ApiEditNoteRequest) Execute() (*RmaNoteResponse, *http.Response, error) 
 /*
 EditNote Edit a note on an RMA
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiEditNoteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiEditNoteRequest
 */
 func (a *RmaAPIService) EditNote(ctx context.Context) ApiEditNoteRequest {
 	return ApiEditNoteRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return RmaNoteResponse
+//
+//	@return RmaNoteResponse
 func (a *RmaAPIService) EditNoteExecute(r ApiEditNoteRequest) (*RmaNoteResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RmaNoteResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RmaNoteResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RmaAPIService.EditNote")
@@ -962,8 +968,8 @@ func (a *RmaAPIService) EditNoteExecute(r ApiEditNoteRequest) (*RmaNoteResponse,
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -973,18 +979,18 @@ func (a *RmaAPIService) EditNoteExecute(r ApiEditNoteRequest) (*RmaNoteResponse,
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1001,9 +1007,9 @@ func (a *RmaAPIService) EditNoteExecute(r ApiEditNoteRequest) (*RmaNoteResponse,
 }
 
 type ApiGetReturnRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RmaAPIService
-	body *RmaGetReturnRequest
+	body       *RmaGetReturnRequest
 }
 
 func (r ApiGetReturnRequest) Body(body RmaGetReturnRequest) ApiGetReturnRequest {
@@ -1018,24 +1024,25 @@ func (r ApiGetReturnRequest) Execute() (*RmaReturnResponse, *http.Response, erro
 /*
 GetReturn Get a return
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetReturnRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetReturnRequest
 */
 func (a *RmaAPIService) GetReturn(ctx context.Context) ApiGetReturnRequest {
 	return ApiGetReturnRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return RmaReturnResponse
+//
+//	@return RmaReturnResponse
 func (a *RmaAPIService) GetReturnExecute(r ApiGetReturnRequest) (*RmaReturnResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RmaReturnResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RmaReturnResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RmaAPIService.GetReturn")
@@ -1100,8 +1107,8 @@ func (a *RmaAPIService) GetReturnExecute(r ApiGetReturnRequest) (*RmaReturnRespo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1111,18 +1118,18 @@ func (a *RmaAPIService) GetReturnExecute(r ApiGetReturnRequest) (*RmaReturnRespo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1139,9 +1146,9 @@ func (a *RmaAPIService) GetReturnExecute(r ApiGetReturnRequest) (*RmaReturnRespo
 }
 
 type ApiListNotesByReturnIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RmaAPIService
-	body *RmaListNotesByReturnIdRequest
+	body       *RmaListNotesByReturnIdRequest
 }
 
 func (r ApiListNotesByReturnIdRequest) Body(body RmaListNotesByReturnIdRequest) ApiListNotesByReturnIdRequest {
@@ -1156,24 +1163,25 @@ func (r ApiListNotesByReturnIdRequest) Execute() (*RmaListNotesByReturnIdRespons
 /*
 ListNotesByReturnId List notes by return id
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListNotesByReturnIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListNotesByReturnIdRequest
 */
 func (a *RmaAPIService) ListNotesByReturnId(ctx context.Context) ApiListNotesByReturnIdRequest {
 	return ApiListNotesByReturnIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return RmaListNotesByReturnIdResponse
+//
+//	@return RmaListNotesByReturnIdResponse
 func (a *RmaAPIService) ListNotesByReturnIdExecute(r ApiListNotesByReturnIdRequest) (*RmaListNotesByReturnIdResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RmaListNotesByReturnIdResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RmaListNotesByReturnIdResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RmaAPIService.ListNotesByReturnId")
@@ -1238,8 +1246,8 @@ func (a *RmaAPIService) ListNotesByReturnIdExecute(r ApiListNotesByReturnIdReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1249,18 +1257,18 @@ func (a *RmaAPIService) ListNotesByReturnIdExecute(r ApiListNotesByReturnIdReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1277,9 +1285,9 @@ func (a *RmaAPIService) ListNotesByReturnIdExecute(r ApiListNotesByReturnIdReque
 }
 
 type ApiListReturnsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RmaAPIService
-	body *RmaListReturnsRequest
+	body       *RmaListReturnsRequest
 }
 
 func (r ApiListReturnsRequest) Body(body RmaListReturnsRequest) ApiListReturnsRequest {
@@ -1294,24 +1302,25 @@ func (r ApiListReturnsRequest) Execute() (*RmaListReturnsResponse, *http.Respons
 /*
 ListReturns List returns
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListReturnsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListReturnsRequest
 */
 func (a *RmaAPIService) ListReturns(ctx context.Context) ApiListReturnsRequest {
 	return ApiListReturnsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return RmaListReturnsResponse
+//
+//	@return RmaListReturnsResponse
 func (a *RmaAPIService) ListReturnsExecute(r ApiListReturnsRequest) (*RmaListReturnsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RmaListReturnsResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RmaListReturnsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RmaAPIService.ListReturns")
@@ -1376,8 +1385,8 @@ func (a *RmaAPIService) ListReturnsExecute(r ApiListReturnsRequest) (*RmaListRet
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1387,18 +1396,18 @@ func (a *RmaAPIService) ListReturnsExecute(r ApiListReturnsRequest) (*RmaListRet
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1415,9 +1424,9 @@ func (a *RmaAPIService) ListReturnsExecute(r ApiListReturnsRequest) (*RmaListRet
 }
 
 type ApiRefundReturnRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RmaAPIService
-	body *RmaRefundReturnRequest
+	body       *RmaRefundReturnRequest
 }
 
 func (r ApiRefundReturnRequest) Body(body RmaRefundReturnRequest) ApiRefundReturnRequest {
@@ -1432,24 +1441,25 @@ func (r ApiRefundReturnRequest) Execute() (map[string]interface{}, *http.Respons
 /*
 RefundReturn Refund a return
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRefundReturnRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiRefundReturnRequest
 */
 func (a *RmaAPIService) RefundReturn(ctx context.Context) ApiRefundReturnRequest {
 	return ApiRefundReturnRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *RmaAPIService) RefundReturnExecute(r ApiRefundReturnRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RmaAPIService.RefundReturn")
@@ -1514,8 +1524,8 @@ func (a *RmaAPIService) RefundReturnExecute(r ApiRefundReturnRequest) (map[strin
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1525,18 +1535,18 @@ func (a *RmaAPIService) RefundReturnExecute(r ApiRefundReturnRequest) (map[strin
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1553,9 +1563,9 @@ func (a *RmaAPIService) RefundReturnExecute(r ApiRefundReturnRequest) (map[strin
 }
 
 type ApiRejectReturnRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RmaAPIService
-	body *RmaRejectReturnRequest
+	body       *RmaRejectReturnRequest
 }
 
 func (r ApiRejectReturnRequest) Body(body RmaRejectReturnRequest) ApiRejectReturnRequest {
@@ -1570,24 +1580,25 @@ func (r ApiRejectReturnRequest) Execute() (map[string]interface{}, *http.Respons
 /*
 RejectReturn Reject a return
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRejectReturnRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiRejectReturnRequest
 */
 func (a *RmaAPIService) RejectReturn(ctx context.Context) ApiRejectReturnRequest {
 	return ApiRejectReturnRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *RmaAPIService) RejectReturnExecute(r ApiRejectReturnRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RmaAPIService.RejectReturn")
@@ -1652,8 +1663,8 @@ func (a *RmaAPIService) RejectReturnExecute(r ApiRejectReturnRequest) (map[strin
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1663,18 +1674,18 @@ func (a *RmaAPIService) RejectReturnExecute(r ApiRejectReturnRequest) (map[strin
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1691,9 +1702,9 @@ func (a *RmaAPIService) RejectReturnExecute(r ApiRejectReturnRequest) (map[strin
 }
 
 type ApiSetReceivedItemsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RmaAPIService
-	body *RmaSetReceivedItemsRequest
+	body       *RmaSetReceivedItemsRequest
 }
 
 func (r ApiSetReceivedItemsRequest) Body(body RmaSetReceivedItemsRequest) ApiSetReceivedItemsRequest {
@@ -1708,24 +1719,25 @@ func (r ApiSetReceivedItemsRequest) Execute() (map[string]interface{}, *http.Res
 /*
 SetReceivedItems Set received items
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetReceivedItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSetReceivedItemsRequest
 */
 func (a *RmaAPIService) SetReceivedItems(ctx context.Context) ApiSetReceivedItemsRequest {
 	return ApiSetReceivedItemsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *RmaAPIService) SetReceivedItemsExecute(r ApiSetReceivedItemsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RmaAPIService.SetReceivedItems")
@@ -1790,8 +1802,8 @@ func (a *RmaAPIService) SetReceivedItemsExecute(r ApiSetReceivedItemsRequest) (m
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1801,18 +1813,18 @@ func (a *RmaAPIService) SetReceivedItemsExecute(r ApiSetReceivedItemsRequest) (m
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1829,9 +1841,9 @@ func (a *RmaAPIService) SetReceivedItemsExecute(r ApiSetReceivedItemsRequest) (m
 }
 
 type ApiSkipReturnStatusRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RmaAPIService
-	body *RmaSkipReturnStatusRequest
+	body       *RmaSkipReturnStatusRequest
 }
 
 func (r ApiSkipReturnStatusRequest) Body(body RmaSkipReturnStatusRequest) ApiSkipReturnStatusRequest {
@@ -1846,24 +1858,25 @@ func (r ApiSkipReturnStatusRequest) Execute() (map[string]interface{}, *http.Res
 /*
 SkipReturnStatus Skip a return status
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSkipReturnStatusRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSkipReturnStatusRequest
 */
 func (a *RmaAPIService) SkipReturnStatus(ctx context.Context) ApiSkipReturnStatusRequest {
 	return ApiSkipReturnStatusRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *RmaAPIService) SkipReturnStatusExecute(r ApiSkipReturnStatusRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RmaAPIService.SkipReturnStatus")
@@ -1928,8 +1941,8 @@ func (a *RmaAPIService) SkipReturnStatusExecute(r ApiSkipReturnStatusRequest) (m
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1939,18 +1952,18 @@ func (a *RmaAPIService) SkipReturnStatusExecute(r ApiSkipReturnStatusRequest) (m
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

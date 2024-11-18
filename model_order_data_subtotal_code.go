@@ -21,13 +21,13 @@ type OrderDataSubtotalCode string
 
 // List of OrderDataSubtotalCode
 const (
-	ORDERDATASUBTOTALCODE_UNKNOWN OrderDataSubtotalCode = "UNKNOWN"
-	ORDERDATASUBTOTALCODE_PAYMENT OrderDataSubtotalCode = "PAYMENT"
-	ORDERDATASUBTOTALCODE_SHIPMENT OrderDataSubtotalCode = "SHIPMENT"
-	ORDERDATASUBTOTALCODE_TAX OrderDataSubtotalCode = "TAX"
-	ORDERDATASUBTOTALCODE_ITEMS OrderDataSubtotalCode = "ITEMS"
+	ORDERDATASUBTOTALCODE_UNKNOWN          OrderDataSubtotalCode = "UNKNOWN"
+	ORDERDATASUBTOTALCODE_PAYMENT          OrderDataSubtotalCode = "PAYMENT"
+	ORDERDATASUBTOTALCODE_SHIPMENT         OrderDataSubtotalCode = "SHIPMENT"
+	ORDERDATASUBTOTALCODE_TAX              OrderDataSubtotalCode = "TAX"
+	ORDERDATASUBTOTALCODE_ITEMS            OrderDataSubtotalCode = "ITEMS"
 	ORDERDATASUBTOTALCODE_ITEMS_DISCOUNTED OrderDataSubtotalCode = "ITEMS_DISCOUNTED"
-	ORDERDATASUBTOTALCODE_DISCOUNT OrderDataSubtotalCode = "DISCOUNT"
+	ORDERDATASUBTOTALCODE_DISCOUNT         OrderDataSubtotalCode = "DISCOUNT"
 )
 
 // All allowed values of OrderDataSubtotalCode enum
@@ -119,4 +119,3 @@ func (v *NullableOrderDataSubtotalCode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -22,7 +22,7 @@ type RmaSortOrder string
 // List of rmaSortOrder
 const (
 	RMASORTORDER_DESC RmaSortOrder = "DESC"
-	RMASORTORDER_ASC RmaSortOrder = "ASC"
+	RMASORTORDER_ASC  RmaSortOrder = "ASC"
 )
 
 // All allowed values of RmaSortOrder enum
@@ -109,4 +109,3 @@ func (v *NullableRmaSortOrder) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

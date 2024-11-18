@@ -11,10 +11,10 @@ package rma
 
 import (
 	"context"
+	openapiclient "github.com/Gemini-Commerce/go-client-rma"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/Gemini-Commerce/go-client-rma"
 )
 
 func Test_rma_RmaAPIService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_rma_RmaAPIService(t *testing.T) {
 
 	t.Run("Test RmaAPIService AddNote", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.RmaAPI.AddNote(context.Background()).Execute()
 
@@ -36,7 +36,7 @@ func Test_rma_RmaAPIService(t *testing.T) {
 
 	t.Run("Test RmaAPIService ApproveReturn", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.RmaAPI.ApproveReturn(context.Background()).Execute()
 
@@ -48,7 +48,7 @@ func Test_rma_RmaAPIService(t *testing.T) {
 
 	t.Run("Test RmaAPIService CancelReturn", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.RmaAPI.CancelReturn(context.Background()).Execute()
 
@@ -60,7 +60,7 @@ func Test_rma_RmaAPIService(t *testing.T) {
 
 	t.Run("Test RmaAPIService ConfirmReturnApproveItems", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.RmaAPI.ConfirmReturnApproveItems(context.Background()).Execute()
 
@@ -72,7 +72,7 @@ func Test_rma_RmaAPIService(t *testing.T) {
 
 	t.Run("Test RmaAPIService CreateReturn", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.RmaAPI.CreateReturn(context.Background()).Execute()
 
@@ -84,7 +84,7 @@ func Test_rma_RmaAPIService(t *testing.T) {
 
 	t.Run("Test RmaAPIService DeleteNote", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.RmaAPI.DeleteNote(context.Background()).Execute()
 
@@ -96,7 +96,7 @@ func Test_rma_RmaAPIService(t *testing.T) {
 
 	t.Run("Test RmaAPIService EditNote", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.RmaAPI.EditNote(context.Background()).Execute()
 
@@ -108,7 +108,7 @@ func Test_rma_RmaAPIService(t *testing.T) {
 
 	t.Run("Test RmaAPIService GetReturn", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.RmaAPI.GetReturn(context.Background()).Execute()
 
@@ -120,7 +120,7 @@ func Test_rma_RmaAPIService(t *testing.T) {
 
 	t.Run("Test RmaAPIService ListNotesByReturnId", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.RmaAPI.ListNotesByReturnId(context.Background()).Execute()
 
@@ -132,7 +132,7 @@ func Test_rma_RmaAPIService(t *testing.T) {
 
 	t.Run("Test RmaAPIService ListReturns", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.RmaAPI.ListReturns(context.Background()).Execute()
 
@@ -144,7 +144,7 @@ func Test_rma_RmaAPIService(t *testing.T) {
 
 	t.Run("Test RmaAPIService RefundReturn", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.RmaAPI.RefundReturn(context.Background()).Execute()
 
@@ -156,7 +156,7 @@ func Test_rma_RmaAPIService(t *testing.T) {
 
 	t.Run("Test RmaAPIService RejectReturn", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.RmaAPI.RejectReturn(context.Background()).Execute()
 
@@ -168,7 +168,7 @@ func Test_rma_RmaAPIService(t *testing.T) {
 
 	t.Run("Test RmaAPIService SetReceivedItems", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.RmaAPI.SetReceivedItems(context.Background()).Execute()
 
@@ -180,7 +180,7 @@ func Test_rma_RmaAPIService(t *testing.T) {
 
 	t.Run("Test RmaAPIService SkipReturnStatus", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.RmaAPI.SkipReturnStatus(context.Background()).Execute()
 

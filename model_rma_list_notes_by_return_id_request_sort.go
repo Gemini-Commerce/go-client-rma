@@ -22,9 +22,9 @@ var _ MappedNullable = &RmaListNotesByReturnIdRequestSort{}
 // RmaListNotesByReturnIdRequestSort struct for RmaListNotesByReturnIdRequestSort
 type RmaListNotesByReturnIdRequestSort struct {
 	// evaluation_order is the order in which the sort will be applied. The lower the number, the earlier the sort will be applied.
-	EvaluationOrder int64 `json:"evaluationOrder"`
-	Field RmaListNotesByReturnIdRequestSortSortField `json:"field"`
-	Order *RmaSortOrder `json:"order,omitempty"`
+	EvaluationOrder      int64                                      `json:"evaluationOrder"`
+	Field                RmaListNotesByReturnIdRequestSortSortField `json:"field"`
+	Order                *RmaSortOrder                              `json:"order,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -136,7 +136,7 @@ func (o *RmaListNotesByReturnIdRequestSort) SetOrder(v RmaSortOrder) {
 }
 
 func (o RmaListNotesByReturnIdRequestSort) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -172,10 +172,10 @@ func (o *RmaListNotesByReturnIdRequestSort) UnmarshalJSON(data []byte) (err erro
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -205,22 +205,24 @@ func (o *RmaListNotesByReturnIdRequestSort) UnmarshalJSON(data []byte) (err erro
 
 // GetValue returns the value of well-known types
 func (o *RmaListNotesByReturnIdRequestSort) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *RmaListNotesByReturnIdRequestSort) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableRmaListNotesByReturnIdRequestSort struct {
 	value *RmaListNotesByReturnIdRequestSort
 	isSet bool
@@ -256,5 +258,3 @@ func (v *NullableRmaListNotesByReturnIdRequestSort) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

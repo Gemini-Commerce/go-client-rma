@@ -19,12 +19,183 @@ import (
 	"net/url"
 )
 
+type RmaAPI interface {
+
+	/*
+		AddNote Add a note to an RMA
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiAddNoteRequest
+	*/
+	AddNote(ctx context.Context) ApiAddNoteRequest
+
+	// AddNoteExecute executes the request
+	//  @return RmaNoteResponse
+	AddNoteExecute(r ApiAddNoteRequest) (*RmaNoteResponse, *http.Response, error)
+
+	/*
+		ApproveReturn Approve a return
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiApproveReturnRequest
+	*/
+	ApproveReturn(ctx context.Context) ApiApproveReturnRequest
+
+	// ApproveReturnExecute executes the request
+	//  @return RpcStatus
+	ApproveReturnExecute(r ApiApproveReturnRequest) (*RpcStatus, *http.Response, error)
+
+	/*
+		CancelReturn Cancel a return
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiCancelReturnRequest
+	*/
+	CancelReturn(ctx context.Context) ApiCancelReturnRequest
+
+	// CancelReturnExecute executes the request
+	//  @return map[string]interface{}
+	CancelReturnExecute(r ApiCancelReturnRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+		ConfirmReturnApproveItems Confirm return approve items
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiConfirmReturnApproveItemsRequest
+	*/
+	ConfirmReturnApproveItems(ctx context.Context) ApiConfirmReturnApproveItemsRequest
+
+	// ConfirmReturnApproveItemsExecute executes the request
+	//  @return map[string]interface{}
+	ConfirmReturnApproveItemsExecute(r ApiConfirmReturnApproveItemsRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+		CreateReturn Create a return
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiCreateReturnRequest
+	*/
+	CreateReturn(ctx context.Context) ApiCreateReturnRequest
+
+	// CreateReturnExecute executes the request
+	//  @return RmaReturnResponse
+	CreateReturnExecute(r ApiCreateReturnRequest) (*RmaReturnResponse, *http.Response, error)
+
+	/*
+		DeleteNote Delete a note from an RMA
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiDeleteNoteRequest
+	*/
+	DeleteNote(ctx context.Context) ApiDeleteNoteRequest
+
+	// DeleteNoteExecute executes the request
+	//  @return map[string]interface{}
+	DeleteNoteExecute(r ApiDeleteNoteRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+		EditNote Edit a note on an RMA
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiEditNoteRequest
+	*/
+	EditNote(ctx context.Context) ApiEditNoteRequest
+
+	// EditNoteExecute executes the request
+	//  @return RmaNoteResponse
+	EditNoteExecute(r ApiEditNoteRequest) (*RmaNoteResponse, *http.Response, error)
+
+	/*
+		GetReturn Get a return
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetReturnRequest
+	*/
+	GetReturn(ctx context.Context) ApiGetReturnRequest
+
+	// GetReturnExecute executes the request
+	//  @return RmaReturnResponse
+	GetReturnExecute(r ApiGetReturnRequest) (*RmaReturnResponse, *http.Response, error)
+
+	/*
+		ListNotesByReturnId List notes by return id
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiListNotesByReturnIdRequest
+	*/
+	ListNotesByReturnId(ctx context.Context) ApiListNotesByReturnIdRequest
+
+	// ListNotesByReturnIdExecute executes the request
+	//  @return RmaListNotesByReturnIdResponse
+	ListNotesByReturnIdExecute(r ApiListNotesByReturnIdRequest) (*RmaListNotesByReturnIdResponse, *http.Response, error)
+
+	/*
+		ListReturns List returns
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiListReturnsRequest
+	*/
+	ListReturns(ctx context.Context) ApiListReturnsRequest
+
+	// ListReturnsExecute executes the request
+	//  @return RmaListReturnsResponse
+	ListReturnsExecute(r ApiListReturnsRequest) (*RmaListReturnsResponse, *http.Response, error)
+
+	/*
+		RefundReturn Refund a return
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiRefundReturnRequest
+	*/
+	RefundReturn(ctx context.Context) ApiRefundReturnRequest
+
+	// RefundReturnExecute executes the request
+	//  @return map[string]interface{}
+	RefundReturnExecute(r ApiRefundReturnRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+		RejectReturn Reject a return
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiRejectReturnRequest
+	*/
+	RejectReturn(ctx context.Context) ApiRejectReturnRequest
+
+	// RejectReturnExecute executes the request
+	//  @return map[string]interface{}
+	RejectReturnExecute(r ApiRejectReturnRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+		SetReceivedItems Set received items
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSetReceivedItemsRequest
+	*/
+	SetReceivedItems(ctx context.Context) ApiSetReceivedItemsRequest
+
+	// SetReceivedItemsExecute executes the request
+	//  @return map[string]interface{}
+	SetReceivedItemsExecute(r ApiSetReceivedItemsRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+		SkipReturnStatus Skip a return status
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSkipReturnStatusRequest
+	*/
+	SkipReturnStatus(ctx context.Context) ApiSkipReturnStatusRequest
+
+	// SkipReturnStatusExecute executes the request
+	//  @return map[string]interface{}
+	SkipReturnStatusExecute(r ApiSkipReturnStatusRequest) (map[string]interface{}, *http.Response, error)
+}
+
 // RmaAPIService RmaAPI service
 type RmaAPIService service
 
 type ApiAddNoteRequest struct {
 	ctx        context.Context
-	ApiService *RmaAPIService
+	ApiService RmaAPI
 	body       *RmaAddNoteRequest
 }
 
@@ -163,7 +334,7 @@ func (a *RmaAPIService) AddNoteExecute(r ApiAddNoteRequest) (*RmaNoteResponse, *
 
 type ApiApproveReturnRequest struct {
 	ctx        context.Context
-	ApiService *RmaAPIService
+	ApiService RmaAPI
 	body       *RmaApproveReturnRequest
 }
 
@@ -313,7 +484,7 @@ func (a *RmaAPIService) ApproveReturnExecute(r ApiApproveReturnRequest) (*RpcSta
 
 type ApiCancelReturnRequest struct {
 	ctx        context.Context
-	ApiService *RmaAPIService
+	ApiService RmaAPI
 	body       *RmaCancelReturnRequest
 }
 
@@ -452,7 +623,7 @@ func (a *RmaAPIService) CancelReturnExecute(r ApiCancelReturnRequest) (map[strin
 
 type ApiConfirmReturnApproveItemsRequest struct {
 	ctx        context.Context
-	ApiService *RmaAPIService
+	ApiService RmaAPI
 	body       *RmaConfirmReturnApproveItemsRequest
 }
 
@@ -591,7 +762,7 @@ func (a *RmaAPIService) ConfirmReturnApproveItemsExecute(r ApiConfirmReturnAppro
 
 type ApiCreateReturnRequest struct {
 	ctx        context.Context
-	ApiService *RmaAPIService
+	ApiService RmaAPI
 	body       *RmaCreateReturnRequest
 }
 
@@ -730,7 +901,7 @@ func (a *RmaAPIService) CreateReturnExecute(r ApiCreateReturnRequest) (*RmaRetur
 
 type ApiDeleteNoteRequest struct {
 	ctx        context.Context
-	ApiService *RmaAPIService
+	ApiService RmaAPI
 	body       *RmaDeleteNoteRequest
 }
 
@@ -869,7 +1040,7 @@ func (a *RmaAPIService) DeleteNoteExecute(r ApiDeleteNoteRequest) (map[string]in
 
 type ApiEditNoteRequest struct {
 	ctx        context.Context
-	ApiService *RmaAPIService
+	ApiService RmaAPI
 	body       *RmaEditNoteRequest
 }
 
@@ -1008,7 +1179,7 @@ func (a *RmaAPIService) EditNoteExecute(r ApiEditNoteRequest) (*RmaNoteResponse,
 
 type ApiGetReturnRequest struct {
 	ctx        context.Context
-	ApiService *RmaAPIService
+	ApiService RmaAPI
 	body       *RmaGetReturnRequest
 }
 
@@ -1147,7 +1318,7 @@ func (a *RmaAPIService) GetReturnExecute(r ApiGetReturnRequest) (*RmaReturnRespo
 
 type ApiListNotesByReturnIdRequest struct {
 	ctx        context.Context
-	ApiService *RmaAPIService
+	ApiService RmaAPI
 	body       *RmaListNotesByReturnIdRequest
 }
 
@@ -1286,7 +1457,7 @@ func (a *RmaAPIService) ListNotesByReturnIdExecute(r ApiListNotesByReturnIdReque
 
 type ApiListReturnsRequest struct {
 	ctx        context.Context
-	ApiService *RmaAPIService
+	ApiService RmaAPI
 	body       *RmaListReturnsRequest
 }
 
@@ -1425,7 +1596,7 @@ func (a *RmaAPIService) ListReturnsExecute(r ApiListReturnsRequest) (*RmaListRet
 
 type ApiRefundReturnRequest struct {
 	ctx        context.Context
-	ApiService *RmaAPIService
+	ApiService RmaAPI
 	body       *RmaRefundReturnRequest
 }
 
@@ -1564,7 +1735,7 @@ func (a *RmaAPIService) RefundReturnExecute(r ApiRefundReturnRequest) (map[strin
 
 type ApiRejectReturnRequest struct {
 	ctx        context.Context
-	ApiService *RmaAPIService
+	ApiService RmaAPI
 	body       *RmaRejectReturnRequest
 }
 
@@ -1703,7 +1874,7 @@ func (a *RmaAPIService) RejectReturnExecute(r ApiRejectReturnRequest) (map[strin
 
 type ApiSetReceivedItemsRequest struct {
 	ctx        context.Context
-	ApiService *RmaAPIService
+	ApiService RmaAPI
 	body       *RmaSetReceivedItemsRequest
 }
 
@@ -1842,7 +2013,7 @@ func (a *RmaAPIService) SetReceivedItemsExecute(r ApiSetReceivedItemsRequest) (m
 
 type ApiSkipReturnStatusRequest struct {
 	ctx        context.Context
-	ApiService *RmaAPIService
+	ApiService RmaAPI
 	body       *RmaSkipReturnStatusRequest
 }
 

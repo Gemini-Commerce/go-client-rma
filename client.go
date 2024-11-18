@@ -49,7 +49,7 @@ type APIClient struct {
 
 	// API Services
 
-	RmaAPI *RmaAPIService
+	RmaAPI RmaAPI
 }
 
 type service struct {
